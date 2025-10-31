@@ -1,0 +1,3433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dr. Siddalingaiah H S, Professor, Community Medicine, SIMSRH, Tumkur" />
+  <meta name="dcterms.date" content="2025-01-01" />
+  <title>Comprehensive Study Design and Methods Guide: Epidemiology and Statistics</title>
+  <style>
+
+html {
+font-size: 11pt;
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: blue;
+}
+a:visited {
+color: blue;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Comprehensive Study Design and Methods Guide:
+Epidemiology and Statistics</h1>
+<p class="author">Dr. Siddalingaiah H S, Professor, Community Medicine,
+SIMSRH, Tumkur</p>
+<p class="date">2025</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#comprehensive-study-design-and-methods-guide-epidemiology-and-statistics" id="toc-comprehensive-study-design-and-methods-guide-epidemiology-and-statistics"><span class="toc-section-number">1</span> Comprehensive Study Design and
+Methods Guide: Epidemiology and Statistics</a>
+<ul>
+<li><a href="#part-i-epidemiology-study-designs" id="toc-part-i-epidemiology-study-designs"><span class="toc-section-number">1.1</span> Part I: Epidemiology Study
+Designs</a></li>
+<li><a href="#part-ii-statistical-methods" id="toc-part-ii-statistical-methods"><span class="toc-section-number">1.2</span> Part II: Statistical
+Methods</a></li>
+<li><a href="#introduction-stats" id="toc-introduction-stats"><span class="toc-section-number">1.3</span> 1. Introduction to Statistical
+Methods</a></li>
+</ul></li>
+<li><a href="#module-1-introduction-to-statistical-methods" id="toc-module-1-introduction-to-statistical-methods"><span class="toc-section-number">2</span> Module 1: Introduction to
+Statistical Methods</a>
+<ul>
+<li><a href="#learning-objectives" id="toc-learning-objectives"><span class="toc-section-number">2.1</span> Learning Objectives</a></li>
+<li><a href="#what-is-statistics" id="toc-what-is-statistics"><span class="toc-section-number">2.2</span> What is Statistics?</a></li>
+<li><a href="#branches-of-statistics" id="toc-branches-of-statistics"><span class="toc-section-number">2.3</span> Branches of Statistics</a>
+<ul>
+<li><a href="#descriptive-statistics" id="toc-descriptive-statistics"><span class="toc-section-number">2.3.1</span> 1. Descriptive
+Statistics</a></li>
+<li><a href="#inferential-statistics" id="toc-inferential-statistics"><span class="toc-section-number">2.3.2</span> 2. Inferential
+Statistics</a></li>
+</ul></li>
+<li><a href="#types-of-data" id="toc-types-of-data"><span class="toc-section-number">2.4</span> Types of Data</a>
+<ul>
+<li><a href="#by-nature" id="toc-by-nature"><span class="toc-section-number">2.4.1</span> By Nature</a></li>
+<li><a href="#by-measurement-scale" id="toc-by-measurement-scale"><span class="toc-section-number">2.4.2</span> By Measurement Scale</a></li>
+</ul></li>
+<li><a href="#the-research-process" id="toc-the-research-process"><span class="toc-section-number">2.5</span> The Research Process</a>
+<ul>
+<li><a href="#problem-identification" id="toc-problem-identification"><span class="toc-section-number">2.5.1</span> 1. Problem
+Identification</a></li>
+<li><a href="#study-design" id="toc-study-design"><span class="toc-section-number">2.5.2</span> 2. Study Design</a></li>
+<li><a href="#data-collection" id="toc-data-collection"><span class="toc-section-number">2.5.3</span> 3. Data Collection</a></li>
+<li><a href="#data-analysis" id="toc-data-analysis"><span class="toc-section-number">2.5.4</span> 4. Data Analysis</a></li>
+<li><a href="#reporting-results" id="toc-reporting-results"><span class="toc-section-number">2.5.5</span> 5. Reporting Results</a></li>
+</ul></li>
+<li><a href="#study-designs-in-research" id="toc-study-designs-in-research"><span class="toc-section-number">2.6</span> Study Designs in Research</a>
+<ul>
+<li><a href="#experimental-designs" id="toc-experimental-designs"><span class="toc-section-number">2.6.1</span> Experimental Designs</a></li>
+<li><a href="#observational-designs" id="toc-observational-designs"><span class="toc-section-number">2.6.2</span> Observational Designs</a></li>
+</ul></li>
+<li><a href="#ethical-considerations" id="toc-ethical-considerations"><span class="toc-section-number">2.7</span> Ethical Considerations</a>
+<ul>
+<li><a href="#key-principles" id="toc-key-principles"><span class="toc-section-number">2.7.1</span> Key Principles</a></li>
+<li><a href="#statistical-ethics" id="toc-statistical-ethics"><span class="toc-section-number">2.7.2</span> Statistical Ethics</a></li>
+</ul></li>
+<li><a href="#software-tools-for-statistics" id="toc-software-tools-for-statistics"><span class="toc-section-number">2.8</span> Software Tools for Statistics</a>
+<ul>
+<li><a href="#statistical-software" id="toc-statistical-software"><span class="toc-section-number">2.8.1</span> Statistical Software</a></li>
+<li><a href="#data-visualization" id="toc-data-visualization"><span class="toc-section-number">2.8.2</span> Data Visualization</a></li>
+</ul></li>
+<li><a href="#summary" id="toc-summary"><span class="toc-section-number">2.9</span> Summary</a></li>
+<li><a href="#descriptive" id="toc-descriptive"><span class="toc-section-number">2.10</span> 2. Descriptive
+Statistics</a></li>
+</ul></li>
+<li><a href="#module-2-descriptive-statistics" id="toc-module-2-descriptive-statistics"><span class="toc-section-number">3</span> Module 2: Descriptive Statistics</a>
+<ul>
+<li><a href="#learning-objectives-1" id="toc-learning-objectives-1"><span class="toc-section-number">3.1</span> Learning Objectives</a></li>
+<li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency"><span class="toc-section-number">3.2</span> Measures of Central Tendency</a>
+<ul>
+<li><a href="#mean-arithmetic-average" id="toc-mean-arithmetic-average"><span class="toc-section-number">3.2.1</span> Mean (Arithmetic
+Average)</a></li>
+<li><a href="#median-middle-value" id="toc-median-middle-value"><span class="toc-section-number">3.2.2</span> Median (Middle Value)</a></li>
+<li><a href="#mode-most-frequent-value" id="toc-mode-most-frequent-value"><span class="toc-section-number">3.2.3</span> Mode (Most Frequent
+Value)</a></li>
+</ul></li>
+<li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion"><span class="toc-section-number">3.3</span> Measures of Dispersion</a>
+<ul>
+<li><a href="#range" id="toc-range"><span class="toc-section-number">3.3.1</span> Range</a></li>
+<li><a href="#variance" id="toc-variance"><span class="toc-section-number">3.3.2</span> Variance</a></li>
+<li><a href="#standard-deviation" id="toc-standard-deviation"><span class="toc-section-number">3.3.3</span> Standard Deviation</a></li>
+</ul></li>
+<li><a href="#data-distributions" id="toc-data-distributions"><span class="toc-section-number">3.4</span> Data Distributions</a>
+<ul>
+<li><a href="#normal-distribution" id="toc-normal-distribution"><span class="toc-section-number">3.4.1</span> Normal Distribution</a></li>
+<li><a href="#skewness" id="toc-skewness"><span class="toc-section-number">3.4.2</span> Skewness</a></li>
+<li><a href="#kurtosis" id="toc-kurtosis"><span class="toc-section-number">3.4.3</span> Kurtosis</a></li>
+</ul></li>
+<li><a href="#data-visualization-1" id="toc-data-visualization-1"><span class="toc-section-number">3.5</span> Data Visualization</a>
+<ul>
+<li><a href="#histograms" id="toc-histograms"><span class="toc-section-number">3.5.1</span> Histograms</a></li>
+<li><a href="#box-plots-box-and-whisker-plots" id="toc-box-plots-box-and-whisker-plots"><span class="toc-section-number">3.5.2</span> Box Plots (Box-and-Whisker
+Plots)</a></li>
+<li><a href="#scatter-plots" id="toc-scatter-plots"><span class="toc-section-number">3.5.3</span> Scatter Plots</a></li>
+<li><a href="#bar-charts-and-pie-charts" id="toc-bar-charts-and-pie-charts"><span class="toc-section-number">3.5.4</span> Bar Charts and Pie
+Charts</a></li>
+</ul></li>
+<li><a href="#sampling-distributions" id="toc-sampling-distributions"><span class="toc-section-number">3.6</span> Sampling Distributions</a>
+<ul>
+<li><a href="#central-limit-theorem" id="toc-central-limit-theorem"><span class="toc-section-number">3.6.1</span> Central Limit Theorem</a></li>
+<li><a href="#standard-error" id="toc-standard-error"><span class="toc-section-number">3.6.2</span> Standard Error</a></li>
+</ul></li>
+<li><a href="#summary-1" id="toc-summary-1"><span class="toc-section-number">3.7</span> Summary</a></li>
+<li><a href="#probability" id="toc-probability"><span class="toc-section-number">3.8</span> 3. Probability Theory</a></li>
+</ul></li>
+<li><a href="#module-3-probability-theory" id="toc-module-3-probability-theory"><span class="toc-section-number">4</span> Module 3: Probability Theory</a>
+<ul>
+<li><a href="#learning-objectives-2" id="toc-learning-objectives-2"><span class="toc-section-number">4.1</span> Learning Objectives</a></li>
+<li><a href="#basic-probability-concepts" id="toc-basic-probability-concepts"><span class="toc-section-number">4.2</span> Basic Probability Concepts</a>
+<ul>
+<li><a href="#probability-1" id="toc-probability-1"><span class="toc-section-number">4.2.1</span> Probability</a></li>
+<li><a href="#sample-space" id="toc-sample-space"><span class="toc-section-number">4.2.2</span> Sample Space</a></li>
+<li><a href="#events" id="toc-events"><span class="toc-section-number">4.2.3</span> Events</a></li>
+</ul></li>
+<li><a href="#probability-rules" id="toc-probability-rules"><span class="toc-section-number">4.3</span> Probability Rules</a>
+<ul>
+<li><a href="#addition-rule" id="toc-addition-rule"><span class="toc-section-number">4.3.1</span> Addition Rule</a></li>
+<li><a href="#multiplication-rule" id="toc-multiplication-rule"><span class="toc-section-number">4.3.2</span> Multiplication Rule</a></li>
+<li><a href="#complement-rule" id="toc-complement-rule"><span class="toc-section-number">4.3.3</span> Complement Rule</a></li>
+<li><a href="#conditional-probability" id="toc-conditional-probability"><span class="toc-section-number">4.3.4</span> Conditional Probability</a></li>
+</ul></li>
+<li><a href="#bayes-theorem" id="toc-bayes-theorem"><span class="toc-section-number">4.4</span> Bayes’ Theorem</a>
+<ul>
+<li><a href="#formula" id="toc-formula"><span class="toc-section-number">4.4.1</span> Formula</a></li>
+<li><a href="#extended-form" id="toc-extended-form"><span class="toc-section-number">4.4.2</span> Extended Form</a></li>
+<li><a href="#applications" id="toc-applications"><span class="toc-section-number">4.4.3</span> Applications</a></li>
+</ul></li>
+<li><a href="#common-probability-distributions" id="toc-common-probability-distributions"><span class="toc-section-number">4.5</span> Common Probability
+Distributions</a>
+<ul>
+<li><a href="#discrete-distributions" id="toc-discrete-distributions"><span class="toc-section-number">4.5.1</span> Discrete Distributions</a></li>
+<li><a href="#continuous-distributions" id="toc-continuous-distributions"><span class="toc-section-number">4.5.2</span> Continuous
+Distributions</a></li>
+</ul></li>
+<li><a href="#expected-value-and-variance" id="toc-expected-value-and-variance"><span class="toc-section-number">4.6</span> Expected Value and Variance</a>
+<ul>
+<li><a href="#expected-value-mean" id="toc-expected-value-mean"><span class="toc-section-number">4.6.1</span> Expected Value (Mean)</a></li>
+<li><a href="#variance-1" id="toc-variance-1"><span class="toc-section-number">4.6.2</span> Variance</a></li>
+<li><a href="#properties" id="toc-properties"><span class="toc-section-number">4.6.3</span> Properties</a></li>
+</ul></li>
+<li><a href="#summary-2" id="toc-summary-2"><span class="toc-section-number">4.7</span> Summary</a></li>
+<li><a href="#inferential" id="toc-inferential"><span class="toc-section-number">4.8</span> 4. Inferential Statistics</a></li>
+</ul></li>
+<li><a href="#module-4-inferential-statistics" id="toc-module-4-inferential-statistics"><span class="toc-section-number">5</span> Module 4: Inferential Statistics</a>
+<ul>
+<li><a href="#learning-objectives-3" id="toc-learning-objectives-3"><span class="toc-section-number">5.1</span> Learning Objectives</a></li>
+<li><a href="#sampling-theory" id="toc-sampling-theory"><span class="toc-section-number">5.2</span> Sampling Theory</a>
+<ul>
+<li><a href="#populations-and-samples" id="toc-populations-and-samples"><span class="toc-section-number">5.2.1</span> Populations and Samples</a></li>
+<li><a href="#sampling-distributions-1" id="toc-sampling-distributions-1"><span class="toc-section-number">5.2.2</span> Sampling Distributions</a></li>
+</ul></li>
+<li><a href="#confidence-intervals" id="toc-confidence-intervals"><span class="toc-section-number">5.3</span> Confidence Intervals</a>
+<ul>
+<li><a href="#concept" id="toc-concept"><span class="toc-section-number">5.3.1</span> Concept</a></li>
+<li><a href="#formula-for-mean-σ-known" id="toc-formula-for-mean-σ-known"><span class="toc-section-number">5.3.2</span> Formula for Mean (σ
+known)</a></li>
+<li><a href="#formula-for-mean-σ-unknown" id="toc-formula-for-mean-σ-unknown"><span class="toc-section-number">5.3.3</span> Formula for Mean (σ
+unknown)</a></li>
+<li><a href="#formula-for-proportion" id="toc-formula-for-proportion"><span class="toc-section-number">5.3.4</span> Formula for Proportion</a></li>
+<li><a href="#interpretation" id="toc-interpretation"><span class="toc-section-number">5.3.5</span> Interpretation</a></li>
+</ul></li>
+<li><a href="#hypothesis-testing" id="toc-hypothesis-testing"><span class="toc-section-number">5.4</span> Hypothesis Testing</a>
+<ul>
+<li><a href="#steps-in-hypothesis-testing" id="toc-steps-in-hypothesis-testing"><span class="toc-section-number">5.4.1</span> Steps in Hypothesis
+Testing</a></li>
+<li><a href="#types-of-errors" id="toc-types-of-errors"><span class="toc-section-number">5.4.2</span> Types of Errors</a></li>
+<li><a href="#power-analysis" id="toc-power-analysis"><span class="toc-section-number">5.4.3</span> Power Analysis</a></li>
+</ul></li>
+<li><a href="#common-statistical-tests" id="toc-common-statistical-tests"><span class="toc-section-number">5.5</span> Common Statistical Tests</a>
+<ul>
+<li><a href="#parametric-tests-normal-data-equal-variances" id="toc-parametric-tests-normal-data-equal-variances"><span class="toc-section-number">5.5.1</span> Parametric Tests (Normal data,
+equal variances)</a></li>
+<li><a href="#non-parametric-tests-no-normality-assumption" id="toc-non-parametric-tests-no-normality-assumption"><span class="toc-section-number">5.5.2</span> Non-parametric Tests (No
+normality assumption)</a></li>
+</ul></li>
+<li><a href="#p-values-and-significance" id="toc-p-values-and-significance"><span class="toc-section-number">5.6</span> p-Values and Significance</a>
+<ul>
+<li><a href="#p-value-definition" id="toc-p-value-definition"><span class="toc-section-number">5.6.1</span> p-Value Definition</a></li>
+<li><a href="#significance-levels" id="toc-significance-levels"><span class="toc-section-number">5.6.2</span> Significance Levels</a></li>
+<li><a href="#misconceptions" id="toc-misconceptions"><span class="toc-section-number">5.6.3</span> Misconceptions</a></li>
+</ul></li>
+<li><a href="#effect-size" id="toc-effect-size"><span class="toc-section-number">5.7</span> Effect Size</a>
+<ul>
+<li><a href="#importance" id="toc-importance"><span class="toc-section-number">5.7.1</span> Importance</a></li>
+<li><a href="#common-measures" id="toc-common-measures"><span class="toc-section-number">5.7.2</span> Common Measures</a></li>
+</ul></li>
+<li><a href="#summary-3" id="toc-summary-3"><span class="toc-section-number">5.8</span> Summary</a></li>
+<li><a href="#parametric" id="toc-parametric"><span class="toc-section-number">5.9</span> 5. Parametric Tests</a></li>
+</ul></li>
+<li><a href="#module-5-parametric-statistical-tests" id="toc-module-5-parametric-statistical-tests"><span class="toc-section-number">6</span> Module 5: Parametric Statistical
+Tests</a>
+<ul>
+<li><a href="#learning-objectives-4" id="toc-learning-objectives-4"><span class="toc-section-number">6.1</span> Learning Objectives</a></li>
+<li><a href="#assumptions-of-parametric-tests" id="toc-assumptions-of-parametric-tests"><span class="toc-section-number">6.2</span> Assumptions of Parametric
+Tests</a>
+<ul>
+<li><a href="#normality" id="toc-normality"><span class="toc-section-number">6.2.1</span> Normality</a></li>
+<li><a href="#homoscedasticity-equal-variances" id="toc-homoscedasticity-equal-variances"><span class="toc-section-number">6.2.2</span> Homoscedasticity (Equal
+Variances)</a></li>
+<li><a href="#independence" id="toc-independence"><span class="toc-section-number">6.2.3</span> Independence</a></li>
+<li><a href="#linearity" id="toc-linearity"><span class="toc-section-number">6.2.4</span> Linearity</a></li>
+</ul></li>
+<li><a href="#t-tests" id="toc-t-tests"><span class="toc-section-number">6.3</span> t-Tests</a>
+<ul>
+<li><a href="#one-sample-t-test-1" id="toc-one-sample-t-test-1"><span class="toc-section-number">6.3.1</span> One-Sample t-Test</a></li>
+<li><a href="#independent-samples-t-test" id="toc-independent-samples-t-test"><span class="toc-section-number">6.3.2</span> Independent Samples
+t-Test</a></li>
+<li><a href="#paired-t-test" id="toc-paired-t-test"><span class="toc-section-number">6.3.3</span> Paired t-Test</a></li>
+</ul></li>
+<li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova"><span class="toc-section-number">6.4</span> Analysis of Variance (ANOVA)</a>
+<ul>
+<li><a href="#one-way-anova-1" id="toc-one-way-anova-1"><span class="toc-section-number">6.4.1</span> One-Way ANOVA</a></li>
+<li><a href="#two-way-anova" id="toc-two-way-anova"><span class="toc-section-number">6.4.2</span> Two-Way ANOVA</a></li>
+<li><a href="#repeated-measures-anova" id="toc-repeated-measures-anova"><span class="toc-section-number">6.4.3</span> Repeated Measures ANOVA</a></li>
+</ul></li>
+<li><a href="#correlation-analysis" id="toc-correlation-analysis"><span class="toc-section-number">6.5</span> Correlation Analysis</a>
+<ul>
+<li><a href="#pearson-correlation-1" id="toc-pearson-correlation-1"><span class="toc-section-number">6.5.1</span> Pearson Correlation</a></li>
+<li><a href="#correlation-vs.-causation" id="toc-correlation-vs.-causation"><span class="toc-section-number">6.5.2</span> Correlation
+vs. Causation</a></li>
+</ul></li>
+<li><a href="#linear-regression" id="toc-linear-regression"><span class="toc-section-number">6.6</span> Linear Regression</a>
+<ul>
+<li><a href="#simple-linear-regression" id="toc-simple-linear-regression"><span class="toc-section-number">6.6.1</span> Simple Linear
+Regression</a></li>
+<li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression"><span class="toc-section-number">6.6.2</span> Multiple Linear
+Regression</a></li>
+<li><a href="#model-evaluation" id="toc-model-evaluation"><span class="toc-section-number">6.6.3</span> Model Evaluation</a></li>
+<li><a href="#regression-diagnostics" id="toc-regression-diagnostics"><span class="toc-section-number">6.6.4</span> Regression Diagnostics</a></li>
+</ul></li>
+<li><a href="#summary-4" id="toc-summary-4"><span class="toc-section-number">6.7</span> Summary</a></li>
+<li><a href="#nonparametric" id="toc-nonparametric"><span class="toc-section-number">6.8</span> 6. Non-Parametric Tests</a></li>
+</ul></li>
+<li><a href="#module-6-non-parametric-statistical-tests" id="toc-module-6-non-parametric-statistical-tests"><span class="toc-section-number">7</span> Module 6: Non-Parametric Statistical
+Tests</a>
+<ul>
+<li><a href="#learning-objectives-5" id="toc-learning-objectives-5"><span class="toc-section-number">7.1</span> Learning Objectives</a></li>
+<li><a href="#when-to-use-non-parametric-tests" id="toc-when-to-use-non-parametric-tests"><span class="toc-section-number">7.2</span> When to Use Non-Parametric
+Tests</a>
+<ul>
+<li><a href="#advantages" id="toc-advantages"><span class="toc-section-number">7.2.1</span> Advantages</a></li>
+<li><a href="#disadvantages" id="toc-disadvantages"><span class="toc-section-number">7.2.2</span> Disadvantages</a></li>
+<li><a href="#decision-criteria" id="toc-decision-criteria"><span class="toc-section-number">7.2.3</span> Decision Criteria</a></li>
+</ul></li>
+<li><a href="#chi-square-tests" id="toc-chi-square-tests"><span class="toc-section-number">7.3</span> Chi-Square Tests</a>
+<ul>
+<li><a href="#chi-square-goodness-of-fit" id="toc-chi-square-goodness-of-fit"><span class="toc-section-number">7.3.1</span> Chi-Square Goodness of
+Fit</a></li>
+<li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence"><span class="toc-section-number">7.3.2</span> Chi-Square Test of
+Independence</a></li>
+<li><a href="#fishers-exact-test" id="toc-fishers-exact-test"><span class="toc-section-number">7.3.3</span> Fisher’s Exact Test</a></li>
+</ul></li>
+<li><a href="#mann-whitney-u-test-1" id="toc-mann-whitney-u-test-1"><span class="toc-section-number">7.4</span> Mann-Whitney U Test</a>
+<ul>
+<li><a href="#purpose" id="toc-purpose"><span class="toc-section-number">7.4.1</span> Purpose</a></li>
+<li><a href="#logic" id="toc-logic"><span class="toc-section-number">7.4.2</span> Logic</a></li>
+<li><a href="#formula-1" id="toc-formula-1"><span class="toc-section-number">7.4.3</span> Formula</a></li>
+<li><a href="#effect-size-1" id="toc-effect-size-1"><span class="toc-section-number">7.4.4</span> Effect Size</a></li>
+</ul></li>
+<li><a href="#kruskal-wallis-test-1" id="toc-kruskal-wallis-test-1"><span class="toc-section-number">7.5</span> Kruskal-Wallis Test</a>
+<ul>
+<li><a href="#purpose-1" id="toc-purpose-1"><span class="toc-section-number">7.5.1</span> Purpose</a></li>
+<li><a href="#logic-1" id="toc-logic-1"><span class="toc-section-number">7.5.2</span> Logic</a></li>
+<li><a href="#post-hoc-tests" id="toc-post-hoc-tests"><span class="toc-section-number">7.5.3</span> Post-hoc Tests</a></li>
+</ul></li>
+<li><a href="#wilcoxon-signed-rank-test" id="toc-wilcoxon-signed-rank-test"><span class="toc-section-number">7.6</span> Wilcoxon Signed-Rank Test</a>
+<ul>
+<li><a href="#purpose-2" id="toc-purpose-2"><span class="toc-section-number">7.6.1</span> Purpose</a></li>
+<li><a href="#procedure" id="toc-procedure"><span class="toc-section-number">7.6.2</span> Procedure</a></li>
+</ul></li>
+<li><a href="#spearmans-rank-correlation" id="toc-spearmans-rank-correlation"><span class="toc-section-number">7.7</span> Spearman’s Rank Correlation</a>
+<ul>
+<li><a href="#purpose-3" id="toc-purpose-3"><span class="toc-section-number">7.7.1</span> Purpose</a></li>
+<li><a href="#calculation" id="toc-calculation"><span class="toc-section-number">7.7.2</span> Calculation</a></li>
+</ul></li>
+<li><a href="#summary-5" id="toc-summary-5"><span class="toc-section-number">7.8</span> Summary</a></li>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">7.9</span> 1. Introduction to Epidemiological
+Study Designs</a></li>
+</ul></li>
+<li><a href="#module-1-introduction-to-epidemiological-study-designs" id="toc-module-1-introduction-to-epidemiological-study-designs"><span class="toc-section-number">8</span> Module 1: Introduction to
+Epidemiological Study Designs</a>
+<ul>
+<li><a href="#learning-objectives-6" id="toc-learning-objectives-6"><span class="toc-section-number">8.1</span> Learning Objectives</a></li>
+<li><a href="#what-is-epidemiology" id="toc-what-is-epidemiology"><span class="toc-section-number">8.2</span> What is Epidemiology?</a></li>
+<li><a href="#levels-of-epidemiological-study" id="toc-levels-of-epidemiological-study"><span class="toc-section-number">8.3</span> Levels of Epidemiological
+Study</a>
+<ul>
+<li><a href="#descriptive-epidemiology" id="toc-descriptive-epidemiology"><span class="toc-section-number">8.3.1</span> 1. Descriptive
+Epidemiology</a></li>
+<li><a href="#analytical-epidemiology" id="toc-analytical-epidemiology"><span class="toc-section-number">8.3.2</span> 2. Analytical
+Epidemiology</a></li>
+</ul></li>
+<li><a href="#epidemiological-study-designs" id="toc-epidemiological-study-designs"><span class="toc-section-number">8.4</span> Epidemiological Study Designs</a>
+<ul>
+<li><a href="#major-categories" id="toc-major-categories"><span class="toc-section-number">8.4.1</span> Major Categories:</a></li>
+</ul></li>
+<li><a href="#key-principles-in-epidemiological-research" id="toc-key-principles-in-epidemiological-research"><span class="toc-section-number">8.5</span> Key Principles in Epidemiological
+Research</a>
+<ul>
+<li><a href="#study-population" id="toc-study-population"><span class="toc-section-number">8.5.1</span> 1. Study Population</a></li>
+<li><a href="#exposure-and-outcome" id="toc-exposure-and-outcome"><span class="toc-section-number">8.5.2</span> 2. Exposure and Outcome</a></li>
+<li><a href="#comparison-groups" id="toc-comparison-groups"><span class="toc-section-number">8.5.3</span> 3. Comparison Groups</a></li>
+<li><a href="#bias-and-confounding" id="toc-bias-and-confounding"><span class="toc-section-number">8.5.4</span> 4. Bias and Confounding</a></li>
+</ul></li>
+<li><a href="#establishing-causality" id="toc-establishing-causality"><span class="toc-section-number">8.6</span> Establishing Causality</a>
+<ul>
+<li><a href="#bradford-hill-criteria-1965" id="toc-bradford-hill-criteria-1965"><span class="toc-section-number">8.6.1</span> Bradford Hill Criteria
+(1965)</a></li>
+</ul></li>
+<li><a href="#importance-of-study-design-selection" id="toc-importance-of-study-design-selection"><span class="toc-section-number">8.7</span> Importance of Study Design
+Selection</a></li>
+<li><a href="#summary-6" id="toc-summary-6"><span class="toc-section-number">8.8</span> Summary</a></li>
+<li><a href="#observational-studies" id="toc-observational-studies"><span class="toc-section-number">8.9</span> 2. Observational Study
+Designs</a></li>
+</ul></li>
+<li><a href="#module-2-observational-study-designs" id="toc-module-2-observational-study-designs"><span class="toc-section-number">9</span> Module 2: Observational Study
+Designs</a>
+<ul>
+<li><a href="#learning-objectives-7" id="toc-learning-objectives-7"><span class="toc-section-number">9.1</span> Learning Objectives</a></li>
+<li><a href="#overview-of-observational-studies" id="toc-overview-of-observational-studies"><span class="toc-section-number">9.2</span> Overview of Observational
+Studies</a></li>
+<li><a href="#descriptive-studies" id="toc-descriptive-studies"><span class="toc-section-number">9.3</span> 1. Descriptive Studies</a>
+<ul>
+<li><a href="#ecological-studies" id="toc-ecological-studies"><span class="toc-section-number">9.3.1</span> Ecological Studies</a></li>
+<li><a href="#case-reports-and-case-series" id="toc-case-reports-and-case-series"><span class="toc-section-number">9.3.2</span> Case Reports and Case
+Series</a></li>
+</ul></li>
+<li><a href="#analytical-observational-studies" id="toc-analytical-observational-studies"><span class="toc-section-number">9.4</span> 2. Analytical Observational
+Studies</a>
+<ul>
+<li><a href="#cohort-studies" id="toc-cohort-studies"><span class="toc-section-number">9.4.1</span> Cohort Studies</a></li>
+<li><a href="#case-control-studies" id="toc-case-control-studies"><span class="toc-section-number">9.4.2</span> Case-Control Studies</a></li>
+<li><a href="#cross-sectional-studies" id="toc-cross-sectional-studies"><span class="toc-section-number">9.4.3</span> Cross-Sectional Studies</a></li>
+</ul></li>
+<li><a href="#choosing-an-observational-study-design" id="toc-choosing-an-observational-study-design"><span class="toc-section-number">9.5</span> Choosing an Observational Study
+Design</a>
+<ul>
+<li><a href="#factors-to-consider" id="toc-factors-to-consider"><span class="toc-section-number">9.5.1</span> Factors to Consider:</a></li>
+<li><a href="#decision-framework" id="toc-decision-framework"><span class="toc-section-number">9.5.2</span> Decision Framework:</a></li>
+</ul></li>
+<li><a href="#summary-7" id="toc-summary-7"><span class="toc-section-number">9.6</span> Summary</a></li>
+</ul></li>
+<li><a href="#module-3-experimental-study-designs" id="toc-module-3-experimental-study-designs"><span class="toc-section-number">10</span> Module 3: Experimental Study
+Designs</a>
+<ul>
+<li><a href="#learning-objectives-8" id="toc-learning-objectives-8"><span class="toc-section-number">10.1</span> Learning Objectives</a></li>
+<li><a href="#overview-of-experimental-studies" id="toc-overview-of-experimental-studies"><span class="toc-section-number">10.2</span> Overview of Experimental
+Studies</a></li>
+<li><a href="#clinical-trials" id="toc-clinical-trials"><span class="toc-section-number">10.3</span> Clinical Trials</a>
+<ul>
+<li><a href="#definition-2" id="toc-definition-2"><span class="toc-section-number">10.3.1</span> Definition</a></li>
+<li><a href="#phases-of-clinical-trials" id="toc-phases-of-clinical-trials"><span class="toc-section-number">10.3.2</span> Phases of Clinical
+Trials</a></li>
+<li><a href="#types-of-clinical-trials" id="toc-types-of-clinical-trials"><span class="toc-section-number">10.3.3</span> Types of Clinical
+Trials</a></li>
+<li><a href="#field-trials-and-community-trials" id="toc-field-trials-and-community-trials"><span class="toc-section-number">10.3.4</span> Field Trials and Community
+Trials</a></li>
+</ul></li>
+<li><a href="#key-principles-of-experimental-design" id="toc-key-principles-of-experimental-design"><span class="toc-section-number">10.4</span> Key Principles of Experimental
+Design</a>
+<ul>
+<li><a href="#randomization" id="toc-randomization"><span class="toc-section-number">10.4.1</span> 1. Randomization</a></li>
+<li><a href="#blindingmasking" id="toc-blindingmasking"><span class="toc-section-number">10.4.2</span> 2. Blinding/Masking</a></li>
+<li><a href="#control-groups" id="toc-control-groups"><span class="toc-section-number">10.4.3</span> 3. Control Groups</a></li>
+<li><a href="#sample-size-and-power" id="toc-sample-size-and-power"><span class="toc-section-number">10.4.4</span> 4. Sample Size and
+Power</a></li>
+</ul></li>
+<li><a href="#ethical-considerations-1" id="toc-ethical-considerations-1"><span class="toc-section-number">10.5</span> Ethical Considerations</a>
+<ul>
+<li><a href="#key-principles-declaration-of-helsinki" id="toc-key-principles-declaration-of-helsinki"><span class="toc-section-number">10.5.1</span> Key Principles (Declaration of
+Helsinki)</a></li>
+<li><a href="#informed-consent" id="toc-informed-consent"><span class="toc-section-number">10.5.2</span> Informed Consent</a></li>
+<li><a href="#equipoise" id="toc-equipoise"><span class="toc-section-number">10.5.3</span> Equipoise</a></li>
+<li><a href="#special-considerations" id="toc-special-considerations"><span class="toc-section-number">10.5.4</span> Special Considerations</a></li>
+</ul></li>
+<li><a href="#analysis-of-experimental-studies" id="toc-analysis-of-experimental-studies"><span class="toc-section-number">10.6</span> Analysis of Experimental
+Studies</a>
+<ul>
+<li><a href="#intention-to-treat-itt-analysis" id="toc-intention-to-treat-itt-analysis"><span class="toc-section-number">10.6.1</span> Intention-to-Treat (ITT)
+Analysis</a></li>
+<li><a href="#per-protocol-analysis" id="toc-per-protocol-analysis"><span class="toc-section-number">10.6.2</span> Per-Protocol Analysis</a></li>
+<li><a href="#measures-of-effect" id="toc-measures-of-effect"><span class="toc-section-number">10.6.3</span> Measures of Effect</a></li>
+</ul></li>
+<li><a href="#limitations-and-challenges" id="toc-limitations-and-challenges"><span class="toc-section-number">10.7</span> Limitations and Challenges</a>
+<ul>
+<li><a href="#internal-validity-threats" id="toc-internal-validity-threats"><span class="toc-section-number">10.7.1</span> Internal Validity
+Threats</a></li>
+<li><a href="#external-validity" id="toc-external-validity"><span class="toc-section-number">10.7.2</span> External Validity</a></li>
+<li><a href="#practical-challenges" id="toc-practical-challenges"><span class="toc-section-number">10.7.3</span> Practical Challenges</a></li>
+</ul></li>
+<li><a href="#summary-8" id="toc-summary-8"><span class="toc-section-number">10.8</span> Summary</a></li>
+<li><a href="#learning-objectives-9" id="toc-learning-objectives-9"><span class="toc-section-number">10.9</span> Learning Objectives</a></li>
+<li><a href="#what-is-bias" id="toc-what-is-bias"><span class="toc-section-number">10.10</span> What is Bias?</a></li>
+<li><a href="#classification-of-bias" id="toc-classification-of-bias"><span class="toc-section-number">10.11</span> Classification of Bias</a>
+<ul>
+<li><a href="#selection-bias" id="toc-selection-bias"><span class="toc-section-number">10.11.1</span> 1. Selection Bias</a></li>
+<li><a href="#information-bias-measurement-bias" id="toc-information-bias-measurement-bias"><span class="toc-section-number">10.11.2</span> 2. Information Bias
+(Measurement Bias)</a></li>
+<li><a href="#confounding-bias" id="toc-confounding-bias"><span class="toc-section-number">10.11.3</span> 3. Confounding Bias</a></li>
+</ul></li>
+<li><a href="#bias-in-different-study-designs" id="toc-bias-in-different-study-designs"><span class="toc-section-number">10.12</span> Bias in Different Study
+Designs</a>
+<ul>
+<li><a href="#cohort-studies-1" id="toc-cohort-studies-1"><span class="toc-section-number">10.12.1</span> Cohort Studies</a></li>
+<li><a href="#case-control-studies-1" id="toc-case-control-studies-1"><span class="toc-section-number">10.12.2</span> Case-Control Studies</a></li>
+<li><a href="#cross-sectional-studies-1" id="toc-cross-sectional-studies-1"><span class="toc-section-number">10.12.3</span> Cross-Sectional
+Studies</a></li>
+<li><a href="#experimental-studies" id="toc-experimental-studies"><span class="toc-section-number">10.12.4</span> Experimental Studies</a></li>
+</ul></li>
+<li><a href="#quantifying-the-impact-of-bias" id="toc-quantifying-the-impact-of-bias"><span class="toc-section-number">10.13</span> Quantifying the Impact of
+Bias</a>
+<ul>
+<li><a href="#direction-of-bias" id="toc-direction-of-bias"><span class="toc-section-number">10.13.1</span> Direction of Bias</a></li>
+<li><a href="#magnitude-of-bias" id="toc-magnitude-of-bias"><span class="toc-section-number">10.13.2</span> Magnitude of Bias</a></li>
+</ul></li>
+<li><a href="#methods-to-minimize-bias" id="toc-methods-to-minimize-bias"><span class="toc-section-number">10.14</span> Methods to Minimize Bias</a>
+<ul>
+<li><a href="#study-design-level" id="toc-study-design-level"><span class="toc-section-number">10.14.1</span> Study Design Level</a></li>
+<li><a href="#data-collection-level" id="toc-data-collection-level"><span class="toc-section-number">10.14.2</span> Data Collection Level</a></li>
+<li><a href="#analysis-level" id="toc-analysis-level"><span class="toc-section-number">10.14.3</span> Analysis Level</a></li>
+</ul></li>
+<li><a href="#assessing-bias-in-published-studies" id="toc-assessing-bias-in-published-studies"><span class="toc-section-number">10.15</span> Assessing Bias in Published
+Studies</a>
+<ul>
+<li><a href="#critical-appraisal-questions" id="toc-critical-appraisal-questions"><span class="toc-section-number">10.15.1</span> Critical Appraisal
+Questions</a></li>
+<li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis"><span class="toc-section-number">10.15.2</span> Sensitivity Analysis</a></li>
+</ul></li>
+<li><a href="#common-sources-of-bias-in-epidemiological-research" id="toc-common-sources-of-bias-in-epidemiological-research"><span class="toc-section-number">10.16</span> Common Sources of Bias in
+Epidemiological Research</a>
+<ul>
+<li><a href="#publication-bias" id="toc-publication-bias"><span class="toc-section-number">10.16.1</span> Publication Bias</a></li>
+<li><a href="#reporting-bias" id="toc-reporting-bias"><span class="toc-section-number">10.16.2</span> Reporting Bias</a></li>
+<li><a href="#time-related-biases" id="toc-time-related-biases"><span class="toc-section-number">10.16.3</span> Time-Related Biases</a></li>
+</ul></li>
+<li><a href="#summary-9" id="toc-summary-9"><span class="toc-section-number">10.17</span> Summary</a></li>
+<li><a href="#learning-objectives-10" id="toc-learning-objectives-10"><span class="toc-section-number">10.18</span> Learning Objectives</a></li>
+<li><a href="#confounding" id="toc-confounding"><span class="toc-section-number">10.19</span> Confounding</a>
+<ul>
+<li><a href="#definition-3" id="toc-definition-3"><span class="toc-section-number">10.19.1</span> Definition</a></li>
+<li><a href="#characteristics-of-a-confounder" id="toc-characteristics-of-a-confounder"><span class="toc-section-number">10.19.2</span> Characteristics of a
+Confounder</a></li>
+<li><a href="#example-smoking-and-lung-cancer" id="toc-example-smoking-and-lung-cancer"><span class="toc-section-number">10.19.3</span> Example: Smoking and Lung
+Cancer</a></li>
+</ul></li>
+<li><a href="#types-of-confounding" id="toc-types-of-confounding"><span class="toc-section-number">10.20</span> Types of Confounding</a>
+<ul>
+<li><a href="#positive-confounding" id="toc-positive-confounding"><span class="toc-section-number">10.20.1</span> 1. Positive
+Confounding</a></li>
+<li><a href="#negative-confounding" id="toc-negative-confounding"><span class="toc-section-number">10.20.2</span> 2. Negative
+Confounding</a></li>
+<li><a href="#quantifying-confounding" id="toc-quantifying-confounding"><span class="toc-section-number">10.20.3</span> 3. Quantifying
+Confounding</a></li>
+</ul></li>
+<li><a href="#methods-to-control-confounding" id="toc-methods-to-control-confounding"><span class="toc-section-number">10.21</span> Methods to Control
+Confounding</a>
+<ul>
+<li><a href="#study-design-level-1" id="toc-study-design-level-1"><span class="toc-section-number">10.21.1</span> 1. Study Design Level</a></li>
+<li><a href="#analysis-level-1" id="toc-analysis-level-1"><span class="toc-section-number">10.21.2</span> 2. Analysis Level</a></li>
+</ul></li>
+<li><a href="#effect-modification-interaction" id="toc-effect-modification-interaction"><span class="toc-section-number">10.22</span> Effect Modification
+(Interaction)</a>
+<ul>
+<li><a href="#definition-4" id="toc-definition-4"><span class="toc-section-number">10.22.1</span> Definition</a></li>
+<li><a href="#key-differences-from-confounding" id="toc-key-differences-from-confounding"><span class="toc-section-number">10.22.2</span> Key Differences from
+Confounding</a></li>
+<li><a href="#example-exercise-and-heart-disease" id="toc-example-exercise-and-heart-disease"><span class="toc-section-number">10.22.3</span> Example: Exercise and Heart
+Disease</a></li>
+<li><a href="#types-of-interaction" id="toc-types-of-interaction"><span class="toc-section-number">10.22.4</span> Types of Interaction</a></li>
+<li><a href="#testing-for-interaction" id="toc-testing-for-interaction"><span class="toc-section-number">10.22.5</span> Testing for
+Interaction</a></li>
+</ul></li>
+<li><a href="#confounding-vs.-interaction-decision-framework" id="toc-confounding-vs.-interaction-decision-framework"><span class="toc-section-number">10.23</span> Confounding vs. Interaction:
+Decision Framework</a>
+<ul>
+<li><a href="#is-the-third-variable-a-confounder-or-effect-modifier" id="toc-is-the-third-variable-a-confounder-or-effect-modifier"><span class="toc-section-number">10.23.1</span> Is the third variable a
+confounder or effect modifier?</a></li>
+<li><a href="#example-age-in-a-drug-study" id="toc-example-age-in-a-drug-study"><span class="toc-section-number">10.23.2</span> Example: Age in a Drug
+Study</a></li>
+</ul></li>
+<li><a href="#advanced-topics" id="toc-advanced-topics"><span class="toc-section-number">10.24</span> Advanced Topics</a>
+<ul>
+<li><a href="#confounding-by-indication" id="toc-confounding-by-indication"><span class="toc-section-number">10.24.1</span> 1. Confounding by
+Indication</a></li>
+<li><a href="#residual-confounding" id="toc-residual-confounding"><span class="toc-section-number">10.24.2</span> 2. Residual
+Confounding</a></li>
+<li><a href="#over-adjustment" id="toc-over-adjustment"><span class="toc-section-number">10.24.3</span> 3. Over-adjustment</a></li>
+<li><a href="#collider-bias" id="toc-collider-bias"><span class="toc-section-number">10.24.4</span> 4. Collider Bias</a></li>
+</ul></li>
+<li><a href="#practical-applications" id="toc-practical-applications"><span class="toc-section-number">10.25</span> Practical Applications</a>
+<ul>
+<li><a href="#causal-diagrams-dags" id="toc-causal-diagrams-dags"><span class="toc-section-number">10.25.1</span> 1. Causal Diagrams
+(DAGs)</a></li>
+<li><a href="#propensity-scores" id="toc-propensity-scores"><span class="toc-section-number">10.25.2</span> 2. Propensity Scores</a></li>
+<li><a href="#instrumental-variable-analysis" id="toc-instrumental-variable-analysis"><span class="toc-section-number">10.25.3</span> 3. Instrumental Variable
+Analysis</a></li>
+</ul></li>
+<li><a href="#summary-10" id="toc-summary-10"><span class="toc-section-number">10.26</span> Summary</a></li>
+<li><a href="#learning-objectives-11" id="toc-learning-objectives-11"><span class="toc-section-number">10.27</span> Learning Objectives</a></li>
+<li><a href="#comprehensive-framework-for-controlling-threats-to-validity" id="toc-comprehensive-framework-for-controlling-threats-to-validity"><span class="toc-section-number">10.28</span> Comprehensive Framework for
+Controlling Threats to Validity</a>
+<ul>
+<li><a href="#hierarchy-of-control-strategies" id="toc-hierarchy-of-control-strategies"><span class="toc-section-number">10.28.1</span> Hierarchy of Control
+Strategies</a></li>
+</ul></li>
+<li><a href="#prevention-strategies-study-design" id="toc-prevention-strategies-study-design"><span class="toc-section-number">10.29</span> 1. Prevention Strategies (Study
+Design)</a>
+<ul>
+<li><a href="#a.-randomization-1" id="toc-a.-randomization-1"><span class="toc-section-number">10.29.1</span> A. Randomization</a></li>
+<li><a href="#b.-matching" id="toc-b.-matching"><span class="toc-section-number">10.29.2</span> B. Matching</a></li>
+<li><a href="#c.-restriction" id="toc-c.-restriction"><span class="toc-section-number">10.29.3</span> C. Restriction</a></li>
+</ul></li>
+<li><a href="#measurement-strategies-data-collection" id="toc-measurement-strategies-data-collection"><span class="toc-section-number">10.30</span> 2. Measurement Strategies (Data
+Collection)</a>
+<ul>
+<li><a href="#a.-blindingmasking" id="toc-a.-blindingmasking"><span class="toc-section-number">10.30.1</span> A. Blinding/Masking</a></li>
+<li><a href="#b.-standardization" id="toc-b.-standardization"><span class="toc-section-number">10.30.2</span> B. Standardization</a></li>
+<li><a href="#c.-objective-measurements" id="toc-c.-objective-measurements"><span class="toc-section-number">10.30.3</span> C. Objective
+Measurements</a></li>
+<li><a href="#d.-multiple-measures" id="toc-d.-multiple-measures"><span class="toc-section-number">10.30.4</span> D. Multiple Measures</a></li>
+</ul></li>
+<li><a href="#analysis-strategies-statistical-control" id="toc-analysis-strategies-statistical-control"><span class="toc-section-number">10.31</span> 3. Analysis Strategies
+(Statistical Control)</a>
+<ul>
+<li><a href="#a.-stratification-1" id="toc-a.-stratification-1"><span class="toc-section-number">10.31.1</span> A. Stratification</a></li>
+<li><a href="#b.-regression-models" id="toc-b.-regression-models"><span class="toc-section-number">10.31.2</span> B. Regression Models</a></li>
+<li><a href="#c.-propensity-score-methods" id="toc-c.-propensity-score-methods"><span class="toc-section-number">10.31.3</span> C. Propensity Score
+Methods</a></li>
+<li><a href="#d.-instrumental-variable-analysis" id="toc-d.-instrumental-variable-analysis"><span class="toc-section-number">10.31.4</span> D. Instrumental Variable
+Analysis</a></li>
+</ul></li>
+<li><a href="#assessment-strategies-sensitivity-analysis" id="toc-assessment-strategies-sensitivity-analysis"><span class="toc-section-number">10.32</span> 4. Assessment Strategies
+(Sensitivity Analysis)</a>
+<ul>
+<li><a href="#a.-sensitivity-analysis" id="toc-a.-sensitivity-analysis"><span class="toc-section-number">10.32.1</span> A. Sensitivity
+Analysis</a></li>
+<li><a href="#b.-subgroup-analysis" id="toc-b.-subgroup-analysis"><span class="toc-section-number">10.32.2</span> B. Subgroup Analysis</a></li>
+<li><a href="#c.-meta-analysis" id="toc-c.-meta-analysis"><span class="toc-section-number">10.32.3</span> C. Meta-analysis</a></li>
+</ul></li>
+<li><a href="#improving-precision" id="toc-improving-precision"><span class="toc-section-number">10.33</span> Improving Precision</a>
+<ul>
+<li><a href="#sample-size-considerations" id="toc-sample-size-considerations"><span class="toc-section-number">10.33.1</span> 1. Sample Size
+Considerations</a></li>
+<li><a href="#study-design-efficiency" id="toc-study-design-efficiency"><span class="toc-section-number">10.33.2</span> 2. Study Design
+Efficiency</a></li>
+<li><a href="#measurement-precision" id="toc-measurement-precision"><span class="toc-section-number">10.33.3</span> 3. Measurement
+Precision</a></li>
+<li><a href="#analytical-precision" id="toc-analytical-precision"><span class="toc-section-number">10.33.4</span> 4. Analytical
+Precision</a></li>
+</ul></li>
+<li><a href="#improving-validity" id="toc-improving-validity"><span class="toc-section-number">10.34</span> Improving Validity</a>
+<ul>
+<li><a href="#internal-validity" id="toc-internal-validity"><span class="toc-section-number">10.34.1</span> Internal Validity</a></li>
+<li><a href="#external-validity-generalizability" id="toc-external-validity-generalizability"><span class="toc-section-number">10.34.2</span> External Validity
+(Generalizability)</a></li>
+<li><a href="#construct-validity" id="toc-construct-validity"><span class="toc-section-number">10.34.3</span> Construct Validity</a></li>
+</ul></li>
+<li><a href="#advanced-control-methods" id="toc-advanced-control-methods"><span class="toc-section-number">10.35</span> Advanced Control Methods</a>
+<ul>
+<li><a href="#causal-inference-methods" id="toc-causal-inference-methods"><span class="toc-section-number">10.35.1</span> 1. Causal Inference
+Methods</a></li>
+<li><a href="#machine-learning-approaches" id="toc-machine-learning-approaches"><span class="toc-section-number">10.35.2</span> 2. Machine Learning
+Approaches</a></li>
+<li><a href="#bayesian-methods" id="toc-bayesian-methods"><span class="toc-section-number">10.35.3</span> 3. Bayesian Methods</a></li>
+</ul></li>
+<li><a href="#practical-applications-1" id="toc-practical-applications-1"><span class="toc-section-number">10.36</span> Practical Applications</a>
+<ul>
+<li><a href="#case-study-controlling-confounding-in-observational-studies" id="toc-case-study-controlling-confounding-in-observational-studies"><span class="toc-section-number">10.36.1</span> Case Study: Controlling
+Confounding in Observational Studies</a></li>
+<li><a href="#case-study-minimizing-bias-in-case-control-studies" id="toc-case-study-minimizing-bias-in-case-control-studies"><span class="toc-section-number">10.36.2</span> Case Study: Minimizing Bias in
+Case-Control Studies</a></li>
+</ul></li>
+<li><a href="#evaluation-framework" id="toc-evaluation-framework"><span class="toc-section-number">10.37</span> Evaluation Framework</a>
+<ul>
+<li><a href="#assessing-control-effectiveness" id="toc-assessing-control-effectiveness"><span class="toc-section-number">10.37.1</span> Assessing Control
+Effectiveness</a></li>
+<li><a href="#reporting-standards" id="toc-reporting-standards"><span class="toc-section-number">10.37.2</span> Reporting Standards</a></li>
+</ul></li>
+<li><a href="#summary-11" id="toc-summary-11"><span class="toc-section-number">10.38</span> Summary</a></li>
+<li><a href="#learning-objectives-12" id="toc-learning-objectives-12"><span class="toc-section-number">10.39</span> Learning Objectives</a></li>
+<li><a href="#introduction-to-critical-appraisal" id="toc-introduction-to-critical-appraisal"><span class="toc-section-number">10.40</span> Introduction to Critical
+Appraisal</a>
+<ul>
+<li><a href="#why-critical-appraisal-matters" id="toc-why-critical-appraisal-matters"><span class="toc-section-number">10.40.1</span> Why Critical Appraisal
+Matters</a></li>
+</ul></li>
+<li><a href="#frameworks-for-critical-appraisal" id="toc-frameworks-for-critical-appraisal"><span class="toc-section-number">10.41</span> Frameworks for Critical
+Appraisal</a>
+<ul>
+<li><a href="#casp-critical-appraisal-skills-programme" id="toc-casp-critical-appraisal-skills-programme"><span class="toc-section-number">10.41.1</span> 1. CASP (Critical Appraisal
+Skills Programme)</a></li>
+<li><a href="#grade-grading-of-recommendations-assessment-development-and-evaluation" id="toc-grade-grading-of-recommendations-assessment-development-and-evaluation"><span class="toc-section-number">10.41.2</span> 2. GRADE (Grading of
+Recommendations Assessment, Development and Evaluation)</a></li>
+<li><a href="#strobe-strengthening-the-reporting-of-observational-studies-in-epidemiology" id="toc-strobe-strengthening-the-reporting-of-observational-studies-in-epidemiology"><span class="toc-section-number">10.41.3</span> 3. STROBE (Strengthening the
+Reporting of Observational Studies in Epidemiology)</a></li>
+</ul></li>
+<li><a href="#critical-appraisal-of-observational-studies" id="toc-critical-appraisal-of-observational-studies"><span class="toc-section-number">10.42</span> Critical Appraisal of
+Observational Studies</a>
+<ul>
+<li><a href="#cohort-studies-2" id="toc-cohort-studies-2"><span class="toc-section-number">10.42.1</span> Cohort Studies</a></li>
+<li><a href="#case-control-studies-2" id="toc-case-control-studies-2"><span class="toc-section-number">10.42.2</span> Case-Control Studies</a></li>
+<li><a href="#cross-sectional-studies-2" id="toc-cross-sectional-studies-2"><span class="toc-section-number">10.42.3</span> Cross-Sectional
+Studies</a></li>
+</ul></li>
+<li><a href="#critical-appraisal-of-experimental-studies" id="toc-critical-appraisal-of-experimental-studies"><span class="toc-section-number">10.43</span> Critical Appraisal of
+Experimental Studies</a>
+<ul>
+<li><a href="#randomized-controlled-trials-rcts-1" id="toc-randomized-controlled-trials-rcts-1"><span class="toc-section-number">10.43.1</span> Randomized Controlled Trials
+(RCTs)</a></li>
+<li><a href="#non-randomized-trials" id="toc-non-randomized-trials"><span class="toc-section-number">10.43.2</span> Non-Randomized Trials</a></li>
+</ul></li>
+<li><a href="#assessing-risk-of-bias" id="toc-assessing-risk-of-bias"><span class="toc-section-number">10.44</span> Assessing Risk of Bias</a>
+<ul>
+<li><a href="#cochrane-risk-of-bias-tool-for-rcts" id="toc-cochrane-risk-of-bias-tool-for-rcts"><span class="toc-section-number">10.44.1</span> Cochrane Risk of Bias Tool
+(for RCTs)</a></li>
+<li><a href="#robins-i-tool-for-non-randomized-studies" id="toc-robins-i-tool-for-non-randomized-studies"><span class="toc-section-number">10.44.2</span> ROBINS-I Tool (for
+Non-Randomized Studies)</a></li>
+</ul></li>
+<li><a href="#evaluating-precision-and-validity" id="toc-evaluating-precision-and-validity"><span class="toc-section-number">10.45</span> Evaluating Precision and
+Validity</a>
+<ul>
+<li><a href="#precision" id="toc-precision"><span class="toc-section-number">10.45.1</span> Precision</a></li>
+<li><a href="#internal-validity-1" id="toc-internal-validity-1"><span class="toc-section-number">10.45.2</span> Internal Validity</a></li>
+<li><a href="#external-validity-generalizability-1" id="toc-external-validity-generalizability-1"><span class="toc-section-number">10.45.3</span> External Validity
+(Generalizability)</a></li>
+</ul></li>
+<li><a href="#quantitative-synthesis" id="toc-quantitative-synthesis"><span class="toc-section-number">10.46</span> Quantitative Synthesis</a>
+<ul>
+<li><a href="#meta-analysis" id="toc-meta-analysis"><span class="toc-section-number">10.46.1</span> Meta-Analysis</a></li>
+<li><a href="#grade-approach" id="toc-grade-approach"><span class="toc-section-number">10.46.2</span> GRADE Approach</a></li>
+</ul></li>
+<li><a href="#practical-application-critical-appraisal-worksheet" id="toc-practical-application-critical-appraisal-worksheet"><span class="toc-section-number">10.47</span> Practical Application: Critical
+Appraisal Worksheet</a>
+<ul>
+<li><a href="#study-identification" id="toc-study-identification"><span class="toc-section-number">10.47.1</span> Study Identification</a></li>
+<li><a href="#methodology-assessment" id="toc-methodology-assessment"><span class="toc-section-number">10.47.2</span> Methodology
+Assessment</a></li>
+<li><a href="#results-evaluation" id="toc-results-evaluation"><span class="toc-section-number">10.47.3</span> Results Evaluation</a></li>
+<li><a href="#applicability" id="toc-applicability"><span class="toc-section-number">10.47.4</span> Applicability</a></li>
+<li><a href="#overall-assessment" id="toc-overall-assessment"><span class="toc-section-number">10.47.5</span> Overall Assessment</a></li>
+</ul></li>
+<li><a href="#case-studies-in-critical-appraisal" id="toc-case-studies-in-critical-appraisal"><span class="toc-section-number">10.48</span> Case Studies in Critical
+Appraisal</a>
+<ul>
+<li><a href="#case-study-1-vitamin-d-and-cancer-prevention" id="toc-case-study-1-vitamin-d-and-cancer-prevention"><span class="toc-section-number">10.48.1</span> Case Study 1: Vitamin D and
+Cancer Prevention</a></li>
+<li><a href="#case-study-2-mobile-phones-and-brain-cancer" id="toc-case-study-2-mobile-phones-and-brain-cancer"><span class="toc-section-number">10.48.2</span> Case Study 2: Mobile Phones
+and Brain Cancer</a></li>
+<li><a href="#case-study-3-mediterranean-diet-and-cardiovascular-disease" id="toc-case-study-3-mediterranean-diet-and-cardiovascular-disease"><span class="toc-section-number">10.48.3</span> Case Study 3: Mediterranean
+Diet and Cardiovascular Disease</a></li>
+</ul></li>
+<li><a href="#common-mistakes-in-critical-appraisal" id="toc-common-mistakes-in-critical-appraisal"><span class="toc-section-number">10.49</span> Common Mistakes in Critical
+Appraisal</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 data-number="1" id="comprehensive-study-design-and-methods-guide-epidemiology-and-statistics"><span class="header-section-number">1</span> Comprehensive Study Design and
+Methods Guide: Epidemiology and Statistics</h1>
+<p><strong>Created by: Dr. Siddalingaiah H S, Professor, Community
+Medicine, SIMSRH, Tumkur</strong></p>
+<p>This comprehensive guide combines epidemiology study designs and
+statistical methods for research in public health and medicine.</p>
+<h2 data-number="1.1" id="part-i-epidemiology-study-designs"><span class="header-section-number">1.1</span> Part I: Epidemiology Study
+Designs</h2>
+<h2 data-number="1.2" id="part-ii-statistical-methods"><span class="header-section-number">1.2</span> Part II: Statistical
+Methods</h2>
+<h2 data-number="1.3" id="introduction-stats"><span class="header-section-number">1.3</span> 1. Introduction to Statistical
+Methods</h2>
+<h1 data-number="2" id="module-1-introduction-to-statistical-methods"><span class="header-section-number">2</span> Module 1: Introduction to
+Statistical Methods</h1>
+<h2 data-number="2.1" id="learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</h2>
+<ul>
+<li>Define statistics and its role in research</li>
+<li>Understand the difference between descriptive and inferential
+statistics</li>
+<li>Identify types of data and measurement scales</li>
+<li>Understand the research process and study designs</li>
+<li>Recognize ethical considerations in statistical analysis</li>
+</ul>
+<h2 data-number="2.2" id="what-is-statistics"><span class="header-section-number">2.2</span> What is Statistics?</h2>
+<p>Statistics is the science of collecting, organizing, analyzing,
+interpreting, and presenting data. It provides methods for making
+inferences about populations from samples and for quantifying
+uncertainty.</p>
+<p><strong>Key terms:</strong> - <strong>Population</strong>: Complete
+set of individuals or objects of interest - <strong>Sample</strong>:
+Subset of the population used for study - <strong>Parameter</strong>:
+Numerical characteristic of a population - <strong>Statistic</strong>:
+Numerical characteristic of a sample - <strong>Variable</strong>:
+Characteristic that varies among individuals</p>
+<h2 data-number="2.3" id="branches-of-statistics"><span class="header-section-number">2.3</span> Branches of Statistics</h2>
+<h3 data-number="2.3.1" id="descriptive-statistics"><span class="header-section-number">2.3.1</span> 1. Descriptive
+Statistics</h3>
+<ul>
+<li>Organize and summarize data</li>
+<li>Describe main features of a dataset</li>
+<li>Include measures of central tendency, dispersion, and
+distribution</li>
+</ul>
+<h3 data-number="2.3.2" id="inferential-statistics"><span class="header-section-number">2.3.2</span> 2. Inferential
+Statistics</h3>
+<ul>
+<li>Make inferences about populations from samples</li>
+<li>Test hypotheses and draw conclusions</li>
+<li>Include estimation, hypothesis testing, and prediction</li>
+</ul>
+<h2 data-number="2.4" id="types-of-data"><span class="header-section-number">2.4</span> Types of Data</h2>
+<h3 data-number="2.4.1" id="by-nature"><span class="header-section-number">2.4.1</span> By Nature</h3>
+<ul>
+<li><strong>Quantitative</strong>: Numerical measurements
+<ul>
+<li><strong>Discrete</strong>: Countable values (e.g., number of
+children)</li>
+<li><strong>Continuous</strong>: Measurable values (e.g., height,
+weight)</li>
+</ul></li>
+<li><strong>Qualitative</strong>: Categorical measurements
+<ul>
+<li><strong>Nominal</strong>: Categories without order (e.g., gender,
+blood type)</li>
+<li><strong>Ordinal</strong>: Categories with order (e.g., education
+level, pain scale)</li>
+</ul></li>
+</ul>
+<h3 data-number="2.4.2" id="by-measurement-scale"><span class="header-section-number">2.4.2</span> By Measurement Scale</h3>
+<ul>
+<li><strong>Nominal</strong>: Categories, no quantitative meaning</li>
+<li><strong>Ordinal</strong>: Ordered categories, unequal intervals</li>
+<li><strong>Interval</strong>: Equal intervals, no true zero</li>
+<li><strong>Ratio</strong>: Equal intervals, true zero point</li>
+</ul>
+<h2 data-number="2.5" id="the-research-process"><span class="header-section-number">2.5</span> The Research Process</h2>
+<h3 data-number="2.5.1" id="problem-identification"><span class="header-section-number">2.5.1</span> 1. Problem
+Identification</h3>
+<ul>
+<li>Define research question</li>
+<li>Review existing literature</li>
+<li>Formulate hypotheses</li>
+</ul>
+<h3 data-number="2.5.2" id="study-design"><span class="header-section-number">2.5.2</span> 2. Study Design</h3>
+<ul>
+<li>Choose appropriate design</li>
+<li>Determine sample size</li>
+<li>Select measurement methods</li>
+</ul>
+<h3 data-number="2.5.3" id="data-collection"><span class="header-section-number">2.5.3</span> 3. Data Collection</h3>
+<ul>
+<li>Implement data collection procedures</li>
+<li>Ensure data quality</li>
+<li>Maintain ethical standards</li>
+</ul>
+<h3 data-number="2.5.4" id="data-analysis"><span class="header-section-number">2.5.4</span> 4. Data Analysis</h3>
+<ul>
+<li>Clean and prepare data</li>
+<li>Apply statistical methods</li>
+<li>Interpret results</li>
+</ul>
+<h3 data-number="2.5.5" id="reporting-results"><span class="header-section-number">2.5.5</span> 5. Reporting Results</h3>
+<ul>
+<li>Present findings clearly</li>
+<li>Draw appropriate conclusions</li>
+<li>Suggest future research</li>
+</ul>
+<h2 data-number="2.6" id="study-designs-in-research"><span class="header-section-number">2.6</span> Study Designs in Research</h2>
+<h3 data-number="2.6.1" id="experimental-designs"><span class="header-section-number">2.6.1</span> Experimental Designs</h3>
+<ul>
+<li><strong>Randomized Controlled Trials (RCTs)</strong>: Gold standard
+for establishing causality</li>
+<li><strong>Quasi-experimental</strong>: Intervention without
+randomization</li>
+<li><strong>Field Experiments</strong>: Natural setting
+interventions</li>
+</ul>
+<h3 data-number="2.6.2" id="observational-designs"><span class="header-section-number">2.6.2</span> Observational Designs</h3>
+<ul>
+<li><strong>Cohort Studies</strong>: Follow groups over time</li>
+<li><strong>Case-Control Studies</strong>: Compare cases and
+controls</li>
+<li><strong>Cross-Sectional Studies</strong>: Snapshot at single
+point</li>
+<li><strong>Ecological Studies</strong>: Population-level data</li>
+</ul>
+<h2 data-number="2.7" id="ethical-considerations"><span class="header-section-number">2.7</span> Ethical Considerations</h2>
+<h3 data-number="2.7.1" id="key-principles"><span class="header-section-number">2.7.1</span> Key Principles</h3>
+<ul>
+<li><strong>Respect for persons</strong>: Informed consent, voluntary
+participation</li>
+<li><strong>Beneficence</strong>: Maximize benefits, minimize harms</li>
+<li><strong>Justice</strong>: Fair distribution of benefits and
+burdens</li>
+<li><strong>Confidentiality</strong>: Protect participant privacy</li>
+</ul>
+<h3 data-number="2.7.2" id="statistical-ethics"><span class="header-section-number">2.7.2</span> Statistical Ethics</h3>
+<ul>
+<li><strong>Data integrity</strong>: Accurate data collection and
+analysis</li>
+<li><strong>Transparency</strong>: Clear reporting of methods and
+results</li>
+<li><strong>Objectivity</strong>: Avoid bias in analysis and
+interpretation</li>
+<li><strong>Reproducibility</strong>: Enable verification of
+results</li>
+</ul>
+<h2 data-number="2.8" id="software-tools-for-statistics"><span class="header-section-number">2.8</span> Software Tools for
+Statistics</h2>
+<h3 data-number="2.8.1" id="statistical-software"><span class="header-section-number">2.8.1</span> Statistical Software</h3>
+<ul>
+<li><strong>R</strong>: Free, powerful statistical programming
+language</li>
+<li><strong>Python</strong>: General programming with statistical
+libraries</li>
+<li><strong>SPSS</strong>: User-friendly interface for statistical
+analysis</li>
+<li><strong>SAS</strong>: Enterprise statistical software</li>
+<li><strong>Stata</strong>: Comprehensive statistical package</li>
+</ul>
+<h3 data-number="2.8.2" id="data-visualization"><span class="header-section-number">2.8.2</span> Data Visualization</h3>
+<ul>
+<li><strong>Tableau</strong>: Interactive data visualization</li>
+<li><strong>Power BI</strong>: Business intelligence and analytics</li>
+<li><strong>ggplot2 (R)</strong>: Advanced plotting capabilities</li>
+<li><strong>matplotlib (Python)</strong>: Flexible plotting library</li>
+</ul>
+<h2 data-number="2.9" id="summary"><span class="header-section-number">2.9</span> Summary</h2>
+<p>Statistical methods provide the tools for extracting meaningful
+insights from data. Understanding the fundamentals of statistics is
+essential for conducting valid research and making evidence-based
+decisions in health sciences and beyond.</p>
+<hr />
+<h2 data-number="2.10" id="descriptive"><span class="header-section-number">2.10</span> 2. Descriptive Statistics</h2>
+<h1 data-number="3" id="module-2-descriptive-statistics"><span class="header-section-number">3</span> Module 2: Descriptive
+Statistics</h1>
+<h2 data-number="3.1" id="learning-objectives-1"><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand measures of central tendency</li>
+<li>Calculate and interpret measures of dispersion</li>
+<li>Describe data distributions</li>
+<li>Create and interpret data visualizations</li>
+<li>Understand sampling distributions</li>
+</ul>
+<h2 data-number="3.2" id="measures-of-central-tendency"><span class="header-section-number">3.2</span> Measures of Central
+Tendency</h2>
+<h3 data-number="3.2.1" id="mean-arithmetic-average"><span class="header-section-number">3.2.1</span> Mean (Arithmetic
+Average)</h3>
+<p><strong>Formula</strong>: <span class="math inline">$\bar{x} =
+\frac{\sum x_i}{n}$</span></p>
+<p><strong>Example</strong>: Test scores: 85, 90, 78, 92, 88 Mean = (85
++ 90 + 78 + 92 + 88) / 5 = 86.6</p>
+<p><strong>Advantages</strong>: - Uses all data points - Mathematically
+useful - Foundation for many statistical tests</p>
+<p><strong>Disadvantages</strong>: - Affected by extreme values
+(outliers) - Not appropriate for ordinal data</p>
+<h3 data-number="3.2.2" id="median-middle-value"><span class="header-section-number">3.2.2</span> Median (Middle Value)</h3>
+<p><strong>Calculation</strong>: - Sort data in ascending order - For
+odd n: Middle value - For even n: Average of two middle values</p>
+<p><strong>Example</strong>: Ages: 23, 25, 28, 30, 35 Median = 28</p>
+<p><strong>Advantages</strong>: - Not affected by outliers - Appropriate
+for ordinal data - Easy to understand</p>
+<h3 data-number="3.2.3" id="mode-most-frequent-value"><span class="header-section-number">3.2.3</span> Mode (Most Frequent
+Value)</h3>
+<p><strong>Definition</strong>: Value that appears most frequently</p>
+<p><strong>Example</strong>: Blood types: A, B, AB, A, O, A Mode = A</p>
+<p><strong>Uses</strong>: - Categorical data - Identifying most common
+category - Bimodal/multimodal distributions</p>
+<h2 data-number="3.3" id="measures-of-dispersion"><span class="header-section-number">3.3</span> Measures of Dispersion</h2>
+<h3 data-number="3.3.1" id="range"><span class="header-section-number">3.3.1</span> Range</h3>
+<p><strong>Formula</strong>: Range = Maximum - Minimum</p>
+<p><strong>Example</strong>: Heights: 160, 165, 170, 175, 180 cm Range =
+180 - 160 = 20 cm</p>
+<p><strong>Limitations</strong>: - Only uses extreme values - Affected
+by outliers - No information about data distribution</p>
+<h3 data-number="3.3.2" id="variance"><span class="header-section-number">3.3.2</span> Variance</h3>
+<p><strong>Population Variance</strong>: <span class="math inline">$\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}$</span></p>
+<p><strong>Sample Variance</strong>: <span class="math inline">$s^2 =
+\frac{\sum (x_i - \bar{x})^2}{n-1}$</span></p>
+<p><strong>Interpretation</strong>: Average squared deviation from
+mean</p>
+<h3 data-number="3.3.3" id="standard-deviation"><span class="header-section-number">3.3.3</span> Standard Deviation</h3>
+<p><strong>Formula</strong>: <span class="math inline">$s =
+\sqrt{s^2}$</span></p>
+<p><strong>Example</strong>: Data: 10, 12, 14, 16, 18 Mean = 14,
+Variance = 8, SD = <span class="math inline">$\sqrt{8}$</span> <span class="math inline">≈</span> 2.83</p>
+<p><strong>Coefficient of Variation</strong>: CV = (s/mean) × 100%</p>
+<h2 data-number="3.4" id="data-distributions"><span class="header-section-number">3.4</span> Data Distributions</h2>
+<h3 data-number="3.4.1" id="normal-distribution"><span class="header-section-number">3.4.1</span> Normal Distribution</h3>
+<ul>
+<li>Bell-shaped, symmetric</li>
+<li>Mean = Median = Mode</li>
+<li>68% within 1 SD, 95% within 2 SD, 99.7% within 3 SD</li>
+<li>Many statistical tests assume normality</li>
+</ul>
+<h3 data-number="3.4.2" id="skewness"><span class="header-section-number">3.4.2</span> Skewness</h3>
+<ul>
+<li><strong>Positive skew</strong>: Tail extends to right</li>
+<li><strong>Negative skew</strong>: Tail extends to left</li>
+<li><strong>Symmetric</strong>: No skew</li>
+</ul>
+<h3 data-number="3.4.3" id="kurtosis"><span class="header-section-number">3.4.3</span> Kurtosis</h3>
+<ul>
+<li><strong>Mesokurtic</strong>: Normal peakedness</li>
+<li><strong>Leptokurtic</strong>: More peaked than normal</li>
+<li><strong>Platykurtic</strong>: Less peaked than normal</li>
+</ul>
+<h2 data-number="3.5" id="data-visualization-1"><span class="header-section-number">3.5</span> Data Visualization</h2>
+<h3 data-number="3.5.1" id="histograms"><span class="header-section-number">3.5.1</span> Histograms</h3>
+<ul>
+<li>Show frequency distribution</li>
+<li>Bar chart for continuous data</li>
+<li>Height represents frequency</li>
+</ul>
+<h3 data-number="3.5.2" id="box-plots-box-and-whisker-plots"><span class="header-section-number">3.5.2</span> Box Plots (Box-and-Whisker
+Plots)</h3>
+<ul>
+<li>Show median, quartiles, outliers</li>
+<li>Box: IQR (Q3-Q1)</li>
+<li>Whiskers: 1.5 × IQR</li>
+<li>Points: Outliers</li>
+</ul>
+<h3 data-number="3.5.3" id="scatter-plots"><span class="header-section-number">3.5.3</span> Scatter Plots</h3>
+<ul>
+<li>Show relationship between two variables</li>
+<li>X-axis: Independent variable</li>
+<li>Y-axis: Dependent variable</li>
+<li>Pattern indicates correlation</li>
+</ul>
+<h3 data-number="3.5.4" id="bar-charts-and-pie-charts"><span class="header-section-number">3.5.4</span> Bar Charts and Pie
+Charts</h3>
+<ul>
+<li>Categorical data</li>
+<li>Bar charts: Compare categories</li>
+<li>Pie charts: Show proportions</li>
+</ul>
+<h2 data-number="3.6" id="sampling-distributions"><span class="header-section-number">3.6</span> Sampling Distributions</h2>
+<h3 data-number="3.6.1" id="central-limit-theorem"><span class="header-section-number">3.6.1</span> Central Limit Theorem</h3>
+<ul>
+<li>Sample means follow normal distribution</li>
+<li>Regardless of population distribution</li>
+<li>For sufficiently large samples (<span class="math inline"><em>n</em> ≥ 30</span>)</li>
+</ul>
+<h3 data-number="3.6.2" id="standard-error"><span class="header-section-number">3.6.2</span> Standard Error</h3>
+<p><strong>Formula</strong>: <span class="math inline">$SE =
+\frac{s}{\sqrt{n}}$</span></p>
+<p><strong>Interpretation</strong>: Standard deviation of sampling
+distribution</p>
+<p><strong>Uses</strong>: - Confidence interval calculation - Hypothesis
+testing - Sample size determination</p>
+<h2 data-number="3.7" id="summary-1"><span class="header-section-number">3.7</span> Summary</h2>
+<p>Descriptive statistics provide the foundation for understanding data.
+Measures of central tendency describe typical values, while measures of
+dispersion describe variability. Data visualization helps identify
+patterns and outliers, and sampling distributions form the basis for
+inferential statistics.</p>
+<hr />
+<h2 data-number="3.8" id="probability"><span class="header-section-number">3.8</span> 3. Probability Theory</h2>
+<h1 data-number="4" id="module-3-probability-theory"><span class="header-section-number">4</span> Module 3: Probability Theory</h1>
+<h2 data-number="4.1" id="learning-objectives-2"><span class="header-section-number">4.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand basic probability concepts</li>
+<li>Calculate probabilities using different rules</li>
+<li>Work with common probability distributions</li>
+<li>Understand conditional probability and independence</li>
+<li>Apply Bayes’ theorem</li>
+</ul>
+<h2 data-number="4.2" id="basic-probability-concepts"><span class="header-section-number">4.2</span> Basic Probability Concepts</h2>
+<h3 data-number="4.2.1" id="probability-1"><span class="header-section-number">4.2.1</span> Probability</h3>
+<p><strong>Definition</strong>: Measure of likelihood that an event will
+occur</p>
+<p><strong>Range</strong>: <span class="math inline">0 ≤ <em>P</em>(<em>A</em>) ≤ 1</span> - P(A) = 0:
+Impossible event - P(A) = 1: Certain event</p>
+<h3 data-number="4.2.2" id="sample-space"><span class="header-section-number">4.2.2</span> Sample Space</h3>
+<p><strong>Definition</strong>: All possible outcomes of an
+experiment</p>
+<p><strong>Examples</strong>: - Coin flip: {Heads, Tails} - Die roll:
+{1, 2, 3, 4, 5, 6}</p>
+<h3 data-number="4.2.3" id="events"><span class="header-section-number">4.2.3</span> Events</h3>
+<ul>
+<li><strong>Simple event</strong>: Single outcome</li>
+<li><strong>Compound event</strong>: Combination of outcomes</li>
+<li><strong>Mutually exclusive</strong>: Cannot occur together</li>
+<li><strong>Independent</strong>: Occurrence doesn’t affect other
+events</li>
+</ul>
+<h2 data-number="4.3" id="probability-rules"><span class="header-section-number">4.3</span> Probability Rules</h2>
+<h3 data-number="4.3.1" id="addition-rule"><span class="header-section-number">4.3.1</span> Addition Rule</h3>
+<p><strong>For mutually exclusive events</strong>: <span class="math inline"><em>P</em>(<em>A</em> ∪ <em>B</em>) = <em>P</em>(<em>A</em>) + <em>P</em>(<em>B</em>)</span></p>
+<p><strong>For non-mutually exclusive events</strong>: <span class="math inline"><em>P</em>(<em>A</em> ∪ <em>B</em>) = <em>P</em>(<em>A</em>) + <em>P</em>(<em>B</em>) − <em>P</em>(<em>A</em> ∩ <em>B</em>)</span></p>
+<h3 data-number="4.3.2" id="multiplication-rule"><span class="header-section-number">4.3.2</span> Multiplication Rule</h3>
+<p><strong>For independent events</strong>: P(A ∩ B) = P(A) × P(B)</p>
+<p><strong>For dependent events</strong>: P(A ∩ B) = P(A) × P(B|A)</p>
+<h3 data-number="4.3.3" id="complement-rule"><span class="header-section-number">4.3.3</span> Complement Rule</h3>
+<p>P(A’) = 1 - P(A)</p>
+<h3 data-number="4.3.4" id="conditional-probability"><span class="header-section-number">4.3.4</span> Conditional Probability</h3>
+<p><strong>Formula</strong>: P(A|B) = P(A ∩ B) / P(B)</p>
+<p><strong>Example</strong>: Probability of having disease given
+positive test</p>
+<h2 data-number="4.4" id="bayes-theorem"><span class="header-section-number">4.4</span> Bayes’ Theorem</h2>
+<h3 data-number="4.4.1" id="formula"><span class="header-section-number">4.4.1</span> Formula</h3>
+<p>P(A|B) = [P(B|A) × P(A)] / P(B)</p>
+<h3 data-number="4.4.2" id="extended-form"><span class="header-section-number">4.4.2</span> Extended Form</h3>
+<p>P(A|B) = [P(B|A) × P(A)] / [P(B|A) × P(A) + P(B|A’) × P(A’)]</p>
+<h3 data-number="4.4.3" id="applications"><span class="header-section-number">4.4.3</span> Applications</h3>
+<ul>
+<li>Medical diagnosis</li>
+<li>Spam filtering</li>
+<li>Risk assessment</li>
+<li>Quality control</li>
+</ul>
+<h2 data-number="4.5" id="common-probability-distributions"><span class="header-section-number">4.5</span> Common Probability
+Distributions</h2>
+<h3 data-number="4.5.1" id="discrete-distributions"><span class="header-section-number">4.5.1</span> Discrete Distributions</h3>
+<h4 data-number="4.5.1.1" id="binomial-distribution"><span class="header-section-number">4.5.1.1</span> Binomial Distribution</h4>
+<ul>
+<li>Fixed number of trials (n)</li>
+<li>Each trial: success/failure</li>
+<li>Constant probability of success (p)</li>
+<li>Independent trials</li>
+</ul>
+<p><strong>Mean</strong>: <span class="math inline"><em>μ</em> = <em>n</em> × <em>p</em></span>
+<strong>Variance</strong>: <span class="math inline"><em>σ</em><sup>2</sup> = <em>n</em> × <em>p</em> × (1 − <em>p</em>)</span></p>
+<p><strong>Example</strong>: Number of heads in 10 coin flips</p>
+<h4 data-number="4.5.1.2" id="poisson-distribution"><span class="header-section-number">4.5.1.2</span> Poisson Distribution</h4>
+<ul>
+<li>Counts rare events</li>
+<li>Events occur randomly over time/space</li>
+<li>Constant average rate (λ)</li>
+</ul>
+<p><strong>Mean = Variance = λ</strong></p>
+<p><strong>Example</strong>: Number of accidents per day</p>
+<h3 data-number="4.5.2" id="continuous-distributions"><span class="header-section-number">4.5.2</span> Continuous Distributions</h3>
+<h4 data-number="4.5.2.1" id="normal-distribution-1"><span class="header-section-number">4.5.2.1</span> Normal Distribution</h4>
+<ul>
+<li>Bell-shaped, symmetric</li>
+<li>Defined by mean (μ) and standard deviation (σ)</li>
+<li>68-95-99.7 rule</li>
+</ul>
+<p><strong>Standard Normal</strong>: <span class="math inline"><em>μ</em> = 0, <em>σ</em> = 1</span>
+<strong>Z-score</strong>: <span class="math inline"><em>z</em> = (<em>x</em> − <em>μ</em>)/<em>σ</em></span></p>
+<h4 data-number="4.5.2.2" id="t-distribution"><span class="header-section-number">4.5.2.2</span> t-Distribution</h4>
+<ul>
+<li>Similar to normal but with heavier tails</li>
+<li>Used for small samples</li>
+<li>Degrees of freedom = n - 1</li>
+</ul>
+<h4 data-number="4.5.2.3" id="chi-square-distribution"><span class="header-section-number">4.5.2.3</span> Chi-Square
+Distribution</h4>
+<ul>
+<li>Sum of squared standard normal variables</li>
+<li>Used for goodness of fit and independence tests</li>
+<li>Degrees of freedom vary</li>
+</ul>
+<h2 data-number="4.6" id="expected-value-and-variance"><span class="header-section-number">4.6</span> Expected Value and
+Variance</h2>
+<h3 data-number="4.6.1" id="expected-value-mean"><span class="header-section-number">4.6.1</span> Expected Value (Mean)</h3>
+<p><strong>Discrete</strong>: E[X] = Σ x × P(x)</p>
+<p><strong>Continuous</strong>: E[X] = ∫ x × f(x) dx</p>
+<h3 data-number="4.6.2" id="variance-1"><span class="header-section-number">4.6.2</span> Variance</h3>
+<p>Var(X) = E[X²] - (E[X])²</p>
+<h3 data-number="4.6.3" id="properties"><span class="header-section-number">4.6.3</span> Properties</h3>
+<ul>
+<li>E[aX + b] = aE[X] + b</li>
+<li>Var(aX + b) = a²Var(X)</li>
+<li>Var(X + Y) = Var(X) + Var(Y) (if independent)</li>
+</ul>
+<h2 data-number="4.7" id="summary-2"><span class="header-section-number">4.7</span> Summary</h2>
+<p>Probability theory provides the foundation for statistical inference.
+Understanding probability rules, distributions, and concepts like
+conditional probability and Bayes’ theorem is essential for advanced
+statistical analysis and decision-making under uncertainty.</p>
+<hr />
+<h2 data-number="4.8" id="inferential"><span class="header-section-number">4.8</span> 4. Inferential Statistics</h2>
+<h1 data-number="5" id="module-4-inferential-statistics"><span class="header-section-number">5</span> Module 4: Inferential
+Statistics</h1>
+<h2 data-number="5.1" id="learning-objectives-3"><span class="header-section-number">5.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand sampling and sampling distributions</li>
+<li>Calculate and interpret confidence intervals</li>
+<li>Perform hypothesis testing</li>
+<li>Understand Type I and Type II errors</li>
+<li>Interpret p-values and statistical significance</li>
+</ul>
+<h2 data-number="5.2" id="sampling-theory"><span class="header-section-number">5.2</span> Sampling Theory</h2>
+<h3 data-number="5.2.1" id="populations-and-samples"><span class="header-section-number">5.2.1</span> Populations and Samples</h3>
+<ul>
+<li><strong>Population</strong>: Complete set of interest</li>
+<li><strong>Sample</strong>: Subset used for inference</li>
+<li><strong>Sampling frame</strong>: List of population elements</li>
+<li><strong>Sampling methods</strong>: Random, stratified, cluster,
+systematic</li>
+</ul>
+<h3 data-number="5.2.2" id="sampling-distributions-1"><span class="header-section-number">5.2.2</span> Sampling Distributions</h3>
+<ul>
+<li><strong>Sampling distribution</strong>: Distribution of a statistic
+over many samples</li>
+<li><strong>Standard error</strong>: Standard deviation of sampling
+distribution</li>
+<li><strong>Central Limit Theorem</strong>: Sample means approach normal
+distribution</li>
+</ul>
+<h2 data-number="5.3" id="confidence-intervals"><span class="header-section-number">5.3</span> Confidence Intervals</h2>
+<h3 data-number="5.3.1" id="concept"><span class="header-section-number">5.3.1</span> Concept</h3>
+<ul>
+<li>Range of values likely to contain true population parameter</li>
+<li>Based on sample data and desired confidence level</li>
+</ul>
+<h3 data-number="5.3.2" id="formula-for-mean-σ-known"><span class="header-section-number">5.3.2</span> Formula for Mean (σ
+known)</h3>
+<p>CI = <span class="math inline">$\bar{x} \pm z \times
+\frac{\sigma}{\sqrt{n}}$</span></p>
+<h3 data-number="5.3.3" id="formula-for-mean-σ-unknown"><span class="header-section-number">5.3.3</span> Formula for Mean (σ
+unknown)</h3>
+<p>CI = <span class="math inline">$\bar{x} \pm t \times
+\frac{s}{\sqrt{n}}$</span></p>
+<h3 data-number="5.3.4" id="formula-for-proportion"><span class="header-section-number">5.3.4</span> Formula for Proportion</h3>
+<p>CI = <span class="math inline">$p \pm z
+\sqrt{\frac{p(1-p)}{n}}$</span></p>
+<h3 data-number="5.3.5" id="interpretation"><span class="header-section-number">5.3.5</span> Interpretation</h3>
+<ul>
+<li>95% CI: 95% confidence that interval contains true parameter</li>
+<li>Wider intervals: More uncertainty</li>
+<li>Factors affecting width: Sample size, variability, confidence
+level</li>
+</ul>
+<h2 data-number="5.4" id="hypothesis-testing"><span class="header-section-number">5.4</span> Hypothesis Testing</h2>
+<h3 data-number="5.4.1" id="steps-in-hypothesis-testing"><span class="header-section-number">5.4.1</span> Steps in Hypothesis
+Testing</h3>
+<ol type="1">
+<li><p><strong>State hypotheses</strong></p>
+<ul>
+<li>H₀: Null hypothesis (no effect/difference)</li>
+<li>H₁: Alternative hypothesis (effect/difference exists)</li>
+</ul></li>
+<li><p><strong>Choose significance level (α)</strong></p>
+<ul>
+<li>Common values: 0.05, 0.01, 0.10</li>
+</ul></li>
+<li><p><strong>Select test statistic</strong></p></li>
+<li><p><strong>Determine critical value or p-value</strong></p></li>
+<li><p><strong>Make decision</strong></p>
+<ul>
+<li>Reject H₀ if p &lt; α</li>
+<li>Fail to reject H₀ if <span class="math inline"><em>p</em> ≥ <em>α</em></span></li>
+</ul></li>
+</ol>
+<h3 data-number="5.4.2" id="types-of-errors"><span class="header-section-number">5.4.2</span> Types of Errors</h3>
+<ul>
+<li><strong>Type I Error (α)</strong>: Reject true H₀ (false
+positive)</li>
+<li><strong>Type II Error (β)</strong>: Fail to reject false H₀ (false
+negative)</li>
+<li><strong>Power (1-β)</strong>: Probability of correctly rejecting
+false H₀</li>
+</ul>
+<h3 data-number="5.4.3" id="power-analysis"><span class="header-section-number">5.4.3</span> Power Analysis</h3>
+<p><strong>Factors affecting power</strong>: - Sample size (primary
+factor) - Effect size - Significance level (α) - Variability</p>
+<p><strong>Sample size formula</strong>: n = [(zα + zβ)/δ]² × σ²</p>
+<h2 data-number="5.5" id="common-statistical-tests"><span class="header-section-number">5.5</span> Common Statistical Tests</h2>
+<h3 data-number="5.5.1" id="parametric-tests-normal-data-equal-variances"><span class="header-section-number">5.5.1</span> Parametric Tests (Normal
+data, equal variances)</h3>
+<h4 data-number="5.5.1.1" id="one-sample-t-test"><span class="header-section-number">5.5.1.1</span> One-sample t-test</h4>
+<ul>
+<li>Compare sample mean to known value</li>
+<li>H₀: μ = μ₀</li>
+</ul>
+<h4 data-number="5.5.1.2" id="two-sample-t-test"><span class="header-section-number">5.5.1.2</span> Two-sample t-test</h4>
+<ul>
+<li>Compare means of two groups</li>
+<li>Independent samples or paired</li>
+</ul>
+<h4 data-number="5.5.1.3" id="one-way-anova"><span class="header-section-number">5.5.1.3</span> One-way ANOVA</h4>
+<ul>
+<li>Compare means of three or more groups</li>
+<li>Tests if at least one group differs</li>
+</ul>
+<h4 data-number="5.5.1.4" id="pearson-correlation"><span class="header-section-number">5.5.1.4</span> Pearson Correlation</h4>
+<ul>
+<li>Measure linear relationship between variables</li>
+<li>Range: -1 to +1</li>
+</ul>
+<h3 data-number="5.5.2" id="non-parametric-tests-no-normality-assumption"><span class="header-section-number">5.5.2</span> Non-parametric Tests (No
+normality assumption)</h3>
+<h4 data-number="5.5.2.1" id="chi-square-test"><span class="header-section-number">5.5.2.1</span> Chi-square test</h4>
+<ul>
+<li>Test independence of categorical variables</li>
+<li>Goodness of fit</li>
+</ul>
+<h4 data-number="5.5.2.2" id="mann-whitney-u-test"><span class="header-section-number">5.5.2.2</span> Mann-Whitney U test</h4>
+<ul>
+<li>Compare two independent groups</li>
+<li>Alternative to t-test</li>
+</ul>
+<h4 data-number="5.5.2.3" id="kruskal-wallis-test"><span class="header-section-number">5.5.2.3</span> Kruskal-Wallis test</h4>
+<ul>
+<li>Compare three or more independent groups</li>
+<li>Alternative to ANOVA</li>
+</ul>
+<h4 data-number="5.5.2.4" id="spearman-correlation"><span class="header-section-number">5.5.2.4</span> Spearman correlation</h4>
+<ul>
+<li>Measure monotonic relationship</li>
+<li>Alternative to Pearson correlation</li>
+</ul>
+<h2 data-number="5.6" id="p-values-and-significance"><span class="header-section-number">5.6</span> p-Values and Significance</h2>
+<h3 data-number="5.6.1" id="p-value-definition"><span class="header-section-number">5.6.1</span> p-Value Definition</h3>
+<ul>
+<li>Probability of observing data as extreme as sample data, assuming H₀
+true</li>
+<li>Smaller p-values: Stronger evidence against H₀</li>
+</ul>
+<h3 data-number="5.6.2" id="significance-levels"><span class="header-section-number">5.6.2</span> Significance Levels</h3>
+<ul>
+<li><strong>p &lt; 0.05</strong>: Statistically significant</li>
+<li><strong>p &lt; 0.01</strong>: Highly significant</li>
+<li><strong>p &lt; 0.001</strong>: Very highly significant</li>
+</ul>
+<h3 data-number="5.6.3" id="misconceptions"><span class="header-section-number">5.6.3</span> Misconceptions</h3>
+<ul>
+<li>p-value <span class="math inline">≠</span> probability that H₀ is
+true</li>
+<li>p-value <span class="math inline">≠</span> importance of result</li>
+<li>Statistical significance <span class="math inline">≠</span> clinical
+significance</li>
+</ul>
+<h2 data-number="5.7" id="effect-size"><span class="header-section-number">5.7</span> Effect Size</h2>
+<h3 data-number="5.7.1" id="importance"><span class="header-section-number">5.7.1</span> Importance</h3>
+<ul>
+<li>Magnitude of relationship or difference</li>
+<li>Independent of sample size</li>
+<li>More meaningful than p-values</li>
+</ul>
+<h3 data-number="5.7.2" id="common-measures"><span class="header-section-number">5.7.2</span> Common Measures</h3>
+<ul>
+<li><strong>Cohen’s d</strong>: Standardized mean difference</li>
+<li><strong>Odds ratio</strong>: For categorical outcomes</li>
+<li><strong>Relative risk</strong>: For incidence data</li>
+<li><strong>R²</strong>: Proportion of variance explained</li>
+</ul>
+<h2 data-number="5.8" id="summary-3"><span class="header-section-number">5.8</span> Summary</h2>
+<p>Inferential statistics allow us to make conclusions about populations
+from sample data. Confidence intervals provide estimates with
+uncertainty, while hypothesis testing helps determine if observed
+effects are real. Understanding Type I/II errors, power, and effect
+sizes is crucial for proper interpretation of statistical results.</p>
+<hr />
+<h2 data-number="5.9" id="parametric"><span class="header-section-number">5.9</span> 5. Parametric Tests</h2>
+<h1 data-number="6" id="module-5-parametric-statistical-tests"><span class="header-section-number">6</span> Module 5: Parametric Statistical
+Tests</h1>
+<h2 data-number="6.1" id="learning-objectives-4"><span class="header-section-number">6.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand assumptions of parametric tests</li>
+<li>Perform and interpret t-tests</li>
+<li>Conduct ANOVA and post-hoc tests</li>
+<li>Calculate and interpret correlation coefficients</li>
+<li>Understand linear regression</li>
+</ul>
+<h2 data-number="6.2" id="assumptions-of-parametric-tests"><span class="header-section-number">6.2</span> Assumptions of Parametric
+Tests</h2>
+<h3 data-number="6.2.1" id="normality"><span class="header-section-number">6.2.1</span> Normality</h3>
+<ul>
+<li>Data follows normal distribution</li>
+<li>Check with histograms, Q-Q plots, Shapiro-Wilk test</li>
+<li>Central Limit Theorem helps with large samples</li>
+</ul>
+<h3 data-number="6.2.2" id="homoscedasticity-equal-variances"><span class="header-section-number">6.2.2</span> Homoscedasticity (Equal
+Variances)</h3>
+<ul>
+<li>Variances equal across groups</li>
+<li>Test with Levene’s test or Bartlett’s test</li>
+<li>Important for t-tests and ANOVA</li>
+</ul>
+<h3 data-number="6.2.3" id="independence"><span class="header-section-number">6.2.3</span> Independence</h3>
+<ul>
+<li>Observations independent of each other</li>
+<li>Violated in repeated measures designs</li>
+<li>Important for all parametric tests</li>
+</ul>
+<h3 data-number="6.2.4" id="linearity"><span class="header-section-number">6.2.4</span> Linearity</h3>
+<ul>
+<li>Relationship between variables is linear</li>
+<li>Check with scatter plots</li>
+<li>Important for correlation and regression</li>
+</ul>
+<h2 data-number="6.3" id="t-tests"><span class="header-section-number">6.3</span> t-Tests</h2>
+<h3 data-number="6.3.1" id="one-sample-t-test-1"><span class="header-section-number">6.3.1</span> One-Sample t-Test</h3>
+<p><strong>Purpose</strong>: Test if sample mean differs from known
+population mean</p>
+<p><strong>Formula</strong>: t = (x̄ - μ₀) / (s / )</p>
+<p><strong>Example</strong>: Test if average height differs from
+national average</p>
+<h3 data-number="6.3.2" id="independent-samples-t-test"><span class="header-section-number">6.3.2</span> Independent Samples
+t-Test</h3>
+<p><strong>Purpose</strong>: Compare means of two independent groups</p>
+<p><strong>Formula</strong>: t = (x̄₁ - x̄₂) / </p>
+<p><strong>Assumptions</strong>: - Independent observations - Normal
+distribution in each group - Equal variances (or use Welch’s
+correction)</p>
+<h3 data-number="6.3.3" id="paired-t-test"><span class="header-section-number">6.3.3</span> Paired t-Test</h3>
+<p><strong>Purpose</strong>: Compare means of two related groups</p>
+<p><strong>Formula</strong>: t = (x̄_d) / (s_d / )</p>
+<p>Where x̄_d is mean of differences</p>
+<p><strong>Uses</strong>: - Before-after studies - Matched pairs -
+Repeated measures</p>
+<h2 data-number="6.4" id="analysis-of-variance-anova"><span class="header-section-number">6.4</span> Analysis of Variance
+(ANOVA)</h2>
+<h3 data-number="6.4.1" id="one-way-anova-1"><span class="header-section-number">6.4.1</span> One-Way ANOVA</h3>
+<p><strong>Purpose</strong>: Compare means of three or more groups</p>
+<p><strong>Logic</strong>: Partition total variation into between-group
+and within-group</p>
+<p><strong>F-statistic</strong>: F = MS_between / MS_within</p>
+<p><strong>Post-hoc tests</strong>: - Tukey’s HSD: Compare all pairs -
+Bonferroni: Control family-wise error - Dunnett’s: Compare to control
+group</p>
+<h3 data-number="6.4.2" id="two-way-anova"><span class="header-section-number">6.4.2</span> Two-Way ANOVA</h3>
+<p><strong>Purpose</strong>: Examine effects of two factors and their
+interaction</p>
+<p><strong>Model</strong>: Y = μ + A + B + AB + ε</p>
+<p><strong>Main effects</strong>: Effect of each factor alone
+<strong>Interaction</strong>: Combined effect of factors</p>
+<h3 data-number="6.4.3" id="repeated-measures-anova"><span class="header-section-number">6.4.3</span> Repeated Measures ANOVA</h3>
+<p><strong>Purpose</strong>: Compare means across multiple time points
+or conditions</p>
+<p><strong>Advantages</strong>: - Controls for individual differences -
+Requires fewer subjects - More powerful than independent groups</p>
+<h2 data-number="6.5" id="correlation-analysis"><span class="header-section-number">6.5</span> Correlation Analysis</h2>
+<h3 data-number="6.5.1" id="pearson-correlation-1"><span class="header-section-number">6.5.1</span> Pearson Correlation</h3>
+<p><strong>Purpose</strong>: Measure strength and direction of linear
+relationship</p>
+<p><strong>Formula</strong>: r = Σ[(x_i - x̄)(y_i - ȳ)] / </p>
+<p><strong>Interpretation</strong>: - +1: Perfect positive correlation -
+0: No linear relationship - -1: Perfect negative correlation</p>
+<p><strong>Hypothesis testing</strong>: t = r </p>
+<h3 data-number="6.5.2" id="correlation-vs.-causation"><span class="header-section-number">6.5.2</span> Correlation
+vs. Causation</h3>
+<ul>
+<li>Correlation does not imply causation</li>
+<li>Third variable may explain relationship</li>
+<li>Experimental design needed for causality</li>
+</ul>
+<h2 data-number="6.6" id="linear-regression"><span class="header-section-number">6.6</span> Linear Regression</h2>
+<h3 data-number="6.6.1" id="simple-linear-regression"><span class="header-section-number">6.6.1</span> Simple Linear Regression</h3>
+<p><strong>Model</strong>: Y = β₀ + β₁X + ε</p>
+<p><strong>Parameters</strong>: - β₀: Intercept (Y when X=0) - β₁: Slope
+(change in Y per unit X) - ε: Error term</p>
+<p><strong>Estimation</strong>: Least squares method</p>
+<h3 data-number="6.6.2" id="multiple-linear-regression"><span class="header-section-number">6.6.2</span> Multiple Linear
+Regression</h3>
+<p><strong>Model</strong>: Y = β₀ + β₁X₁ + β₂X₂ + … + βₖXₖ + ε</p>
+<p><strong>Assumptions</strong>: - Linearity - Independence -
+Homoscedasticity - Normality of residuals</p>
+<h3 data-number="6.6.3" id="model-evaluation"><span class="header-section-number">6.6.3</span> Model Evaluation</h3>
+<ul>
+<li><strong>R²</strong>: Proportion of variance explained</li>
+<li><strong>Adjusted R²</strong>: Penalizes for additional
+variables</li>
+<li><strong>F-test</strong>: Overall model significance</li>
+<li><strong>t-tests</strong>: Individual coefficient significance</li>
+</ul>
+<h3 data-number="6.6.4" id="regression-diagnostics"><span class="header-section-number">6.6.4</span> Regression Diagnostics</h3>
+<ul>
+<li><strong>Residual plots</strong>: Check assumptions</li>
+<li><strong>Influential points</strong>: Cook’s distance</li>
+<li><strong>Multicollinearity</strong>: VIF &gt; 10</li>
+<li><strong>Outliers</strong>: Standardized residuals &gt; 3</li>
+</ul>
+<h2 data-number="6.7" id="summary-4"><span class="header-section-number">6.7</span> Summary</h2>
+<p>Parametric tests provide powerful tools for comparing groups and
+examining relationships when assumptions are met. Understanding test
+assumptions, proper interpretation, and appropriate use of post-hoc
+tests is essential for valid statistical analysis.</p>
+<hr />
+<h2 data-number="6.8" id="nonparametric"><span class="header-section-number">6.8</span> 6. Non-Parametric Tests</h2>
+<h1 data-number="7" id="module-6-non-parametric-statistical-tests"><span class="header-section-number">7</span> Module 6: Non-Parametric
+Statistical Tests</h1>
+<h2 data-number="7.1" id="learning-objectives-5"><span class="header-section-number">7.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand when to use non-parametric tests</li>
+<li>Perform and interpret chi-square tests</li>
+<li>Apply Mann-Whitney and Kruskal-Wallis tests</li>
+<li>Use Spearman’s correlation</li>
+<li>Understand non-parametric alternatives</li>
+</ul>
+<h2 data-number="7.2" id="when-to-use-non-parametric-tests"><span class="header-section-number">7.2</span> When to Use Non-Parametric
+Tests</h2>
+<h3 data-number="7.2.1" id="advantages"><span class="header-section-number">7.2.1</span> Advantages</h3>
+<ul>
+<li><strong>No normality assumption</strong>: Work with any
+distribution</li>
+<li><strong>Ordinal data</strong>: Appropriate for ranked data</li>
+<li><strong>Robust</strong>: Less affected by outliers</li>
+<li><strong>Small samples</strong>: Often more powerful with small
+n</li>
+</ul>
+<h3 data-number="7.2.2" id="disadvantages"><span class="header-section-number">7.2.2</span> Disadvantages</h3>
+<ul>
+<li><strong>Less powerful</strong>: May miss real effects with normal
+data</li>
+<li><strong>Less precise</strong>: Often only test for differences, not
+magnitude</li>
+<li><strong>Ordinal results</strong>: May lose information from
+continuous data</li>
+</ul>
+<h3 data-number="7.2.3" id="decision-criteria"><span class="header-section-number">7.2.3</span> Decision Criteria</h3>
+<ul>
+<li>Data not normally distributed</li>
+<li>Ordinal or nominal data</li>
+<li>Small sample sizes</li>
+<li>Presence of outliers</li>
+</ul>
+<h2 data-number="7.3" id="chi-square-tests"><span class="header-section-number">7.3</span> Chi-Square Tests</h2>
+<h3 data-number="7.3.1" id="chi-square-goodness-of-fit"><span class="header-section-number">7.3.1</span> Chi-Square Goodness of
+Fit</h3>
+<p><strong>Purpose</strong>: Test if observed frequencies match expected
+distribution</p>
+<p><strong>Formula</strong>: χ² = Σ [(O_i - E_i)² / E_i]</p>
+<p><strong>Example</strong>: Test if die is fair - Expected: Each face
+1/6 = 16.67 - Observed: 20, 15, 18, 16, 17, 14</p>
+<h3 data-number="7.3.2" id="chi-square-test-of-independence"><span class="header-section-number">7.3.2</span> Chi-Square Test of
+Independence</h3>
+<p><strong>Purpose</strong>: Test if two categorical variables are
+independent</p>
+<p><strong>Contingency table</strong>:</p>
+<pre><code>         Variable B
+Variable A | B1 | B2 | Total
+-----------|----|----|------
+A1        |    |    |
+A2        |    |    |
+-----------|----|----|------
+Total     |    |    |</code></pre>
+<p><strong>Expected frequency</strong>: E_ij = (Row total × Column
+total) / Grand total</p>
+<h3 data-number="7.3.3" id="fishers-exact-test"><span class="header-section-number">7.3.3</span> Fisher’s Exact Test</h3>
+<p><strong>Purpose</strong>: Alternative to chi-square for small
+samples</p>
+<p><strong>Uses</strong>: 2×2 tables with small expected frequencies
+(&lt;5)</p>
+<h2 data-number="7.4" id="mann-whitney-u-test-1"><span class="header-section-number">7.4</span> Mann-Whitney U Test</h2>
+<h3 data-number="7.4.1" id="purpose"><span class="header-section-number">7.4.1</span> Purpose</h3>
+<ul>
+<li>Compare two independent groups</li>
+<li>Alternative to independent samples t-test</li>
+<li>Works with ordinal or continuous data</li>
+</ul>
+<h3 data-number="7.4.2" id="logic"><span class="header-section-number">7.4.2</span> Logic</h3>
+<ul>
+<li>Rank all observations combined</li>
+<li>Compare sum of ranks between groups</li>
+<li>Test if groups come from same distribution</li>
+</ul>
+<h3 data-number="7.4.3" id="formula-1"><span class="header-section-number">7.4.3</span> Formula</h3>
+<p>U = n₁n₂ + n₁(n₁+1)/2 - R₁</p>
+<p>Where R₁ is sum of ranks in group 1</p>
+<h3 data-number="7.4.4" id="effect-size-1"><span class="header-section-number">7.4.4</span> Effect Size</h3>
+<p><span class="math inline">$r = |z| / \sqrt{(n₁ + n₂)}$</span></p>
+<h2 data-number="7.5" id="kruskal-wallis-test-1"><span class="header-section-number">7.5</span> Kruskal-Wallis Test</h2>
+<h3 data-number="7.5.1" id="purpose-1"><span class="header-section-number">7.5.1</span> Purpose</h3>
+<ul>
+<li>Compare three or more independent groups</li>
+<li>Extension of Mann-Whitney test</li>
+<li>Alternative to one-way ANOVA</li>
+</ul>
+<h3 data-number="7.5.2" id="logic-1"><span class="header-section-number">7.5.2</span> Logic</h3>
+<ul>
+<li>Rank all observations</li>
+<li>Compare mean ranks between groups</li>
+<li>Chi-square approximation for large samples</li>
+</ul>
+<h3 data-number="7.5.3" id="post-hoc-tests"><span class="header-section-number">7.5.3</span> Post-hoc Tests</h3>
+<ul>
+<li>Dunn’s test for pairwise comparisons</li>
+<li>Bonferroni correction for multiple tests</li>
+</ul>
+<h2 data-number="7.6" id="wilcoxon-signed-rank-test"><span class="header-section-number">7.6</span> Wilcoxon Signed-Rank Test</h2>
+<h3 data-number="7.6.1" id="purpose-2"><span class="header-section-number">7.6.1</span> Purpose</h3>
+<ul>
+<li>Compare two related samples</li>
+<li>Alternative to paired t-test</li>
+<li>Works with ordinal data</li>
+</ul>
+<h3 data-number="7.6.2" id="procedure"><span class="header-section-number">7.6.2</span> Procedure</h3>
+<ol type="1">
+<li>Calculate differences between pairs</li>
+<li>Rank absolute differences</li>
+<li>Assign signs based on direction</li>
+<li>Test if positive and negative ranks balanced</li>
+</ol>
+<h2 data-number="7.7" id="spearmans-rank-correlation"><span class="header-section-number">7.7</span> Spearman’s Rank
+Correlation</h2>
+<h3 data-number="7.7.1" id="purpose-3"><span class="header-section-number">7.7.1</span> Purpose</h3>
+<ul>
+<li>Measure monotonic relationship between variables</li>
+<li>Alternative to Pearson correlation</li>
+<li>Works with ordinal data</li>
+</ul>
+<h3 data-number="7.7.2" id="calculation"><span class="header-section-number">7.7.2</span> Calculation</h3>
+<ol type="1">
+<li>Rank both variables</li>
+<li>Calculate Pearson correlation on ranks</li>
+</ol>
+<p><strong>Formula</strong>: r_s = 1 - (6Σd_i²) / (n(n²-1))</p>
+<h2 data-number="7.8" id="summary-5"><span class="header-section-number">7.8</span> Summary</h2>
+<p>Non-parametric tests provide robust alternatives when parametric
+assumptions are not met. Understanding when to use each test and how to
+interpret results is essential for appropriate statistical analysis of
+various data types.</p>
+<h2 data-number="7.9" id="introduction"><span class="header-section-number">7.9</span> 1. Introduction to
+Epidemiological Study Designs</h2>
+<h1 data-number="8" id="module-1-introduction-to-epidemiological-study-designs"><span class="header-section-number">8</span> Module 1: Introduction to
+Epidemiological Study Designs</h1>
+<h2 data-number="8.1" id="learning-objectives-6"><span class="header-section-number">8.1</span> Learning Objectives</h2>
+<ul>
+<li>Define epidemiology and its role in public health</li>
+<li>Understand the basic principles of epidemiological research</li>
+<li>Differentiate between descriptive and analytical epidemiology</li>
+<li>Identify the key components of epidemiological study designs</li>
+<li>Understand the importance of study design in establishing
+causality</li>
+</ul>
+<h2 data-number="8.2" id="what-is-epidemiology"><span class="header-section-number">8.2</span> What is Epidemiology?</h2>
+<p>Epidemiology is the study of the distribution and determinants of
+health-related states or events in specified populations, and the
+application of this study to control health problems.</p>
+<p><strong>Key terms:</strong> - <strong>Distribution</strong>: Who,
+when, where of health events - <strong>Determinants</strong>: Causes and
+risk factors - <strong>Health-related states</strong>: Diseases,
+injuries, disabilities, deaths - <strong>Specified populations</strong>:
+Defined groups of people - <strong>Control</strong>: Prevention and
+intervention</p>
+<h2 data-number="8.3" id="levels-of-epidemiological-study"><span class="header-section-number">8.3</span> Levels of Epidemiological
+Study</h2>
+<h3 data-number="8.3.1" id="descriptive-epidemiology"><span class="header-section-number">8.3.1</span> 1. Descriptive
+Epidemiology</h3>
+<ul>
+<li>Describes the distribution of disease in terms of person, place, and
+time</li>
+<li>Answers: Who gets the disease? Where? When?</li>
+<li>Does not test hypotheses about causes</li>
+<li>Useful for generating hypotheses and planning interventions</li>
+</ul>
+<h3 data-number="8.3.2" id="analytical-epidemiology"><span class="header-section-number">8.3.2</span> 2. Analytical
+Epidemiology</h3>
+<ul>
+<li>Examines associations between exposures and outcomes</li>
+<li>Tests hypotheses about causal relationships</li>
+<li>Determines whether associations are causal</li>
+</ul>
+<h2 data-number="8.4" id="epidemiological-study-designs"><span class="header-section-number">8.4</span> Epidemiological Study
+Designs</h2>
+<p>Study designs are classified based on: - <strong>Timing</strong>:
+Prospective vs. Retrospective - <strong>Direction of inquiry</strong>:
+Forward vs. Backward - <strong>Manipulation of exposure</strong>:
+Observational vs. Experimental</p>
+<h3 data-number="8.4.1" id="major-categories"><span class="header-section-number">8.4.1</span> Major Categories:</h3>
+<ol type="1">
+<li><strong>Observational Studies</strong>: Researcher observes without
+intervention
+<ul>
+<li>Descriptive studies</li>
+<li>Analytical observational studies (cohort, case-control,
+cross-sectional)</li>
+</ul></li>
+<li><strong>Experimental Studies</strong>: Researcher intervenes or
+manipulates exposure
+<ul>
+<li>Clinical trials</li>
+<li>Field trials</li>
+<li>Community trials</li>
+</ul></li>
+</ol>
+<h2 data-number="8.5" id="key-principles-in-epidemiological-research"><span class="header-section-number">8.5</span> Key Principles in
+Epidemiological Research</h2>
+<h3 data-number="8.5.1" id="study-population"><span class="header-section-number">8.5.1</span> 1. Study Population</h3>
+<ul>
+<li>Clearly defined population from which subjects are drawn</li>
+<li>Target population vs. study population vs. source population</li>
+</ul>
+<h3 data-number="8.5.2" id="exposure-and-outcome"><span class="header-section-number">8.5.2</span> 2. Exposure and Outcome</h3>
+<ul>
+<li><strong>Exposure</strong>: Factor of interest (risk factor,
+intervention)</li>
+<li><strong>Outcome</strong>: Health event or condition being
+studied</li>
+<li>Clear definitions essential for validity</li>
+</ul>
+<h3 data-number="8.5.3" id="comparison-groups"><span class="header-section-number">8.5.3</span> 3. Comparison Groups</h3>
+<ul>
+<li>Essential for analytical studies</li>
+<li>Exposed vs. unexposed groups</li>
+<li>Cases vs. controls</li>
+</ul>
+<h3 data-number="8.5.4" id="bias-and-confounding"><span class="header-section-number">8.5.4</span> 4. Bias and Confounding</h3>
+<ul>
+<li>Threats to validity that must be controlled</li>
+<li>Bias: Systematic error in design, conduct, or analysis</li>
+<li>Confounding: Mixing of effects of exposure with other factors</li>
+</ul>
+<h2 data-number="8.6" id="establishing-causality"><span class="header-section-number">8.6</span> Establishing Causality</h2>
+<h3 data-number="8.6.1" id="bradford-hill-criteria-1965"><span class="header-section-number">8.6.1</span> Bradford Hill Criteria
+(1965)</h3>
+<ol type="1">
+<li><strong>Strength of association</strong>: Strong associations more
+likely causal</li>
+<li><strong>Consistency</strong>: Findings replicated in different
+studies/settings</li>
+<li><strong>Specificity</strong>: Exposure leads to specific
+outcome</li>
+<li><strong>Temporality</strong>: Exposure precedes outcome</li>
+<li><strong>Biological gradient</strong>: Dose-response
+relationship</li>
+<li><strong>Plausibility</strong>: Biologically credible</li>
+<li><strong>Coherence</strong>: Fits with existing knowledge</li>
+<li><strong>Experiment</strong>: Experimental evidence supports</li>
+<li><strong>Analogy</strong>: Similar to known causal relationships</li>
+</ol>
+<h2 data-number="8.7" id="importance-of-study-design-selection"><span class="header-section-number">8.7</span> Importance of Study Design
+Selection</h2>
+<ul>
+<li>Different research questions require different designs</li>
+<li>Each design has strengths and limitations</li>
+<li>Choice affects validity, precision, and generalizability</li>
+<li>Ethical considerations influence design selection</li>
+</ul>
+<h2 data-number="8.8" id="summary-6"><span class="header-section-number">8.8</span> Summary</h2>
+<p>Epidemiological study designs provide the framework for investigating
+health-related questions. Understanding the principles of epidemiology
+and the characteristics of different study designs is essential for
+conducting valid research and critically appraising published
+studies.</p>
+<hr />
+<h2 data-number="8.9" id="observational-studies"><span class="header-section-number">8.9</span> 2. Observational Study
+Designs</h2>
+<h1 data-number="9" id="module-2-observational-study-designs"><span class="header-section-number">9</span> Module 2: Observational Study
+Designs</h1>
+<h2 data-number="9.1" id="learning-objectives-7"><span class="header-section-number">9.1</span> Learning Objectives</h2>
+<ul>
+<li>Describe the characteristics of different observational study
+designs</li>
+<li>Understand the strengths and limitations of each design</li>
+<li>Identify appropriate situations for using each design</li>
+<li>Calculate and interpret measures of association</li>
+</ul>
+<h2 data-number="9.2" id="overview-of-observational-studies"><span class="header-section-number">9.2</span> Overview of Observational
+Studies</h2>
+<p>Observational studies involve observation of subjects without
+manipulation of exposure by the researcher. They are essential when
+experimental designs are unethical, impractical, or impossible.</p>
+<h2 data-number="9.3" id="descriptive-studies"><span class="header-section-number">9.3</span> 1. Descriptive Studies</h2>
+<h3 data-number="9.3.1" id="ecological-studies"><span class="header-section-number">9.3.1</span> Ecological Studies</h3>
+<ul>
+<li><strong>Definition</strong>: Study of groups or populations rather
+than individuals</li>
+<li><strong>Unit of analysis</strong>: Groups (countries, regions,
+communities)</li>
+<li><strong>Data sources</strong>: Routinely collected data (mortality
+rates, disease registries)</li>
+</ul>
+<p><strong>Example</strong>: Correlation between per capita fat
+consumption and breast cancer rates across countries</p>
+<p><strong>Advantages:</strong> - Inexpensive and quick - Use existing
+data - Good for hypothesis generation</p>
+<p><strong>Limitations:</strong> - <strong>Ecological fallacy</strong>:
+Associations at group level may not reflect individual level - Cannot
+establish causality - Confounding at individual level</p>
+<p><strong>Measures:</strong> - Correlation coefficients - Rates and
+proportions</p>
+<h3 data-number="9.3.2" id="case-reports-and-case-series"><span class="header-section-number">9.3.2</span> Case Reports and Case
+Series</h3>
+<ul>
+<li><strong>Case Report</strong>: Detailed description of single
+case</li>
+<li><strong>Case Series</strong>: Description of multiple similar
+cases</li>
+<li><strong>Purpose</strong>: Describe unusual presentations, generate
+hypotheses</li>
+<li><strong>Limitations</strong>: No comparison group, cannot establish
+causality</li>
+</ul>
+<h2 data-number="9.4" id="analytical-observational-studies"><span class="header-section-number">9.4</span> 2. Analytical Observational
+Studies</h2>
+<h3 data-number="9.4.1" id="cohort-studies"><span class="header-section-number">9.4.1</span> Cohort Studies</h3>
+<h4 data-number="9.4.1.1" id="prospective-cohort-studies"><span class="header-section-number">9.4.1.1</span> Prospective Cohort
+Studies</h4>
+<ul>
+<li><strong>Definition</strong>: Follow groups of people who are free of
+disease forward in time</li>
+<li><strong>Exposure assessment</strong>: Before outcome occurs</li>
+<li><strong>Direction</strong>: Forward in time</li>
+</ul>
+<p><strong>Example</strong>: Framingham Heart Study - followed healthy
+individuals to study cardiovascular risk factors</p>
+<p><strong>Advantages:</strong> - Can study multiple outcomes - Exposure
+precedes outcome (temporality) - Can calculate incidence rates - Good
+for rare exposures</p>
+<p><strong>Limitations:</strong> - Expensive and time-consuming - Loss
+to follow-up - Changes in exposure classification over time - Not
+suitable for rare outcomes</p>
+<p><strong>Measures of Association:</strong> - <strong>Relative Risk
+(RR)</strong>: Incidence in exposed / Incidence in unexposed -
+<strong>Attributable Risk</strong>: Excess risk due to exposure -
+<strong>Attributable Fraction</strong>: Proportion of disease due to
+exposure</p>
+<h4 data-number="9.4.1.2" id="retrospective-historical-cohort-studies"><span class="header-section-number">9.4.1.2</span> Retrospective (Historical)
+Cohort Studies</h4>
+<ul>
+<li><strong>Definition</strong>: Use existing records to reconstruct
+cohorts</li>
+<li><strong>Exposure assessment</strong>: From historical records</li>
+<li><strong>Direction</strong>: Backward in time from outcome</li>
+</ul>
+<p><strong>Example</strong>: Occupational studies using employment
+records</p>
+<p><strong>Advantages:</strong> - Quicker and cheaper than prospective
+studies - Can study past exposures - Good for rare exposures</p>
+<p><strong>Limitations:</strong> - Dependent on quality of historical
+records - Exposure misclassification possible - Cannot study new
+exposures</p>
+<h3 data-number="9.4.2" id="case-control-studies"><span class="header-section-number">9.4.2</span> Case-Control Studies</h3>
+<h4 data-number="9.4.2.1" id="definition"><span class="header-section-number">9.4.2.1</span> Definition</h4>
+<ul>
+<li><strong>Study base</strong>: Population that gives rise to
+cases</li>
+<li><strong>Cases</strong>: Individuals with the outcome of
+interest</li>
+<li><strong>Controls</strong>: Individuals without the outcome, from
+same study base</li>
+</ul>
+<p><strong>Example</strong>: Study of lung cancer cases and controls to
+examine smoking history</p>
+<p><strong>Advantages:</strong> - Efficient for rare outcomes - Can
+study multiple exposures - Relatively quick and inexpensive - Good for
+studying diseases with long latency</p>
+<p><strong>Limitations:</strong> - Cannot calculate incidence rates -
+Prone to recall bias - Selection bias possible - Not suitable for rare
+exposures</p>
+<p><strong>Measures of Association:</strong> - <strong>Odds Ratio
+(OR)</strong>: (Cases exposed/Cases unexposed) / (Controls
+exposed/Controls unexposed) - When disease is rare, OR <span class="math inline">≈</span> RR</p>
+<h4 data-number="9.4.2.2" id="types-of-case-control-studies"><span class="header-section-number">9.4.2.2</span> Types of Case-Control
+Studies</h4>
+<ol type="1">
+<li><strong>Population-based</strong>: Cases and controls from defined
+population</li>
+<li><strong>Hospital-based</strong>: Cases from hospitals, controls from
+same hospitals</li>
+<li><strong>Nested case-control</strong>: Within a cohort study</li>
+</ol>
+<h3 data-number="9.4.3" id="cross-sectional-studies"><span class="header-section-number">9.4.3</span> Cross-Sectional Studies</h3>
+<h4 data-number="9.4.3.1" id="definition-1"><span class="header-section-number">9.4.3.1</span> Definition</h4>
+<ul>
+<li><strong>Prevalence study</strong>: Measures prevalence of exposure
+and outcome at single point in time</li>
+<li><strong>Direction</strong>: Neither forward nor backward - both
+exposure and outcome measured simultaneously</li>
+</ul>
+<p><strong>Example</strong>: National Health Survey measuring current
+smoking and current health status</p>
+<p><strong>Advantages:</strong> - Quick and inexpensive - Can study
+multiple outcomes and exposures - Good for hypothesis generation - Can
+determine prevalence</p>
+<p><strong>Limitations:</strong> - Cannot establish temporality -
+Prevalence-incidence bias (Neyman bias) - Cannot distinguish between
+cause and effect - Cross-sectional fallacy</p>
+<p><strong>Measures of Association:</strong> - <strong>Prevalence Ratio
+(PR)</strong>: Prevalence in exposed / Prevalence in unexposed -
+<strong>Prevalence Odds Ratio (POR)</strong></p>
+<h2 data-number="9.5" id="choosing-an-observational-study-design"><span class="header-section-number">9.5</span> Choosing an Observational Study
+Design</h2>
+<h3 data-number="9.5.1" id="factors-to-consider"><span class="header-section-number">9.5.1</span> Factors to Consider:</h3>
+<ol type="1">
+<li><strong>Research question</strong>: What is the exposure? What is
+the outcome?</li>
+<li><strong>Frequency</strong>: How common are exposure and
+outcome?</li>
+<li><strong>Time</strong>: When did exposure/outcome occur?</li>
+<li><strong>Resources</strong>: Time and budget available</li>
+<li><strong>Feasibility</strong>: Can the study be conducted?</li>
+</ol>
+<h3 data-number="9.5.2" id="decision-framework"><span class="header-section-number">9.5.2</span> Decision Framework:</h3>
+<div class="line-block">Scenario | Preferred Design |</div>
+<p>|*********-|******************| | Rare outcome, common exposure |
+Cohort study | | Rare outcome, rare exposure | Case-control study | |
+Common outcome, common exposure | Cross-sectional study | | Multiple
+outcomes, single exposure | Cohort study | | Multiple exposures, single
+outcome | Case-control study | | Quick assessment needed |
+Cross-sectional study |</p>
+<h2 data-number="9.6" id="summary-7"><span class="header-section-number">9.6</span> Summary</h2>
+<p>Each observational study design has unique strengths and limitations.
+The choice of design depends on the research question, the frequency of
+exposure and outcome, available resources, and feasibility.
+Understanding these designs is crucial for both conducting research and
+critically appraising published studies.</p>
+<hr />
+<h1 data-number="10" id="module-3-experimental-study-designs"><span class="header-section-number">10</span> Module 3: Experimental Study
+Designs</h1>
+<h2 data-number="10.1" id="learning-objectives-8"><span class="header-section-number">10.1</span> Learning Objectives</h2>
+<ul>
+<li>Describe the characteristics of experimental study designs</li>
+<li>Understand randomization and its importance</li>
+<li>Identify different types of experimental studies</li>
+<li>Recognize ethical considerations in experimental research</li>
+<li>Calculate and interpret results from experimental studies</li>
+</ul>
+<h2 data-number="10.2" id="overview-of-experimental-studies"><span class="header-section-number">10.2</span> Overview of Experimental
+Studies</h2>
+<p>Experimental studies involve active manipulation of exposure by the
+researcher. They are considered the “gold standard” for establishing
+causality because they can control for confounding and establish
+temporality.</p>
+<p><strong>Key features:</strong> - Manipulation of exposure - Random
+allocation to groups - Control group for comparison - Prospective
+design</p>
+<h2 data-number="10.3" id="clinical-trials"><span class="header-section-number">10.3</span> Clinical Trials</h2>
+<h3 data-number="10.3.1" id="definition-2"><span class="header-section-number">10.3.1</span> Definition</h3>
+<p>Clinical trials are experimental studies conducted in clinical
+settings to evaluate the safety and efficacy of interventions in human
+subjects.</p>
+<h3 data-number="10.3.2" id="phases-of-clinical-trials"><span class="header-section-number">10.3.2</span> Phases of Clinical
+Trials</h3>
+<ol type="1">
+<li><strong>Phase I</strong>: Safety, dosage, pharmacokinetics (small
+number of healthy volunteers)</li>
+<li><strong>Phase II</strong>: Efficacy and side effects (small number
+of patients)</li>
+<li><strong>Phase III</strong>: Large-scale evaluation of efficacy and
+safety (hundreds to thousands of patients)</li>
+<li><strong>Phase IV</strong>: Post-marketing surveillance (ongoing
+monitoring after approval)</li>
+</ol>
+<h3 data-number="10.3.3" id="types-of-clinical-trials"><span class="header-section-number">10.3.3</span> Types of Clinical
+Trials</h3>
+<h4 data-number="10.3.3.1" id="randomized-controlled-trials-rcts"><span class="header-section-number">10.3.3.1</span> 1. Randomized Controlled
+Trials (RCTs)</h4>
+<ul>
+<li><strong>Definition</strong>: Participants randomly assigned to
+intervention or control groups</li>
+<li><strong>Gold standard</strong> for clinical research</li>
+</ul>
+<p><strong>Components:</strong> - <strong>Randomization</strong>:
+Ensures groups are comparable - <strong>Control group</strong>: Receives
+placebo or standard treatment - <strong>Blinding</strong>: Single-blind,
+double-blind, triple-blind - <strong>Intention-to-treat
+analysis</strong>: Analyzes participants as originally assigned</p>
+<p><strong>Advantages:</strong> - Minimizes confounding - Establishes
+temporality - Can measure multiple outcomes - High internal validity</p>
+<p><strong>Limitations:</strong> - Expensive and time-consuming -
+Ethical constraints - May not be generalizable - Loss to follow-up</p>
+<p><strong>Example</strong>: RCT comparing new drug vs. placebo for
+hypertension</p>
+<h4 data-number="10.3.3.2" id="non-randomized-controlled-trials"><span class="header-section-number">10.3.3.2</span> 2. Non-Randomized
+Controlled Trials</h4>
+<ul>
+<li><strong>Definition</strong>: Participants assigned to groups without
+randomization</li>
+<li><strong>Methods</strong>: Alternate allocation, physician
+preference, etc.</li>
+</ul>
+<p><strong>Advantages:</strong> - Easier to implement - Less
+expensive</p>
+<p><strong>Limitations:</strong> - Potential for selection bias - Groups
+may not be comparable</p>
+<h4 data-number="10.3.3.3" id="crossover-trials"><span class="header-section-number">10.3.3.3</span> 3. Crossover Trials</h4>
+<ul>
+<li><strong>Definition</strong>: Each participant receives both
+intervention and control in sequence</li>
+<li><strong>Design</strong>: A-B vs. B-A or A-B vs. A-C</li>
+</ul>
+<p><strong>Advantages:</strong> - Each participant serves as own control
+- Requires fewer participants - Controls for individual differences</p>
+<p><strong>Limitations:</strong> - Carryover effects - Not suitable for
+irreversible outcomes - Dropout between periods</p>
+<p><strong>Example</strong>: Trial comparing two pain medications where
+each patient tries both</p>
+<h4 data-number="10.3.3.4" id="cluster-randomized-trials"><span class="header-section-number">10.3.3.4</span> 4. Cluster Randomized
+Trials</h4>
+<ul>
+<li><strong>Definition</strong>: Groups (clusters) rather than
+individuals are randomized</li>
+<li><strong>Examples</strong>: Schools, clinics, communities</li>
+</ul>
+<p><strong>Advantages:</strong> - Practical for community interventions
+- Reduces contamination between groups - Cost-effective</p>
+<p><strong>Limitations:</strong> - Requires larger sample size -
+Potential for cluster-level confounding</p>
+<h3 data-number="10.3.4" id="field-trials-and-community-trials"><span class="header-section-number">10.3.4</span> Field Trials and Community
+Trials</h3>
+<h4 data-number="10.3.4.1" id="field-trials"><span class="header-section-number">10.3.4.1</span> Field Trials</h4>
+<ul>
+<li><strong>Definition</strong>: Experimental studies conducted in field
+settings</li>
+<li><strong>Examples</strong>: Vaccine trials in developing
+countries</li>
+<li><strong>Similar to RCTs but in natural settings</strong></li>
+</ul>
+<h4 data-number="10.3.4.2" id="community-trials"><span class="header-section-number">10.3.4.2</span> Community Trials</h4>
+<ul>
+<li><strong>Definition</strong>: Interventions applied to entire
+communities</li>
+<li><strong>Examples</strong>: Water fluoridation, community health
+programs</li>
+<li><strong>Unit of randomization</strong>: Communities or groups</li>
+</ul>
+<p><strong>Advantages:</strong> - High external validity - Can study
+population-level effects - Ethical for public health interventions</p>
+<p><strong>Limitations:</strong> - Difficult to control confounding -
+Hawthorne effect - Contamination between groups</p>
+<h2 data-number="10.4" id="key-principles-of-experimental-design"><span class="header-section-number">10.4</span> Key Principles of Experimental
+Design</h2>
+<h3 data-number="10.4.1" id="randomization"><span class="header-section-number">10.4.1</span> 1. Randomization</h3>
+<ul>
+<li><strong>Purpose</strong>: Creates comparable groups</li>
+<li><strong>Methods</strong>:
+<ul>
+<li>Simple randomization</li>
+<li>Block randomization (stratified)</li>
+<li>Cluster randomization</li>
+<li>Minimization</li>
+</ul></li>
+</ul>
+<p><strong>Importance:</strong> - Balances both known and unknown
+confounders - Allows for statistical inference - Reduces selection
+bias</p>
+<h3 data-number="10.4.2" id="blindingmasking"><span class="header-section-number">10.4.2</span> 2. Blinding/Masking</h3>
+<ul>
+<li><strong>Single-blind</strong>: Participant unaware of
+assignment</li>
+<li><strong>Double-blind</strong>: Participant and investigator
+unaware</li>
+<li><strong>Triple-blind</strong>: Participant, investigator, and
+analyst unaware</li>
+</ul>
+<p><strong>Purpose:</strong> - Reduces performance bias - Reduces
+detection bias - Improves validity</p>
+<h3 data-number="10.4.3" id="control-groups"><span class="header-section-number">10.4.3</span> 3. Control Groups</h3>
+<ul>
+<li><strong>Placebo control</strong>: Inert substance</li>
+<li><strong>Active control</strong>: Standard treatment</li>
+<li><strong>No treatment control</strong>: Ethical only when no standard
+exists</li>
+<li><strong>Historical control</strong>: Uses past data (not
+recommended)</li>
+</ul>
+<h3 data-number="10.4.4" id="sample-size-and-power"><span class="header-section-number">10.4.4</span> 4. Sample Size and
+Power</h3>
+<ul>
+<li><strong>Power</strong>: Probability of detecting true effect</li>
+<li><strong>Factors affecting power</strong>: Sample size, effect size,
+variability, significance level</li>
+<li><strong>Sample size calculation</strong>: Based on desired power and
+effect size</li>
+</ul>
+<h2 data-number="10.5" id="ethical-considerations-1"><span class="header-section-number">10.5</span> Ethical Considerations</h2>
+<h3 data-number="10.5.1" id="key-principles-declaration-of-helsinki"><span class="header-section-number">10.5.1</span> Key Principles (Declaration
+of Helsinki)</h3>
+<ol type="1">
+<li><strong>Respect for persons</strong>: Autonomy and informed
+consent</li>
+<li><strong>Beneficence</strong>: Maximize benefits, minimize harms</li>
+<li><strong>Justice</strong>: Fair distribution of benefits and
+burdens</li>
+</ol>
+<h3 data-number="10.5.2" id="informed-consent"><span class="header-section-number">10.5.2</span> Informed Consent</h3>
+<ul>
+<li><strong>Elements</strong>:
+<ul>
+<li>Disclosure of information</li>
+<li>Comprehension</li>
+<li>Voluntariness</li>
+<li>Competence</li>
+</ul></li>
+</ul>
+<h3 data-number="10.5.3" id="equipoise"><span class="header-section-number">10.5.3</span> Equipoise</h3>
+<ul>
+<li><strong>Clinical equipoise</strong>: Genuine uncertainty about which
+intervention is better</li>
+<li><strong>Community equipoise</strong>: Uncertainty at community
+level</li>
+</ul>
+<h3 data-number="10.5.4" id="special-considerations"><span class="header-section-number">10.5.4</span> Special Considerations</h3>
+<ul>
+<li><strong>Vulnerable populations</strong>: Children, prisoners,
+mentally ill</li>
+<li><strong>Placebo use</strong>: When no proven treatment exists</li>
+<li><strong>Emergency research</strong>: Waiver of consent in
+emergencies</li>
+</ul>
+<h2 data-number="10.6" id="analysis-of-experimental-studies"><span class="header-section-number">10.6</span> Analysis of Experimental
+Studies</h2>
+<h3 data-number="10.6.1" id="intention-to-treat-itt-analysis"><span class="header-section-number">10.6.1</span> Intention-to-Treat (ITT)
+Analysis</h3>
+<ul>
+<li><strong>Definition</strong>: Analyzes participants as originally
+randomized</li>
+<li><strong>Purpose</strong>: Preserves randomization, reduces bias</li>
+<li><strong>Advantages</strong>: More conservative, reflects real-world
+effectiveness</li>
+</ul>
+<h3 data-number="10.6.2" id="per-protocol-analysis"><span class="header-section-number">10.6.2</span> Per-Protocol Analysis</h3>
+<ul>
+<li><strong>Definition</strong>: Analyzes only participants who
+completed treatment as assigned</li>
+<li><strong>Purpose</strong>: Estimates efficacy under ideal
+conditions</li>
+<li><strong>Limitations</strong>: Can introduce bias</li>
+</ul>
+<h3 data-number="10.6.3" id="measures-of-effect"><span class="header-section-number">10.6.3</span> Measures of Effect</h3>
+<ul>
+<li><strong>Risk Difference (RD)</strong>: Risk in intervention - Risk
+in control</li>
+<li><strong>Relative Risk (RR)</strong>: Risk in intervention / Risk in
+control</li>
+<li><strong>Odds Ratio (OR)</strong>: Odds in intervention / Odds in
+control</li>
+<li><strong>Number Needed to Treat (NNT)</strong>: 1 / RD</li>
+</ul>
+<h2 data-number="10.7" id="limitations-and-challenges"><span class="header-section-number">10.7</span> Limitations and
+Challenges</h2>
+<h3 data-number="10.7.1" id="internal-validity-threats"><span class="header-section-number">10.7.1</span> Internal Validity
+Threats</h3>
+<ul>
+<li><strong>Attrition bias</strong>: Differential loss to follow-up</li>
+<li><strong>Non-compliance</strong>: Participants not following
+protocol</li>
+<li><strong>Contamination</strong>: Control group receives
+intervention</li>
+<li><strong>Co-intervention</strong>: Additional treatments affect
+outcome</li>
+</ul>
+<h3 data-number="10.7.2" id="external-validity"><span class="header-section-number">10.7.2</span> External Validity</h3>
+<ul>
+<li><strong>Generalizability</strong>: Can results apply to other
+populations?</li>
+<li><strong>Factors affecting</strong>: Study population, setting,
+intervention delivery</li>
+</ul>
+<h3 data-number="10.7.3" id="practical-challenges"><span class="header-section-number">10.7.3</span> Practical Challenges</h3>
+<ul>
+<li><strong>Cost and time</strong>: RCTs are expensive and slow</li>
+<li><strong>Feasibility</strong>: Not all questions can be studied
+experimentally</li>
+<li><strong>Ethical constraints</strong>: Cannot study harmful
+exposures</li>
+</ul>
+<h2 data-number="10.8" id="summary-8"><span class="header-section-number">10.8</span> Summary</h2>
+<p>Experimental studies provide the strongest evidence for causality due
+to randomization and control. However, they are not always feasible or
+ethical. Understanding experimental designs is crucial for both
+conducting clinical research and critically appraising the medical
+literature. # Module 4: Bias in Epidemiological Research</p>
+<h2 data-number="10.9" id="learning-objectives-9"><span class="header-section-number">10.9</span> Learning Objectives</h2>
+<ul>
+<li>Define different types of bias in epidemiological studies</li>
+<li>Understand how bias affects study validity</li>
+<li>Identify sources of bias in different study designs</li>
+<li>Learn methods to minimize bias in study design and conduct</li>
+</ul>
+<h2 data-number="10.10" id="what-is-bias"><span class="header-section-number">10.10</span> What is Bias?</h2>
+<p><strong>Bias</strong> is systematic error that leads to incorrect
+estimates of association between exposure and outcome.</p>
+<p><strong>Key characteristics:</strong> - Systematic (not random) -
+Leads to incorrect conclusions - Can inflate or deflate associations -
+Threatens validity</p>
+<p><strong>Types of validity:</strong> - <strong>Internal
+validity</strong>: Study measures what it intends to measure -
+<strong>External validity</strong>: Results can be generalized to other
+populations</p>
+<h2 data-number="10.11" id="classification-of-bias"><span class="header-section-number">10.11</span> Classification of Bias</h2>
+<h3 data-number="10.11.1" id="selection-bias"><span class="header-section-number">10.11.1</span> 1. Selection Bias</h3>
+<p>Selection bias occurs when the relationship between exposure and
+outcome differs between selected study participants and the target
+population.</p>
+<h4 data-number="10.11.1.1" id="types-of-selection-bias"><span class="header-section-number">10.11.1.1</span> Types of Selection
+Bias</h4>
+<p><strong>A. Sampling Bias</strong> - <strong>Definition</strong>:
+Sample not representative of target population -
+<strong>Examples</strong>: - Hospital-based controls not representative
+of population - Volunteer bias in cohort studies - Non-response bias in
+surveys</p>
+<p><strong>B. Berkson’s Bias (Admission Rate Bias)</strong> -
+<strong>Definition</strong>: Hospital controls may not represent the
+general population - <strong>Reason</strong>: Hospitalized people have
+higher disease rates - <strong>Example</strong>: Studying risk factors
+for disease X using hospitalized controls</p>
+<p><strong>C. Healthy Worker Effect</strong> -
+<strong>Definition</strong>: Working populations appear healthier than
+general population - <strong>Reason</strong>: Unhealthy people less
+likely to be employed - <strong>Example</strong>: Occupational studies
+showing lower mortality in workers</p>
+<p><strong>D. Self-Selection Bias</strong> -
+<strong>Definition</strong>: Participants choose their own exposure -
+<strong>Example</strong>: Exercise intervention where motivated people
+enroll</p>
+<p><strong>E. Loss to Follow-up Bias</strong> -
+<strong>Definition</strong>: Differential loss to follow-up between
+groups - <strong>Example</strong>: In cohort studies, exposed
+participants drop out more than unexposed</p>
+<h4 data-number="10.11.1.2" id="prevention-of-selection-bias"><span class="header-section-number">10.11.1.2</span> Prevention of Selection
+Bias</h4>
+<ul>
+<li>Random sampling from defined population</li>
+<li>Matching cases and controls on important variables</li>
+<li>High follow-up rates</li>
+<li>Intention-to-treat analysis in RCTs</li>
+</ul>
+<h3 data-number="10.11.2" id="information-bias-measurement-bias"><span class="header-section-number">10.11.2</span> 2. Information Bias
+(Measurement Bias)</h3>
+<p>Information bias occurs when information about exposure or outcome is
+collected or interpreted differently between comparison groups.</p>
+<h4 data-number="10.11.2.1" id="types-of-information-bias"><span class="header-section-number">10.11.2.1</span> Types of Information
+Bias</h4>
+<p><strong>A. Recall Bias</strong> - <strong>Definition</strong>:
+Differential recall of past exposures - <strong>Common in</strong>:
+Case-control studies - <strong>Example</strong>: Cancer patients recall
+exposures better than controls - <strong>Prevention</strong>: Use
+objective measures, blinded interviewers</p>
+<p><strong>B. Observer Bias (Detection Bias)</strong> -
+<strong>Definition</strong>: Outcome assessment differs between groups -
+<strong>Example</strong>: Knowing exposure status affects diagnosis -
+<strong>Prevention</strong>: Blinding, standardized criteria</p>
+<p><strong>C. Interviewer Bias</strong> - <strong>Definition</strong>:
+Interviewer knowledge affects questioning - <strong>Prevention</strong>:
+Training, blinding, standardized questionnaires</p>
+<p><strong>D. Misclassification Bias</strong> -
+<strong>Definition</strong>: Incorrect classification of exposure or
+outcome - <strong>Types</strong>: - <strong>Non-differential</strong>:
+Equal misclassification in both groups (biases toward null) -
+<strong>Differential</strong>: Unequal misclassification between groups
+(can bias in either direction)</p>
+<p><strong>Examples of Misclassification:</strong> - Exposure
+misclassification: Self-reported smoking vs. cotinine levels - Outcome
+misclassification: Different diagnostic criteria used</p>
+<p><strong>E. Confounding by Indication</strong> -
+<strong>Definition</strong>: Treatment indication mistaken for treatment
+effect - <strong>Example</strong>: Sicker patients get treatment, appear
+to have worse outcomes</p>
+<h4 data-number="10.11.2.2" id="prevention-of-information-bias"><span class="header-section-number">10.11.2.2</span> Prevention of Information
+Bias</h4>
+<ul>
+<li>Standardized data collection</li>
+<li>Blinding</li>
+<li>Objective measurements</li>
+<li>Validation studies</li>
+<li>Training of observers</li>
+</ul>
+<h3 data-number="10.11.3" id="confounding-bias"><span class="header-section-number">10.11.3</span> 3. Confounding Bias</h3>
+<p><strong>Definition</strong>: Mixing of the effect of exposure with
+the effect of another variable (confounder)</p>
+<p><strong>Characteristics of a Confounder:</strong> 1. Associated with
+exposure 2. Independently associated with outcome 3. Not in causal
+pathway between exposure and outcome</p>
+<p><strong>Example</strong>: Age as confounder in smoking-lung cancer
+association - Older people more likely to smoke (associated with
+exposure) - Older people more likely to develop lung cancer (associated
+with outcome) - Age is not caused by smoking</p>
+<p><strong>Note</strong>: Confounding is discussed in detail in Module
+5</p>
+<h2 data-number="10.12" id="bias-in-different-study-designs"><span class="header-section-number">10.12</span> Bias in Different Study
+Designs</h2>
+<h3 data-number="10.12.1" id="cohort-studies-1"><span class="header-section-number">10.12.1</span> Cohort Studies</h3>
+<p><strong>Common biases:</strong> - Selection bias: Healthy worker
+effect, self-selection - Information bias: Differential loss to
+follow-up, recall bias (retrospective) - Confounding: Important
+issue</p>
+<h3 data-number="10.12.2" id="case-control-studies-1"><span class="header-section-number">10.12.2</span> Case-Control Studies</h3>
+<p><strong>Common biases:</strong> - Selection bias: Berkson’s bias,
+inappropriate controls - Information bias: Recall bias, interviewer bias
+- Confounding: Important issue</p>
+<h3 data-number="10.12.3" id="cross-sectional-studies-1"><span class="header-section-number">10.12.3</span> Cross-Sectional
+Studies</h3>
+<p><strong>Common biases:</strong> - Selection bias: Non-response -
+Information bias: Simultaneous measurement issues - Prevalence-incidence
+bias</p>
+<h3 data-number="10.12.4" id="experimental-studies"><span class="header-section-number">10.12.4</span> Experimental Studies</h3>
+<p><strong>Common biases:</strong> - Selection bias: Non-random
+assignment - Information bias: Lack of blinding - Performance bias:
+Different care between groups</p>
+<h2 data-number="10.13" id="quantifying-the-impact-of-bias"><span class="header-section-number">10.13</span> Quantifying the Impact of
+Bias</h2>
+<h3 data-number="10.13.1" id="direction-of-bias"><span class="header-section-number">10.13.1</span> Direction of Bias</h3>
+<ul>
+<li><strong>Bias toward null</strong>: Association underestimated
+(non-differential misclassification)</li>
+<li><strong>Bias away from null</strong>: Association overestimated</li>
+</ul>
+<h3 data-number="10.13.2" id="magnitude-of-bias"><span class="header-section-number">10.13.2</span> Magnitude of Bias</h3>
+<p>Depends on: - Prevalence of bias - Strength of association between
+bias factor and outcome - Difference in bias between groups</p>
+<h2 data-number="10.14" id="methods-to-minimize-bias"><span class="header-section-number">10.14</span> Methods to Minimize Bias</h2>
+<h3 data-number="10.14.1" id="study-design-level"><span class="header-section-number">10.14.1</span> Study Design Level</h3>
+<ol type="1">
+<li><strong>Randomization</strong>: Balances known and unknown
+confounders</li>
+<li><strong>Matching</strong>: Ensures comparability on key
+variables</li>
+<li><strong>Blinding</strong>: Prevents observer and performance
+bias</li>
+<li><strong>Prospective design</strong>: Reduces recall bias</li>
+</ol>
+<h3 data-number="10.14.2" id="data-collection-level"><span class="header-section-number">10.14.2</span> Data Collection Level</h3>
+<ol type="1">
+<li><strong>Standardized protocols</strong>: Consistent data
+collection</li>
+<li><strong>Training</strong>: Ensures quality and consistency</li>
+<li><strong>Quality control</strong>: Monitoring and validation</li>
+<li><strong>Objective measures</strong>: When possible, use biological
+markers</li>
+</ol>
+<h3 data-number="10.14.3" id="analysis-level"><span class="header-section-number">10.14.3</span> Analysis Level</h3>
+<ol type="1">
+<li><strong>Restriction</strong>: Limit analysis to homogeneous
+subgroups</li>
+<li><strong>Matching</strong>: In analysis (frequency matching,
+individual matching)</li>
+<li><strong>Stratification</strong>: Examine effect in strata of
+confounder</li>
+<li><strong>Statistical adjustment</strong>: Regression models,
+standardization</li>
+</ol>
+<h2 data-number="10.15" id="assessing-bias-in-published-studies"><span class="header-section-number">10.15</span> Assessing Bias in Published
+Studies</h2>
+<h3 data-number="10.15.1" id="critical-appraisal-questions"><span class="header-section-number">10.15.1</span> Critical Appraisal
+Questions</h3>
+<ol type="1">
+<li><strong>Selection bias</strong>: Was selection systematic?
+Representative sample?</li>
+<li><strong>Information bias</strong>: Were measurements objective?
+Blinded assessment?</li>
+<li><strong>Confounding</strong>: Were important confounders measured
+and controlled?</li>
+<li><strong>Other biases</strong>: Reporting bias, publication
+bias?</li>
+</ol>
+<h3 data-number="10.15.2" id="sensitivity-analysis"><span class="header-section-number">10.15.2</span> Sensitivity Analysis</h3>
+<ul>
+<li><strong>Definition</strong>: Test how robust results are to
+different assumptions about bias</li>
+<li><strong>Methods</strong>: Vary assumptions about misclassification
+rates</li>
+<li><strong>Purpose</strong>: Assess potential impact of bias on
+conclusions</li>
+</ul>
+<h2 data-number="10.16" id="common-sources-of-bias-in-epidemiological-research"><span class="header-section-number">10.16</span> Common Sources of Bias in
+Epidemiological Research</h2>
+<h3 data-number="10.16.1" id="publication-bias"><span class="header-section-number">10.16.1</span> Publication Bias</h3>
+<ul>
+<li><strong>Definition</strong>: Studies with significant results more
+likely to be published</li>
+<li><strong>Impact</strong>: Overestimation of effects</li>
+<li><strong>Prevention</strong>: Register trials, publish protocols,
+include all results</li>
+</ul>
+<h3 data-number="10.16.2" id="reporting-bias"><span class="header-section-number">10.16.2</span> Reporting Bias</h3>
+<ul>
+<li><strong>Definition</strong>: Selective reporting of outcomes or
+analyses</li>
+<li><strong>Prevention</strong>: Publish protocols, report all
+outcomes</li>
+</ul>
+<h3 data-number="10.16.3" id="time-related-biases"><span class="header-section-number">10.16.3</span> Time-Related Biases</h3>
+<ul>
+<li><strong>Immortal time bias</strong>: Follow-up time
+misclassified</li>
+<li><strong>Lead time bias</strong>: Earlier diagnosis appears to
+prolong survival</li>
+<li><strong>Length bias</strong>: Slow-growing tumors more likely
+detected by screening</li>
+</ul>
+<h2 data-number="10.17" id="summary-9"><span class="header-section-number">10.17</span> Summary</h2>
+<p>Bias is a major threat to the validity of epidemiological studies.
+Understanding different types of bias and their sources is essential for
+both designing studies and critically appraising research. While some
+bias can be prevented through good study design, other biases must be
+controlled through analysis or acknowledged as limitations. # Module 5:
+Confounding and Interaction</p>
+<h2 data-number="10.18" id="learning-objectives-10"><span class="header-section-number">10.18</span> Learning Objectives</h2>
+<ul>
+<li>Define confounding and understand its impact on study results</li>
+<li>Identify confounders in epidemiological studies</li>
+<li>Learn methods to control for confounding</li>
+<li>Understand effect modification (interaction)</li>
+<li>Distinguish between confounding and interaction</li>
+</ul>
+<h2 data-number="10.19" id="confounding"><span class="header-section-number">10.19</span> Confounding</h2>
+<h3 data-number="10.19.1" id="definition-3"><span class="header-section-number">10.19.1</span> Definition</h3>
+<p><strong>Confounding</strong> is a mixing of effects where the
+apparent association between exposure and outcome is distorted by the
+effect of a third variable (confounder).</p>
+<h3 data-number="10.19.2" id="characteristics-of-a-confounder"><span class="header-section-number">10.19.2</span> Characteristics of a
+Confounder</h3>
+<p>A variable is a confounder if it meets ALL THREE criteria:</p>
+<ol type="1">
+<li><strong>Associated with exposure</strong>: Confounder must be
+related to the exposure of interest</li>
+<li><strong>Independently associated with outcome</strong>: Confounder
+must affect the outcome</li>
+<li><strong>Not in the causal pathway</strong>: Confounder should not be
+an intermediate variable</li>
+</ol>
+<h3 data-number="10.19.3" id="example-smoking-and-lung-cancer"><span class="header-section-number">10.19.3</span> Example: Smoking and Lung
+Cancer</h3>
+<pre><code>Age $\rightarrow$ Smoking $\rightarrow$ Lung Cancer
+     $\uparrow$
+     $\downarrow$ Confounder: Age is associated with both smoking and lung cancer</code></pre>
+<ul>
+<li>Older people are more likely to smoke (age associated with
+exposure)</li>
+<li>Older people are more likely to develop lung cancer (age associated
+with outcome)</li>
+<li>Age is not caused by smoking (not in causal pathway)</li>
+</ul>
+<p><strong>Crude association</strong>: Smoking appears strongly
+associated with lung cancer <strong>After controlling for age</strong>:
+The association is weaker but still present</p>
+<h2 data-number="10.20" id="types-of-confounding"><span class="header-section-number">10.20</span> Types of Confounding</h2>
+<h3 data-number="10.20.1" id="positive-confounding"><span class="header-section-number">10.20.1</span> 1. Positive
+Confounding</h3>
+<ul>
+<li>Confounder increases the apparent association</li>
+<li>Example: Age in smoking-lung cancer association</li>
+</ul>
+<h3 data-number="10.20.2" id="negative-confounding"><span class="header-section-number">10.20.2</span> 2. Negative
+Confounding</h3>
+<ul>
+<li>Confounder decreases the apparent association</li>
+<li>Example: Socioeconomic status in some associations</li>
+</ul>
+<h3 data-number="10.20.3" id="quantifying-confounding"><span class="header-section-number">10.20.3</span> 3. Quantifying
+Confounding</h3>
+<ul>
+<li><strong>Confounding bias</strong>: Difference between crude and
+adjusted estimates</li>
+<li><strong>Percent change</strong>: [(Crude RR - Adjusted RR) / Crude
+RR] × 100</li>
+</ul>
+<h2 data-number="10.21" id="methods-to-control-confounding"><span class="header-section-number">10.21</span> Methods to Control
+Confounding</h2>
+<h3 data-number="10.21.1" id="study-design-level-1"><span class="header-section-number">10.21.1</span> 1. Study Design Level</h3>
+<h4 data-number="10.21.1.1" id="a.-randomization"><span class="header-section-number">10.21.1.1</span> A. Randomization</h4>
+<ul>
+<li><strong>How it works</strong>: Balances confounders across
+groups</li>
+<li><strong>Best method</strong>: In experimental studies</li>
+<li><strong>Limitations</strong>: Not always possible (observational
+studies)</li>
+</ul>
+<h4 data-number="10.21.1.2" id="b.-restriction"><span class="header-section-number">10.21.1.2</span> B. Restriction</h4>
+<ul>
+<li><strong>Definition</strong>: Limit study to participants with
+similar levels of confounder</li>
+<li><strong>Example</strong>: Study only adults aged 40-60 to control
+for age</li>
+<li><strong>Advantages</strong>: Simple, effective</li>
+<li><strong>Limitations</strong>: Reduces generalizability, may not
+control multiple confounders</li>
+</ul>
+<h4 data-number="10.21.1.3" id="c.-matching"><span class="header-section-number">10.21.1.3</span> C. Matching</h4>
+<ul>
+<li><strong>Definition</strong>: Select controls similar to cases on
+confounding variables</li>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Individual matching</strong>: Each case matched to specific
+control(s)</li>
+<li><strong>Frequency matching</strong>: Controls selected to match case
+distribution</li>
+</ul></li>
+<li><strong>Example</strong>: Match cases and controls by age and
+sex</li>
+<li><strong>Advantages</strong>: Ensures balance on matched
+variables</li>
+<li><strong>Limitations</strong>: Can only match on known confounders,
+matching on too many variables difficult</li>
+</ul>
+<h3 data-number="10.21.2" id="analysis-level-1"><span class="header-section-number">10.21.2</span> 2. Analysis Level</h3>
+<h4 data-number="10.21.2.1" id="a.-stratification"><span class="header-section-number">10.21.2.1</span> A. Stratification</h4>
+<ul>
+<li><strong>Definition</strong>: Analyze data separately within strata
+of the confounder</li>
+<li><strong>Example</strong>: Calculate association separately for
+different age groups</li>
+<li><strong>Mantel-Haenszel method</strong>: Combines stratum-specific
+estimates</li>
+<li><strong>Advantages</strong>: Simple, shows effect modification</li>
+<li><strong>Limitations</strong>: Limited to few confounders</li>
+</ul>
+<h4 data-number="10.21.2.2" id="b.-statistical-adjustment"><span class="header-section-number">10.21.2.2</span> B. Statistical
+Adjustment</h4>
+<ul>
+<li><strong>Multivariable regression</strong>: Controls for multiple
+confounders simultaneously</li>
+<li><strong>Types</strong>:
+<ul>
+<li>Linear regression (continuous outcomes)</li>
+<li>Logistic regression (binary outcomes)</li>
+<li>Cox regression (time-to-event outcomes)</li>
+</ul></li>
+<li><strong>Advantages</strong>: Can control many confounders, handles
+continuous variables</li>
+<li><strong>Limitations</strong>: Requires assumptions, can
+over-adjust</li>
+</ul>
+<h4 data-number="10.21.2.3" id="c.-standardization"><span class="header-section-number">10.21.2.3</span> C. Standardization</h4>
+<ul>
+<li><strong>Direct standardization</strong>: Apply study rates to
+standard population</li>
+<li><strong>Indirect standardization</strong>: Compare observed
+vs. expected rates</li>
+<li><strong>Purpose</strong>: Compare rates across populations with
+different age structures</li>
+</ul>
+<h2 data-number="10.22" id="effect-modification-interaction"><span class="header-section-number">10.22</span> Effect Modification
+(Interaction)</h2>
+<h3 data-number="10.22.1" id="definition-4"><span class="header-section-number">10.22.1</span> Definition</h3>
+<p><strong>Effect modification</strong> occurs when the association
+between exposure and outcome differs across levels of a third
+variable.</p>
+<h3 data-number="10.22.2" id="key-differences-from-confounding"><span class="header-section-number">10.22.2</span> Key Differences from
+Confounding</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 32%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Confounding</th>
+<th>Effect Modification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Effect on association</strong></td>
+<td>Distorts the association</td>
+<td>Changes the association</td>
+</tr>
+<tr>
+<td><strong>Control method</strong></td>
+<td>Should be controlled</td>
+<td>Should NOT be controlled</td>
+</tr>
+<tr>
+<td><strong>Interpretation</strong></td>
+<td>Single effect estimate</td>
+<td>Separate estimates for subgroups</td>
+</tr>
+<tr>
+<td><strong>Terminology</strong></td>
+<td>Confounder</td>
+<td>Effect modifier</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="10.22.3" id="example-exercise-and-heart-disease"><span class="header-section-number">10.22.3</span> Example: Exercise and Heart
+Disease</h3>
+<pre><code>Exercise $\rightarrow$ Heart Disease
+$\uparrow$
+Sex (Effect Modifier)</code></pre>
+<ul>
+<li>In men: Exercise reduces heart disease risk by 30%</li>
+<li>In women: Exercise reduces heart disease risk by 50%</li>
+<li>Overall: Exercise reduces heart disease risk by 40%</li>
+</ul>
+<h3 data-number="10.22.4" id="types-of-interaction"><span class="header-section-number">10.22.4</span> Types of Interaction</h3>
+<h4 data-number="10.22.4.1" id="quantitative-interaction"><span class="header-section-number">10.22.4.1</span> 1. Quantitative
+Interaction</h4>
+<ul>
+<li><strong>Definition</strong>: Direction of association same, but
+magnitude differs</li>
+<li><strong>Example</strong>: Drug effect stronger in younger
+patients</li>
+</ul>
+<h4 data-number="10.22.4.2" id="qualitative-interaction"><span class="header-section-number">10.22.4.2</span> 2. Qualitative
+Interaction</h4>
+<ul>
+<li><strong>Definition</strong>: Direction of association differs
+between subgroups</li>
+<li><strong>Example</strong>: Treatment beneficial in men but harmful in
+women</li>
+</ul>
+<h3 data-number="10.22.5" id="testing-for-interaction"><span class="header-section-number">10.22.5</span> Testing for
+Interaction</h3>
+<h4 data-number="10.22.5.1" id="stratified-analysis"><span class="header-section-number">10.22.5.1</span> 1. Stratified
+Analysis</h4>
+<ul>
+<li>Calculate effect estimates in each stratum</li>
+<li>Compare estimates across strata</li>
+<li>Look for statistical significance of interaction term</li>
+</ul>
+<h4 data-number="10.22.5.2" id="statistical-tests"><span class="header-section-number">10.22.5.2</span> 2. Statistical Tests</h4>
+<ul>
+<li><strong>Interaction term</strong> in regression models</li>
+<li><strong>Likelihood ratio test</strong>: Compare models with/without
+interaction</li>
+<li><strong>Wald test</strong>: Test significance of interaction
+coefficient</li>
+</ul>
+<h4 data-number="10.22.5.3" id="graphical-methods"><span class="header-section-number">10.22.5.3</span> 3. Graphical Methods</h4>
+<ul>
+<li><strong>Effect plots</strong>: Show how association changes across
+levels of modifier</li>
+<li><strong>Interaction plots</strong>: Lines that cross or diverge
+indicate interaction</li>
+</ul>
+<h2 data-number="10.23" id="confounding-vs.-interaction-decision-framework"><span class="header-section-number">10.23</span> Confounding vs. Interaction:
+Decision Framework</h2>
+<h3 data-number="10.23.1" id="is-the-third-variable-a-confounder-or-effect-modifier"><span class="header-section-number">10.23.1</span> Is the third variable a
+confounder or effect modifier?</h3>
+<ol type="1">
+<li><strong>Biological plausibility</strong>: Does it make sense that
+the variable modifies the effect?</li>
+<li><strong>Consistency</strong>: Is the pattern seen in other
+studies?</li>
+<li><strong>Statistical evidence</strong>: Is there significant
+interaction?</li>
+<li><strong>Clinical importance</strong>: Does it change clinical
+decisions?</li>
+</ol>
+<h3 data-number="10.23.2" id="example-age-in-a-drug-study"><span class="header-section-number">10.23.2</span> Example: Age in a Drug
+Study</h3>
+<ul>
+<li><strong>Confounding</strong>: Age associated with both drug use and
+outcome</li>
+<li><strong>Effect modification</strong>: Drug works differently in
+young vs. old patients</li>
+</ul>
+<h2 data-number="10.24" id="advanced-topics"><span class="header-section-number">10.24</span> Advanced Topics</h2>
+<h3 data-number="10.24.1" id="confounding-by-indication"><span class="header-section-number">10.24.1</span> 1. Confounding by
+Indication</h3>
+<ul>
+<li><strong>Definition</strong>: Treatment appears harmful because
+sicker patients receive it</li>
+<li><strong>Example</strong>: Drug appears to cause worse outcomes
+because given to severe cases</li>
+<li><strong>Control</strong>: Instrumental variable analysis, propensity
+scores</li>
+</ul>
+<h3 data-number="10.24.2" id="residual-confounding"><span class="header-section-number">10.24.2</span> 2. Residual
+Confounding</h3>
+<ul>
+<li><strong>Definition</strong>: Confounding not fully controlled due to
+measurement error</li>
+<li><strong>Example</strong>: Age categorized as 20-40, 41-60, but true
+effect varies within categories</li>
+<li><strong>Prevention</strong>: Better measurement, more
+categories</li>
+</ul>
+<h3 data-number="10.24.3" id="over-adjustment"><span class="header-section-number">10.24.3</span> 3. Over-adjustment</h3>
+<ul>
+<li><strong>Definition</strong>: Controlling for variables in the causal
+pathway</li>
+<li><strong>Example</strong>: Controlling for intermediate variables
+weakens true associations</li>
+<li><strong>Prevention</strong>: Careful consideration of causal
+diagrams</li>
+</ul>
+<h3 data-number="10.24.4" id="collider-bias"><span class="header-section-number">10.24.4</span> 4. Collider Bias</h3>
+<ul>
+<li><strong>Definition</strong>: Conditioning on a collider creates
+spurious associations</li>
+<li><strong>Example</strong>: Studying factors associated with hospital
+admission creates associations between unrelated conditions</li>
+</ul>
+<h2 data-number="10.25" id="practical-applications"><span class="header-section-number">10.25</span> Practical Applications</h2>
+<h3 data-number="10.25.1" id="causal-diagrams-dags"><span class="header-section-number">10.25.1</span> 1. Causal Diagrams
+(DAGs)</h3>
+<ul>
+<li><strong>Directed Acyclic Graphs</strong>: Visual representation of
+causal relationships</li>
+<li><strong>Purpose</strong>: Identify confounders, mediators,
+colliders</li>
+<li><strong>Use</strong>: Guide analysis and control strategies</li>
+</ul>
+<h3 data-number="10.25.2" id="propensity-scores"><span class="header-section-number">10.25.2</span> 2. Propensity Scores</h3>
+<ul>
+<li><strong>Definition</strong>: Probability of exposure given
+covariates</li>
+<li><strong>Methods</strong>: Logistic regression to estimate
+propensity</li>
+<li><strong>Uses</strong>: Matching, stratification, weighting</li>
+<li><strong>Advantages</strong>: Control many confounders
+simultaneously</li>
+</ul>
+<h3 data-number="10.25.3" id="instrumental-variable-analysis"><span class="header-section-number">10.25.3</span> 3. Instrumental Variable
+Analysis</h3>
+<ul>
+<li><strong>Definition</strong>: Use instrumental variables to estimate
+causal effects</li>
+<li><strong>Requirements</strong>: Instrument associated with exposure,
+affects outcome only through exposure</li>
+<li><strong>Example</strong>: Physician preference as instrument for
+treatment choice</li>
+</ul>
+<h2 data-number="10.26" id="summary-10"><span class="header-section-number">10.26</span> Summary</h2>
+<p>Confounding and interaction are critical concepts in epidemiology.
+Confounding distorts associations and must be controlled, while effect
+modification reveals important heterogeneity in effects that should be
+explored. Understanding these concepts is essential for valid
+epidemiological research and appropriate interpretation of study
+results. # Module 6: Methods to Control Bias, Confounding, and Improve
+Precision/Validity</p>
+<h2 data-number="10.27" id="learning-objectives-11"><span class="header-section-number">10.27</span> Learning Objectives</h2>
+<ul>
+<li>Understand comprehensive strategies to control bias and
+confounding</li>
+<li>Learn methods to improve precision and validity</li>
+<li>Apply appropriate control methods for different study designs</li>
+<li>Evaluate the effectiveness of control strategies</li>
+</ul>
+<h2 data-number="10.28" id="comprehensive-framework-for-controlling-threats-to-validity"><span class="header-section-number">10.28</span> Comprehensive Framework for
+Controlling Threats to Validity</h2>
+<h3 data-number="10.28.1" id="hierarchy-of-control-strategies"><span class="header-section-number">10.28.1</span> Hierarchy of Control
+Strategies</h3>
+<ol type="1">
+<li><strong>Prevention</strong> (Study Design Level)</li>
+<li><strong>Measurement</strong> (Data Collection Level)</li>
+<li><strong>Analysis</strong> (Statistical Control Level)</li>
+<li><strong>Assessment</strong> (Sensitivity Analysis Level)</li>
+</ol>
+<h2 data-number="10.29" id="prevention-strategies-study-design"><span class="header-section-number">10.29</span> 1. Prevention Strategies
+(Study Design)</h2>
+<h3 data-number="10.29.1" id="a.-randomization-1"><span class="header-section-number">10.29.1</span> A. Randomization</h3>
+<ul>
+<li><strong>Purpose</strong>: Balance both known and unknown
+confounders</li>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Simple randomization</strong>: Equal probability
+assignment</li>
+<li><strong>Stratified randomization</strong>: Balance on key
+variables</li>
+<li><strong>Block randomization</strong>: Ensure balance within
+blocks</li>
+<li><strong>Cluster randomization</strong>: Randomize groups</li>
+</ul></li>
+<li><strong>Advantages</strong>: Controls all confounders, allows
+statistical inference</li>
+<li><strong>Limitations</strong>: Not always feasible, ethical
+constraints</li>
+</ul>
+<h3 data-number="10.29.2" id="b.-matching"><span class="header-section-number">10.29.2</span> B. Matching</h3>
+<ul>
+<li><strong>Purpose</strong>: Ensure comparability on key variables</li>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Individual matching</strong>: Pair cases with similar
+controls</li>
+<li><strong>Frequency matching</strong>: Match distribution of
+variables</li>
+<li><strong>Caliper matching</strong>: Allow small differences</li>
+</ul></li>
+<li><strong>Variables to match</strong>: Age, sex, socioeconomic
+status</li>
+<li><strong>Advantages</strong>: Ensures balance, increases
+efficiency</li>
+<li><strong>Limitations</strong>: Can only match on measured variables,
+reduces sample size</li>
+</ul>
+<h3 data-number="10.29.3" id="c.-restriction"><span class="header-section-number">10.29.3</span> C. Restriction</h3>
+<ul>
+<li><strong>Purpose</strong>: Limit study to homogeneous population</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Age-restricted studies</li>
+<li>Single-sex studies</li>
+<li>Geographic restriction</li>
+</ul></li>
+<li><strong>Advantages</strong>: Simple, effective for known
+confounders</li>
+<li><strong>Limitations</strong>: Reduces generalizability, cannot
+control multiple factors</li>
+</ul>
+<h2 data-number="10.30" id="measurement-strategies-data-collection"><span class="header-section-number">10.30</span> 2. Measurement Strategies
+(Data Collection)</h2>
+<h3 data-number="10.30.1" id="a.-blindingmasking"><span class="header-section-number">10.30.1</span> A. Blinding/Masking</h3>
+<ul>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Single-blind</strong>: Participant unaware</li>
+<li><strong>Double-blind</strong>: Participant and investigator
+unaware</li>
+<li><strong>Triple-blind</strong>: Participant, investigator, and
+analyst unaware</li>
+</ul></li>
+<li><strong>Purpose</strong>: Prevent performance and detection
+bias</li>
+<li><strong>Implementation</strong>: Placebo controls, identical
+packaging</li>
+</ul>
+<h3 data-number="10.30.2" id="b.-standardization"><span class="header-section-number">10.30.2</span> B. Standardization</h3>
+<ul>
+<li><strong>Protocols</strong>: Standardized data collection
+procedures</li>
+<li><strong>Training</strong>: Ensure consistency across observers</li>
+<li><strong>Quality control</strong>: Regular monitoring and
+retraining</li>
+<li><strong>Validation</strong>: Compare against gold standards</li>
+</ul>
+<h3 data-number="10.30.3" id="c.-objective-measurements"><span class="header-section-number">10.30.3</span> C. Objective
+Measurements</h3>
+<ul>
+<li><strong>Biological markers</strong>: Cotinine for smoking, HbA1c for
+diabetes</li>
+<li><strong>Medical records</strong>: Independent of self-report</li>
+<li><strong>Administrative data</strong>: Less prone to recall bias</li>
+<li><strong>Device calibration</strong>: Regular maintenance and
+validation</li>
+</ul>
+<h3 data-number="10.30.4" id="d.-multiple-measures"><span class="header-section-number">10.30.4</span> D. Multiple Measures</h3>
+<ul>
+<li><strong>Triangulation</strong>: Use multiple methods to measure same
+construct</li>
+<li><strong>Reliability testing</strong>: Test-retest, inter-observer
+agreement</li>
+<li><strong>Validity assessment</strong>: Compare against established
+standards</li>
+</ul>
+<h2 data-number="10.31" id="analysis-strategies-statistical-control"><span class="header-section-number">10.31</span> 3. Analysis Strategies
+(Statistical Control)</h2>
+<h3 data-number="10.31.1" id="a.-stratification-1"><span class="header-section-number">10.31.1</span> A. Stratification</h3>
+<ul>
+<li><strong>Purpose</strong>: Examine association within subgroups</li>
+<li><strong>Methods</strong>:
+<ul>
+<li><strong>Crude analysis</strong>: Unadjusted association</li>
+<li><strong>Stratified analysis</strong>: Association within strata</li>
+<li><strong>Mantel-Haenszel</strong>: Summary estimate across
+strata</li>
+</ul></li>
+<li><strong>Advantages</strong>: Simple, reveals effect
+modification</li>
+<li><strong>Limitations</strong>: Limited to categorical variables, few
+confounders</li>
+</ul>
+<h3 data-number="10.31.2" id="b.-regression-models"><span class="header-section-number">10.31.2</span> B. Regression Models</h3>
+<ul>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Linear regression</strong>: Continuous outcomes</li>
+<li><strong>Logistic regression</strong>: Binary outcomes</li>
+<li><strong>Poisson regression</strong>: Count outcomes</li>
+<li><strong>Cox regression</strong>: Time-to-event outcomes</li>
+</ul></li>
+<li><strong>Advantages</strong>: Control multiple confounders
+simultaneously</li>
+<li><strong>Considerations</strong>: Include confounders, avoid
+over-adjustment</li>
+</ul>
+<h3 data-number="10.31.3" id="c.-propensity-score-methods"><span class="header-section-number">10.31.3</span> C. Propensity Score
+Methods</h3>
+<ul>
+<li><strong>Definition</strong>: Probability of exposure given
+covariates</li>
+<li><strong>Methods</strong>:
+<ul>
+<li><strong>Matching</strong>: Match on propensity score</li>
+<li><strong>Stratification</strong>: Stratify by propensity score</li>
+<li><strong>Weighting</strong>: Inverse probability weighting</li>
+<li><strong>Covariate adjustment</strong>: Include propensity score in
+model</li>
+</ul></li>
+<li><strong>Advantages</strong>: Control many confounders, reduce
+dimensionality</li>
+</ul>
+<h3 data-number="10.31.4" id="d.-instrumental-variable-analysis"><span class="header-section-number">10.31.4</span> D. Instrumental Variable
+Analysis</h3>
+<ul>
+<li><strong>Requirements</strong>:
+<ul>
+<li>Instrument associated with exposure</li>
+<li>Instrument affects outcome only through exposure</li>
+<li>Instrument independent of confounders</li>
+</ul></li>
+<li><strong>Examples</strong>: Physician preference, lottery for
+treatment</li>
+<li><strong>Advantages</strong>: Controls unmeasured confounding</li>
+<li><strong>Limitations</strong>: Hard to find valid instruments</li>
+</ul>
+<h2 data-number="10.32" id="assessment-strategies-sensitivity-analysis"><span class="header-section-number">10.32</span> 4. Assessment Strategies
+(Sensitivity Analysis)</h2>
+<h3 data-number="10.32.1" id="a.-sensitivity-analysis"><span class="header-section-number">10.32.1</span> A. Sensitivity
+Analysis</h3>
+<ul>
+<li><strong>Purpose</strong>: Test robustness of conclusions to
+different assumptions</li>
+<li><strong>Types</strong>:
+<ul>
+<li><strong>Bias analysis</strong>: Vary assumptions about bias
+magnitude</li>
+<li><strong>Missing data</strong>: Different imputation methods</li>
+<li><strong>Unmeasured confounding</strong>: Assume strength of
+unmeasured confounder</li>
+</ul></li>
+</ul>
+<h3 data-number="10.32.2" id="b.-subgroup-analysis"><span class="header-section-number">10.32.2</span> B. Subgroup Analysis</h3>
+<ul>
+<li><strong>Purpose</strong>: Examine consistency across subgroups</li>
+<li><strong>Methods</strong>: Test for interaction, stratified
+estimates</li>
+<li><strong>Caution</strong>: Multiple testing, power issues</li>
+</ul>
+<h3 data-number="10.32.3" id="c.-meta-analysis"><span class="header-section-number">10.32.3</span> C. Meta-analysis</h3>
+<ul>
+<li><strong>Purpose</strong>: Combine results across studies</li>
+<li><strong>Methods</strong>: Fixed vs. random effects models</li>
+<li><strong>Assessment</strong>: Heterogeneity, publication bias</li>
+</ul>
+<h2 data-number="10.33" id="improving-precision"><span class="header-section-number">10.33</span> Improving Precision</h2>
+<h3 data-number="10.33.1" id="sample-size-considerations"><span class="header-section-number">10.33.1</span> 1. Sample Size
+Considerations</h3>
+<ul>
+<li><strong>Power calculation</strong>: Probability of detecting true
+effect</li>
+<li><strong>Factors affecting power</strong>:
+<ul>
+<li>Sample size (primary factor)</li>
+<li>Effect size</li>
+<li>Variability</li>
+<li>Significance level</li>
+</ul></li>
+<li><strong>Sample size formulas</strong>: Based on desired power and
+effect size</li>
+</ul>
+<h3 data-number="10.33.2" id="study-design-efficiency"><span class="header-section-number">10.33.2</span> 2. Study Design
+Efficiency</h3>
+<ul>
+<li><strong>Matching</strong>: Increases precision for matched
+variables</li>
+<li><strong>Stratification</strong>: More efficient than regression for
+few variables</li>
+<li><strong>Cluster design</strong>: May reduce precision due to
+intra-cluster correlation</li>
+</ul>
+<h3 data-number="10.33.3" id="measurement-precision"><span class="header-section-number">10.33.3</span> 3. Measurement
+Precision</h3>
+<ul>
+<li><strong>Reliable instruments</strong>: High test-retest
+reliability</li>
+<li><strong>Calibration</strong>: Regular instrument calibration</li>
+<li><strong>Quality assurance</strong>: Ongoing monitoring</li>
+</ul>
+<h3 data-number="10.33.4" id="analytical-precision"><span class="header-section-number">10.33.4</span> 4. Analytical
+Precision</h3>
+<ul>
+<li><strong>Appropriate models</strong>: Correct model
+specification</li>
+<li><strong>Variance estimation</strong>: Proper standard error
+calculation</li>
+<li><strong>Confidence intervals</strong>: Report precision
+measures</li>
+</ul>
+<h2 data-number="10.34" id="improving-validity"><span class="header-section-number">10.34</span> Improving Validity</h2>
+<h3 data-number="10.34.1" id="internal-validity"><span class="header-section-number">10.34.1</span> Internal Validity</h3>
+<ul>
+<li><strong>Control confounding</strong>: Use appropriate methods
+above</li>
+<li><strong>Minimize bias</strong>: Design and measurement
+strategies</li>
+<li><strong>Account for interaction</strong>: Test and report effect
+modification</li>
+</ul>
+<h3 data-number="10.34.2" id="external-validity-generalizability"><span class="header-section-number">10.34.2</span> External Validity
+(Generalizability)</h3>
+<ul>
+<li><strong>Target population</strong>: Clearly define and describe</li>
+<li><strong>Study population</strong>: How representative?</li>
+<li><strong>Setting</strong>: Clinic vs. community vs. hospital</li>
+<li><strong>Time period</strong>: Current vs. historical</li>
+</ul>
+<h3 data-number="10.34.3" id="construct-validity"><span class="header-section-number">10.34.3</span> Construct Validity</h3>
+<ul>
+<li><strong>Operational definitions</strong>: Clear measurement of
+concepts</li>
+<li><strong>Face validity</strong>: Measures appear to assess intended
+construct</li>
+<li><strong>Content validity</strong>: Measures cover all aspects of
+construct</li>
+<li><strong>Criterion validity</strong>: Correlates with gold
+standard</li>
+</ul>
+<h2 data-number="10.35" id="advanced-control-methods"><span class="header-section-number">10.35</span> Advanced Control Methods</h2>
+<h3 data-number="10.35.1" id="causal-inference-methods"><span class="header-section-number">10.35.1</span> 1. Causal Inference
+Methods</h3>
+<ul>
+<li><strong>Directed Acyclic Graphs (DAGs)</strong>: Visual causal
+models</li>
+<li><strong>Front-door criterion</strong>: Identify causal effects with
+unmeasured confounding</li>
+<li><strong>G-methods</strong>: Control time-varying confounding</li>
+</ul>
+<h3 data-number="10.35.2" id="machine-learning-approaches"><span class="header-section-number">10.35.2</span> 2. Machine Learning
+Approaches</h3>
+<ul>
+<li><strong>Regularization</strong>: LASSO for variable selection</li>
+<li><strong>Ensemble methods</strong>: Random forests for
+prediction</li>
+<li><strong>Dimensionality reduction</strong>: Principal components</li>
+</ul>
+<h3 data-number="10.35.3" id="bayesian-methods"><span class="header-section-number">10.35.3</span> 3. Bayesian Methods</h3>
+<ul>
+<li><strong>Prior knowledge</strong>: Incorporate existing evidence</li>
+<li><strong>Posterior distributions</strong>: Uncertainty
+quantification</li>
+<li><strong>Sensitivity analysis</strong>: Robust to assumptions</li>
+</ul>
+<h2 data-number="10.36" id="practical-applications-1"><span class="header-section-number">10.36</span> Practical Applications</h2>
+<h3 data-number="10.36.1" id="case-study-controlling-confounding-in-observational-studies"><span class="header-section-number">10.36.1</span> Case Study: Controlling
+Confounding in Observational Studies</h3>
+<p><strong>Scenario</strong>: Studying effect of statin use on
+cardiovascular outcomes</p>
+<p><strong>Potential confounders</strong>: Age, sex, smoking, diabetes,
+hypertension</p>
+<p><strong>Control strategies</strong>: 1. <strong>Design</strong>:
+Match on age and sex 2. <strong>Measurement</strong>: Use pharmacy
+records for exposure, medical records for outcomes 3.
+<strong>Analysis</strong>: Propensity score adjustment for multiple
+confounders 4. <strong>Assessment</strong>: Sensitivity analysis for
+unmeasured confounding</p>
+<h3 data-number="10.36.2" id="case-study-minimizing-bias-in-case-control-studies"><span class="header-section-number">10.36.2</span> Case Study: Minimizing Bias
+in Case-Control Studies</h3>
+<p><strong>Scenario</strong>: Studying risk factors for breast
+cancer</p>
+<p><strong>Bias concerns</strong>: Recall bias, selection bias</p>
+<p><strong>Control strategies</strong>: 1. <strong>Design</strong>:
+Population-based controls, incident cases 2.
+<strong>Measurement</strong>: Use medical records, blinded interviewers
+3. <strong>Analysis</strong>: Conditional logistic regression 4.
+<strong>Assessment</strong>: Validation substudy for exposure
+measurement</p>
+<h2 data-number="10.37" id="evaluation-framework"><span class="header-section-number">10.37</span> Evaluation Framework</h2>
+<h3 data-number="10.37.1" id="assessing-control-effectiveness"><span class="header-section-number">10.37.1</span> Assessing Control
+Effectiveness</h3>
+<ol type="1">
+<li><strong>Balance assessment</strong>: Compare groups on
+confounders</li>
+<li><strong>Residual confounding</strong>: Test for remaining
+association</li>
+<li><strong>Sensitivity analysis</strong>: How much bias would change
+conclusions?</li>
+<li><strong>Consistency</strong>: Results consistent across
+methods?</li>
+</ol>
+<h3 data-number="10.37.2" id="reporting-standards"><span class="header-section-number">10.37.2</span> Reporting Standards</h3>
+<ul>
+<li><strong>STROBE guidelines</strong>: For observational studies</li>
+<li><strong>CONSORT guidelines</strong>: For randomized trials</li>
+<li><strong>PRISMA guidelines</strong>: For systematic reviews</li>
+<li><strong>Complete reporting</strong>: Methods, results,
+limitations</li>
+</ul>
+<h2 data-number="10.38" id="summary-11"><span class="header-section-number">10.38</span> Summary</h2>
+<p>Controlling bias and confounding requires a multi-level approach
+combining prevention, measurement, analysis, and assessment strategies.
+The choice of methods depends on study design, resources, and research
+question. Effective control improves both precision and validity,
+leading to more reliable epidemiological evidence. # Module 7: Critical
+Appraisal of Study Designs</p>
+<h2 data-number="10.39" id="learning-objectives-12"><span class="header-section-number">10.39</span> Learning Objectives</h2>
+<ul>
+<li>Apply critical appraisal frameworks to epidemiological studies</li>
+<li>Evaluate the validity and reliability of study findings</li>
+<li>Identify strengths and limitations of different study designs</li>
+<li>Make informed decisions about study quality and applicability</li>
+</ul>
+<h2 data-number="10.40" id="introduction-to-critical-appraisal"><span class="header-section-number">10.40</span> Introduction to Critical
+Appraisal</h2>
+<p><strong>Critical appraisal</strong> is the systematic evaluation of
+research evidence to assess its validity, reliability, and applicability
+to clinical practice or policy.</p>
+<h3 data-number="10.40.1" id="why-critical-appraisal-matters"><span class="header-section-number">10.40.1</span> Why Critical Appraisal
+Matters</h3>
+<ul>
+<li><strong>Evidence-based practice</strong>: Base decisions on best
+available evidence</li>
+<li><strong>Research quality</strong>: Identify high-quality
+vs. low-quality studies</li>
+<li><strong>Bias identification</strong>: Recognize potential threats to
+validity</li>
+<li><strong>Clinical relevance</strong>: Determine applicability to
+specific contexts</li>
+</ul>
+<h2 data-number="10.41" id="frameworks-for-critical-appraisal"><span class="header-section-number">10.41</span> Frameworks for Critical
+Appraisal</h2>
+<h3 data-number="10.41.1" id="casp-critical-appraisal-skills-programme"><span class="header-section-number">10.41.1</span> 1. CASP (Critical Appraisal
+Skills Programme)</h3>
+<ul>
+<li><strong>CASP checklists</strong>: Structured questions for different
+study types</li>
+<li><strong>Domains</strong>: Validity, reliability, applicability</li>
+<li><strong>Scoring</strong>: Clear criteria for evaluation</li>
+</ul>
+<h3 data-number="10.41.2" id="grade-grading-of-recommendations-assessment-development-and-evaluation"><span class="header-section-number">10.41.2</span> 2. GRADE (Grading of
+Recommendations Assessment, Development and Evaluation)</h3>
+<ul>
+<li><strong>Quality assessment</strong>: High, moderate, low, very low
+quality</li>
+<li><strong>Factors considered</strong>: Study design, risk of bias,
+inconsistency, indirectness, imprecision, publication bias</li>
+<li><strong>Strength of recommendations</strong>: Strong vs. weak
+recommendations</li>
+</ul>
+<h3 data-number="10.41.3" id="strobe-strengthening-the-reporting-of-observational-studies-in-epidemiology"><span class="header-section-number">10.41.3</span> 3. STROBE (Strengthening
+the Reporting of Observational Studies in Epidemiology)</h3>
+<ul>
+<li><strong>Checklist</strong>: 22 items for reporting observational
+studies</li>
+<li><strong>Domains</strong>: Title, abstract, introduction, methods,
+results, discussion</li>
+<li><strong>Purpose</strong>: Improve transparency and completeness of
+reporting</li>
+</ul>
+<h2 data-number="10.42" id="critical-appraisal-of-observational-studies"><span class="header-section-number">10.42</span> Critical Appraisal of
+Observational Studies</h2>
+<h3 data-number="10.42.1" id="cohort-studies-2"><span class="header-section-number">10.42.1</span> Cohort Studies</h3>
+<h4 data-number="10.42.1.1" id="key-questions-to-ask"><span class="header-section-number">10.42.1.1</span> Key Questions to
+Ask:</h4>
+<ol type="1">
+<li><strong>Study population</strong>: Clearly defined?
+Representative?</li>
+<li><strong>Exposure assessment</strong>: Valid and reliable
+measurement?</li>
+<li><strong>Outcome assessment</strong>: Objective criteria? Blinded
+assessment?</li>
+<li><strong>Follow-up</strong>: Complete? Differential loss to
+follow-up?</li>
+<li><strong>Confounding</strong>: Important confounders measured and
+controlled?</li>
+<li><strong>Analysis</strong>: Appropriate statistical methods?</li>
+</ol>
+<h4 data-number="10.42.1.2" id="common-pitfalls"><span class="header-section-number">10.42.1.2</span> Common Pitfalls:</h4>
+<ul>
+<li><strong>Immortal time bias</strong>: Misclassification of follow-up
+time</li>
+<li><strong>Time-varying confounding</strong>: Confounders change over
+time</li>
+<li><strong>Competing risks</strong>: Other outcomes affect results</li>
+</ul>
+<h4 data-number="10.42.1.3" id="example-appraisal"><span class="header-section-number">10.42.1.3</span> Example Appraisal:</h4>
+<p><strong>Study</strong>: Coffee consumption and risk of type 2
+diabetes</p>
+<p><strong>Strengths</strong>: Large prospective cohort, objective
+outcome assessment <strong>Limitations</strong>: Self-reported coffee
+consumption, residual confounding</p>
+<h3 data-number="10.42.2" id="case-control-studies-2"><span class="header-section-number">10.42.2</span> Case-Control Studies</h3>
+<h4 data-number="10.42.2.1" id="key-questions"><span class="header-section-number">10.42.2.1</span> Key Questions:</h4>
+<ol type="1">
+<li><strong>Case definition</strong>: Clear, consistent criteria?</li>
+<li><strong>Control selection</strong>: Appropriate source
+population?</li>
+<li><strong>Exposure assessment</strong>: Recall bias minimized?</li>
+<li><strong>Matching</strong>: Appropriate variables matched?</li>
+<li><strong>Response rates</strong>: High participation?</li>
+<li><strong>Analysis</strong>: Conditional vs. unconditional logistic
+regression?</li>
+</ol>
+<h4 data-number="10.42.2.2" id="common-issues"><span class="header-section-number">10.42.2.2</span> Common Issues:</h4>
+<ul>
+<li><strong>Recall bias</strong>: Cases remember exposures better</li>
+<li><strong>Selection bias</strong>: Controls not representative</li>
+<li><strong>Confounding by indication</strong>: Disease severity affects
+exposure</li>
+</ul>
+<h4 data-number="10.42.2.3" id="example-appraisal-1"><span class="header-section-number">10.42.2.3</span> Example Appraisal:</h4>
+<p><strong>Study</strong>: Oral contraceptives and venous
+thromboembolism</p>
+<p><strong>Strengths</strong>: Population-based, validated outcomes
+<strong>Limitations</strong>: Potential recall bias, confounding by
+smoking</p>
+<h3 data-number="10.42.3" id="cross-sectional-studies-2"><span class="header-section-number">10.42.3</span> Cross-Sectional
+Studies</h3>
+<h4 data-number="10.42.3.1" id="key-questions-1"><span class="header-section-number">10.42.3.1</span> Key Questions:</h4>
+<ol type="1">
+<li><strong>Sampling</strong>: Random? Representative?</li>
+<li><strong>Measurement timing</strong>: Exposure and outcome measured
+simultaneously?</li>
+<li><strong>Response rates</strong>: High participation?</li>
+<li><strong>Analysis</strong>: Appropriate for cross-sectional
+design?</li>
+</ol>
+<h4 data-number="10.42.3.2" id="limitations"><span class="header-section-number">10.42.3.2</span> Limitations:</h4>
+<ul>
+<li><strong>Temporality</strong>: Cannot determine cause-effect</li>
+<li><strong>Prevalence-incidence bias</strong>: Mix of prevalent and
+incident cases</li>
+<li><strong>Survival bias</strong>: Only survivors included</li>
+</ul>
+<h2 data-number="10.43" id="critical-appraisal-of-experimental-studies"><span class="header-section-number">10.43</span> Critical Appraisal of
+Experimental Studies</h2>
+<h3 data-number="10.43.1" id="randomized-controlled-trials-rcts-1"><span class="header-section-number">10.43.1</span> Randomized Controlled
+Trials (RCTs)</h3>
+<h4 data-number="10.43.1.1" id="key-questions-2"><span class="header-section-number">10.43.1.1</span> Key Questions:</h4>
+<ol type="1">
+<li><strong>Randomization</strong>: Adequate method? Concealed
+allocation?</li>
+<li><strong>Blinding</strong>: Participants, investigators, assessors
+blinded?</li>
+<li><strong>Groups comparable</strong>: Baseline characteristics
+similar?</li>
+<li><strong>Intervention</strong>: Clearly described? Compliance
+monitored?</li>
+<li><strong>Outcome assessment</strong>: Objective? Blinded?</li>
+<li><strong>Analysis</strong>: Intention-to-treat? Handling of missing
+data?</li>
+<li><strong>Follow-up</strong>: Complete? Differential loss?</li>
+</ol>
+<h4 data-number="10.43.1.2" id="quality-assessment-jadad-scale"><span class="header-section-number">10.43.1.2</span> Quality Assessment (Jadad
+Scale):</h4>
+<ul>
+<li><strong>Randomization</strong>: Adequate method (+1), inadequate
+(-1)</li>
+<li><strong>Blinding</strong>: Adequate method (+1), inadequate
+(-1)</li>
+<li><strong>Withdrawals</strong>: Described (+1)</li>
+<li><strong>Maximum score</strong>: 5 points</li>
+</ul>
+<h4 data-number="10.43.1.3" id="common-biases"><span class="header-section-number">10.43.1.3</span> Common Biases:</h4>
+<ul>
+<li><strong>Performance bias</strong>: Different care between
+groups</li>
+<li><strong>Attrition bias</strong>: Differential dropouts</li>
+<li><strong>Reporting bias</strong>: Selective outcome reporting</li>
+</ul>
+<h3 data-number="10.43.2" id="non-randomized-trials"><span class="header-section-number">10.43.2</span> Non-Randomized Trials</h3>
+<h4 data-number="10.43.2.1" id="additional-questions"><span class="header-section-number">10.43.2.1</span> Additional
+Questions:</h4>
+<ol type="1">
+<li><strong>Assignment method</strong>: How were groups formed?</li>
+<li><strong>Baseline differences</strong>: Statistical adjustment
+performed?</li>
+<li><strong>Confounding</strong>: Important confounders controlled?</li>
+</ol>
+<h4 data-number="10.43.2.2" id="limitations-1"><span class="header-section-number">10.43.2.2</span> Limitations:</h4>
+<ul>
+<li><strong>Selection bias</strong>: Groups not comparable</li>
+<li><strong>Confounding</strong>: Unmeasured confounders</li>
+<li><strong>Lower evidence quality</strong>: GRADE approach</li>
+</ul>
+<h2 data-number="10.44" id="assessing-risk-of-bias"><span class="header-section-number">10.44</span> Assessing Risk of Bias</h2>
+<h3 data-number="10.44.1" id="cochrane-risk-of-bias-tool-for-rcts"><span class="header-section-number">10.44.1</span> Cochrane Risk of Bias Tool
+(for RCTs)</h3>
+<ol type="1">
+<li><strong>Selection bias</strong>: Random sequence generation,
+allocation concealment</li>
+<li><strong>Performance bias</strong>: Blinding of participants and
+personnel</li>
+<li><strong>Detection bias</strong>: Blinding of outcome assessment</li>
+<li><strong>Attrition bias</strong>: Incomplete outcome data</li>
+<li><strong>Reporting bias</strong>: Selective reporting</li>
+<li><strong>Other bias</strong>: Other sources of bias</li>
+</ol>
+<h3 data-number="10.44.2" id="robins-i-tool-for-non-randomized-studies"><span class="header-section-number">10.44.2</span> ROBINS-I Tool (for
+Non-Randomized Studies)</h3>
+<ul>
+<li><strong>Domains</strong>: Confounding, selection, classification,
+deviation, missing data, measurement, reporting</li>
+<li><strong>Overall risk</strong>: Low, moderate, serious, critical, no
+information</li>
+</ul>
+<h2 data-number="10.45" id="evaluating-precision-and-validity"><span class="header-section-number">10.45</span> Evaluating Precision and
+Validity</h2>
+<h3 data-number="10.45.1" id="precision"><span class="header-section-number">10.45.1</span> Precision</h3>
+<ul>
+<li><strong>Confidence intervals</strong>: Narrow vs. wide</li>
+<li><strong>P-values</strong>: Statistical significance vs. clinical
+importance</li>
+<li><strong>Sample size</strong>: Adequate power?</li>
+<li><strong>Standard errors</strong>: Measurement precision</li>
+</ul>
+<h3 data-number="10.45.2" id="internal-validity-1"><span class="header-section-number">10.45.2</span> Internal Validity</h3>
+<ul>
+<li><strong>Bias control</strong>: How well were biases minimized?</li>
+<li><strong>Confounding</strong>: Appropriately controlled?</li>
+<li><strong>Measurement error</strong>: Reliable and valid
+measures?</li>
+</ul>
+<h3 data-number="10.45.3" id="external-validity-generalizability-1"><span class="header-section-number">10.45.3</span> External Validity
+(Generalizability)</h3>
+<ul>
+<li><strong>Study population</strong>: Similar to target
+population?</li>
+<li><strong>Setting</strong>: Clinic vs. community vs. hospital?</li>
+<li><strong>Time period</strong>: Current applicability?</li>
+<li><strong>Intervention delivery</strong>: Feasible in practice?</li>
+</ul>
+<h2 data-number="10.46" id="quantitative-synthesis"><span class="header-section-number">10.46</span> Quantitative Synthesis</h2>
+<h3 data-number="10.46.1" id="meta-analysis"><span class="header-section-number">10.46.1</span> Meta-Analysis</h3>
+<ul>
+<li><strong>Heterogeneity</strong>: I² statistic, Cochran’s Q test</li>
+<li><strong>Publication bias</strong>: Funnel plots, Egger’s test</li>
+<li><strong>Subgroup analysis</strong>: Sources of heterogeneity</li>
+<li><strong>Sensitivity analysis</strong>: Robustness of findings</li>
+</ul>
+<h3 data-number="10.46.2" id="grade-approach"><span class="header-section-number">10.46.2</span> GRADE Approach</h3>
+<ul>
+<li><strong>Starting quality</strong>: Based on study design</li>
+<li><strong>Quality modifiers</strong>: Risk of bias, inconsistency,
+indirectness, imprecision, publication bias</li>
+<li><strong>Final quality</strong>: High, moderate, low, very low</li>
+</ul>
+<h2 data-number="10.47" id="practical-application-critical-appraisal-worksheet"><span class="header-section-number">10.47</span> Practical Application:
+Critical Appraisal Worksheet</h2>
+<h3 data-number="10.47.1" id="study-identification"><span class="header-section-number">10.47.1</span> Study Identification</h3>
+<ul>
+<li><strong>Citation</strong>: Full reference</li>
+<li><strong>Study type</strong>: RCT, cohort, case-control, etc.</li>
+<li><strong>Research question</strong>: Clear and focused?</li>
+</ul>
+<h3 data-number="10.47.2" id="methodology-assessment"><span class="header-section-number">10.47.2</span> Methodology Assessment</h3>
+<ul>
+<li><strong>Design appropriate</strong>: For research question?</li>
+<li><strong>Sample size</strong>: Adequate power?</li>
+<li><strong>Data collection</strong>: Valid and reliable?</li>
+<li><strong>Analysis</strong>: Appropriate statistical methods?</li>
+</ul>
+<h3 data-number="10.47.3" id="results-evaluation"><span class="header-section-number">10.47.3</span> Results Evaluation</h3>
+<ul>
+<li><strong>Findings clear</strong>: Well-presented results?</li>
+<li><strong>Precision</strong>: Confidence intervals reported?</li>
+<li><strong>Clinical importance</strong>: Statistically significant and
+clinically meaningful?</li>
+</ul>
+<h3 data-number="10.47.4" id="applicability"><span class="header-section-number">10.47.4</span> Applicability</h3>
+<ul>
+<li><strong>Target population</strong>: Relevant to your context?</li>
+<li><strong>Feasibility</strong>: Can intervention be implemented?</li>
+<li><strong>Cost-effectiveness</strong>: Value for money?</li>
+</ul>
+<h3 data-number="10.47.5" id="overall-assessment"><span class="header-section-number">10.47.5</span> Overall Assessment</h3>
+<ul>
+<li><strong>Strengths</strong>: What are the study’s strong points?</li>
+<li><strong>Limitations</strong>: What are the main weaknesses?</li>
+<li><strong>Overall quality</strong>: High, moderate, low?</li>
+<li><strong>Use in practice</strong>: How will you use these
+findings?</li>
+</ul>
+<h2 data-number="10.48" id="case-studies-in-critical-appraisal"><span class="header-section-number">10.48</span> Case Studies in Critical
+Appraisal</h2>
+<h3 data-number="10.48.1" id="case-study-1-vitamin-d-and-cancer-prevention"><span class="header-section-number">10.48.1</span> Case Study 1: Vitamin D and
+Cancer Prevention</h3>
+<p><strong>Study</strong>: RCT of vitamin D supplementation
+<strong>Appraisal points</strong>: - Randomization adequate? - Blinding
+maintained? - Compliance monitored? - Outcomes clinically relevant?</p>
+<h3 data-number="10.48.2" id="case-study-2-mobile-phones-and-brain-cancer"><span class="header-section-number">10.48.2</span> Case Study 2: Mobile Phones
+and Brain Cancer</h3>
+<p><strong>Study</strong>: Case-control study of mobile phone use
+<strong>Appraisal points</strong>: - Case definition clear? - Controls
+appropriate? - Recall bias addressed? - Confounding controlled?</p>
+<h3 data-number="10.48.3" id="case-study-3-mediterranean-diet-and-cardiovascular-disease"><span class="header-section-number">10.48.3</span> Case Study 3: Mediterranean
+Diet and Cardiovascular Disease</h3>
+<p><strong>Study</strong>: Prospective cohort study <strong>Appraisal
+points</strong>: - Exposure assessment valid? - Outcome ascertainment
+complete? - Follow-up adequate? - Residual confounding?</p>
+<h2 data-number="10.49" id="common-mistakes-in-critical-appraisal"><span class="header-section-number">10.49</span> Common Mistakes in Critical
+Appraisal</h2>
+<ol type="1">
+<li><strong>Design bias</strong>: Assuming RCT is always best</li>
+<li><strong>Statistical fixation</strong>: Focusing only on
+p-values</li>
+<li>**Confirmation</li>
+</ol>
+</body>
+</html>

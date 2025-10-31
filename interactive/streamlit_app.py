@@ -250,8 +250,7 @@ def show_dashboard_overview():
 
     with col1:
         if st.button("📚 Start Next Module", key="next_module"):
-            st.success("Redirecting to Bias Simulation...")
-            st.markdown("[Open Bias Simulation](bias_simulation.html)")
+            st.success("Navigate to the Interactive Modules section below to access Bias Simulation")
 
     with col2:
         if st.button("📖 Review Content", key="review_content"):
@@ -264,8 +263,7 @@ def show_dashboard_overview():
 
     with col4:
         if st.button("🎯 Take Quiz", key="take_quiz"):
-            st.info("Opening quiz module...")
-            st.markdown("[Open Quiz](quiz.html)")
+            st.info("Navigate to the Interactive Modules section below to access the Study Design Quiz")
 
 def show_module_progress():
     st.header("📚 Module Progress")

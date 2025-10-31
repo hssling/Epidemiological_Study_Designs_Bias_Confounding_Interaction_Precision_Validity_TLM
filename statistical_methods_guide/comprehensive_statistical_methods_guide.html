@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>comprehensive_statistical_methods_guide</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<div class="title-page" style="text-align: center; margin: 150px 0; page-break-after: always; background-color: #ffffff; padding: 80px; border: 3px solid #2c3e50; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+  <h1 style="font-size: 3.5em; margin-bottom: 30px; color: #2c3e50; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Statistical Methods: Comprehensive Teaching Guide</h1>
+  <h2 style="font-size: 2.2em; margin-bottom: 50px; color: #666; font-style: italic;">Epidemiology and Statistics</h2>
+
+  <div style="margin: 60px 0; font-size: 1.4em;">
+    <p style="margin-bottom: 20px; font-size: 1.1em; color: #666;"><strong>Author:</strong></p>
+    <p style="font-size: 1.8em; margin-bottom: 30px; font-weight: bold; color: #2c3e50;">Dr. Siddalingaiah H S</p>
+    <p style="font-size: 1.3em; margin-bottom: 20px; color: #555;">Professor, Community Medicine</p>
+    <p style="font-size: 1.3em; margin-bottom: 50px; color: #555;">SIMSRH, Tumkur</p>
+  </div>
+
+  <div style="margin: 60px 0;">
+    <p style="font-size: 1.4em; color: #666;"><strong>Publication Date:</strong> <span style="color: #2c3e50; font-weight: bold;">2025</span></p>
+  </div>
+
+  <div style="margin: 100px 0 60px 0; border-top: 4px solid #2c3e50; padding-top: 40px;">
+    <p style="font-size: 1.3em; font-style: italic; line-height: 1.7; color: #444; max-width: 800px; margin: 0 auto;">A comprehensive guide for understanding statistical methods and their applications in health research.</p>
+  </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#statistical-methods-comprehensive-teaching-guide" id="toc-statistical-methods-comprehensive-teaching-guide"><span class="toc-section-number">1</span> Statistical Methods: Comprehensive
+Teaching Guide</a>
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1.1</span> 1. Introduction to Statistical
+Methods</a></li>
+</ul></li>
+<li><a href="#module-1-introduction-to-statistical-methods" id="toc-module-1-introduction-to-statistical-methods"><span class="toc-section-number">2</span> Module 1: Introduction to
+Statistical Methods</a>
+<ul>
+<li><a href="#learning-objectives" id="toc-learning-objectives"><span class="toc-section-number">2.1</span> Learning Objectives</a></li>
+<li><a href="#what-is-statistics" id="toc-what-is-statistics"><span class="toc-section-number">2.2</span> What is Statistics?</a></li>
+<li><a href="#branches-of-statistics" id="toc-branches-of-statistics"><span class="toc-section-number">2.3</span> Branches of Statistics</a></li>
+<li><a href="#types-of-data" id="toc-types-of-data"><span class="toc-section-number">2.4</span> Types of Data</a></li>
+<li><a href="#the-research-process" id="toc-the-research-process"><span class="toc-section-number">2.5</span> The Research Process</a></li>
+<li><a href="#study-designs-in-research" id="toc-study-designs-in-research"><span class="toc-section-number">2.6</span> Study Designs in Research</a></li>
+<li><a href="#ethical-considerations" id="toc-ethical-considerations"><span class="toc-section-number">2.7</span> Ethical Considerations</a></li>
+<li><a href="#software-tools-for-statistics" id="toc-software-tools-for-statistics"><span class="toc-section-number">2.8</span> Software Tools for
+Statistics</a></li>
+<li><a href="#summary" id="toc-summary"><span class="toc-section-number">2.9</span> Summary</a></li>
+<li><a href="#descriptive" id="toc-descriptive"><span class="toc-section-number">2.10</span> 2. Descriptive
+Statistics</a></li>
+</ul></li>
+<li><a href="#module-2-descriptive-statistics" id="toc-module-2-descriptive-statistics"><span class="toc-section-number">3</span> Module 2: Descriptive Statistics</a>
+<ul>
+<li><a href="#learning-objectives-1" id="toc-learning-objectives-1"><span class="toc-section-number">3.1</span> Learning Objectives</a></li>
+<li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency"><span class="toc-section-number">3.2</span> Measures of Central
+Tendency</a></li>
+<li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion"><span class="toc-section-number">3.3</span> Measures of Dispersion</a></li>
+<li><a href="#data-distributions" id="toc-data-distributions"><span class="toc-section-number">3.4</span> Data Distributions</a></li>
+<li><a href="#data-visualization-1" id="toc-data-visualization-1"><span class="toc-section-number">3.5</span> Data Visualization</a></li>
+<li><a href="#sampling-distributions" id="toc-sampling-distributions"><span class="toc-section-number">3.6</span> Sampling Distributions</a></li>
+<li><a href="#summary-1" id="toc-summary-1"><span class="toc-section-number">3.7</span> Summary</a></li>
+<li><a href="#probability" id="toc-probability"><span class="toc-section-number">3.8</span> 3. Probability Theory</a></li>
+</ul></li>
+<li><a href="#module-3-probability-theory" id="toc-module-3-probability-theory"><span class="toc-section-number">4</span> Module 3: Probability Theory</a>
+<ul>
+<li><a href="#learning-objectives-2" id="toc-learning-objectives-2"><span class="toc-section-number">4.1</span> Learning Objectives</a></li>
+<li><a href="#basic-probability-concepts" id="toc-basic-probability-concepts"><span class="toc-section-number">4.2</span> Basic Probability
+Concepts</a></li>
+<li><a href="#probability-rules" id="toc-probability-rules"><span class="toc-section-number">4.3</span> Probability Rules</a></li>
+<li><a href="#bayes-theorem" id="toc-bayes-theorem"><span class="toc-section-number">4.4</span> Bayes’ Theorem</a></li>
+<li><a href="#common-probability-distributions" id="toc-common-probability-distributions"><span class="toc-section-number">4.5</span> Common Probability
+Distributions</a></li>
+<li><a href="#expected-value-and-variance" id="toc-expected-value-and-variance"><span class="toc-section-number">4.6</span> Expected Value and
+Variance</a></li>
+<li><a href="#summary-2" id="toc-summary-2"><span class="toc-section-number">4.7</span> Summary</a></li>
+<li><a href="#inferential" id="toc-inferential"><span class="toc-section-number">4.8</span> 4. Inferential Statistics</a></li>
+</ul></li>
+<li><a href="#module-4-inferential-statistics" id="toc-module-4-inferential-statistics"><span class="toc-section-number">5</span> Module 4: Inferential Statistics</a>
+<ul>
+<li><a href="#learning-objectives-3" id="toc-learning-objectives-3"><span class="toc-section-number">5.1</span> Learning Objectives</a></li>
+<li><a href="#sampling-theory" id="toc-sampling-theory"><span class="toc-section-number">5.2</span> Sampling Theory</a></li>
+<li><a href="#confidence-intervals" id="toc-confidence-intervals"><span class="toc-section-number">5.3</span> Confidence Intervals</a></li>
+<li><a href="#hypothesis-testing" id="toc-hypothesis-testing"><span class="toc-section-number">5.4</span> Hypothesis Testing</a></li>
+<li><a href="#common-statistical-tests" id="toc-common-statistical-tests"><span class="toc-section-number">5.5</span> Common Statistical Tests</a></li>
+<li><a href="#p-values-and-significance" id="toc-p-values-and-significance"><span class="toc-section-number">5.6</span> p-Values and Significance</a></li>
+<li><a href="#effect-size" id="toc-effect-size"><span class="toc-section-number">5.7</span> Effect Size</a></li>
+<li><a href="#summary-3" id="toc-summary-3"><span class="toc-section-number">5.8</span> Summary</a></li>
+<li><a href="#parametric" id="toc-parametric"><span class="toc-section-number">5.9</span> 5. Parametric Tests</a></li>
+</ul></li>
+<li><a href="#module-5-parametric-statistical-tests" id="toc-module-5-parametric-statistical-tests"><span class="toc-section-number">6</span> Module 5: Parametric Statistical
+Tests</a>
+<ul>
+<li><a href="#learning-objectives-4" id="toc-learning-objectives-4"><span class="toc-section-number">6.1</span> Learning Objectives</a></li>
+<li><a href="#assumptions-of-parametric-tests" id="toc-assumptions-of-parametric-tests"><span class="toc-section-number">6.2</span> Assumptions of Parametric
+Tests</a></li>
+<li><a href="#t-tests" id="toc-t-tests"><span class="toc-section-number">6.3</span> t-Tests</a></li>
+<li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova"><span class="toc-section-number">6.4</span> Analysis of Variance
+(ANOVA)</a></li>
+<li><a href="#correlation-analysis" id="toc-correlation-analysis"><span class="toc-section-number">6.5</span> Correlation Analysis</a></li>
+<li><a href="#linear-regression" id="toc-linear-regression"><span class="toc-section-number">6.6</span> Linear Regression</a></li>
+<li><a href="#summary-4" id="toc-summary-4"><span class="toc-section-number">6.7</span> Summary</a></li>
+<li><a href="#nonparametric" id="toc-nonparametric"><span class="toc-section-number">6.8</span> 6. Non-Parametric Tests</a></li>
+</ul></li>
+<li><a href="#module-6-non-parametric-statistical-tests" id="toc-module-6-non-parametric-statistical-tests"><span class="toc-section-number">7</span> Module 6: Non-Parametric Statistical
+Tests</a>
+<ul>
+<li><a href="#learning-objectives-5" id="toc-learning-objectives-5"><span class="toc-section-number">7.1</span> Learning Objectives</a></li>
+<li><a href="#when-to-use-non-parametric-tests" id="toc-when-to-use-non-parametric-tests"><span class="toc-section-number">7.2</span> When to Use Non-Parametric
+Tests</a></li>
+<li><a href="#chi-square-tests" id="toc-chi-square-tests"><span class="toc-section-number">7.3</span> Chi-Square Tests</a></li>
+<li><a href="#mann-whitney-u-test-1" id="toc-mann-whitney-u-test-1"><span class="toc-section-number">7.4</span> Mann-Whitney U Test</a></li>
+<li><a href="#kruskal-wallis-test-1" id="toc-kruskal-wallis-test-1"><span class="toc-section-number">7.5</span> Kruskal-Wallis Test</a></li>
+<li><a href="#wilcoxon-signed-rank-test" id="toc-wilcoxon-signed-rank-test"><span class="toc-section-number">7.6</span> Wilcoxon Signed-Rank Test</a></li>
+<li><a href="#spearmans-rank-correlation" id="toc-spearmans-rank-correlation"><span class="toc-section-number">7.7</span> Spearman’s Rank
+Correlation</a></li>
+<li><a href="#summary-5" id="toc-summary-5"><span class="toc-section-number">7.8</span> Summary</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>q— title: “Statistical Methods: Comprehensive Teaching Guide” author:
+“Dr. Siddalingaiah H S, Professor, Community Medicine, SIMSRH, Tumkur”
+date: “2025” geometry: margin=1in fontsize: 11pt colorlinks: true
+linkcolor: blue urlcolor: blue citecolor: green toc: true toc-depth: 2
+numbersections: true —</p>
+<h1 data-number="1" id="statistical-methods-comprehensive-teaching-guide"><span class="header-section-number">1</span> Statistical Methods:
+Comprehensive Teaching Guide</h1>
+<p><strong>Created by: Dr. Siddalingaiah H S, Professor, Community
+Medicine, SIMSRH, Tumkur</strong></p>
+<h2 data-number="1.1" id="introduction"><span class="header-section-number">1.1</span> 1. Introduction to Statistical
+Methods</h2>
+<h1 data-number="2" id="module-1-introduction-to-statistical-methods"><span class="header-section-number">2</span> Module 1: Introduction to
+Statistical Methods</h1>
+<h2 data-number="2.1" id="learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</h2>
+<ul>
+<li>Define statistics and its role in research</li>
+<li>Understand the difference between descriptive and inferential
+statistics</li>
+<li>Identify types of data and measurement scales</li>
+<li>Understand the research process and study designs</li>
+<li>Recognize ethical considerations in statistical analysis</li>
+</ul>
+<h2 data-number="2.2" id="what-is-statistics"><span class="header-section-number">2.2</span> What is Statistics?</h2>
+<p>Statistics is the science of collecting, organizing, analyzing,
+interpreting, and presenting data. It provides methods for making
+inferences about populations from samples and for quantifying
+uncertainty.</p>
+<p><strong>Key terms:</strong> - <strong>Population</strong>: Complete
+set of individuals or objects of interest - <strong>Sample</strong>:
+Subset of the population used for study - <strong>Parameter</strong>:
+Numerical characteristic of a population - <strong>Statistic</strong>:
+Numerical characteristic of a sample - <strong>Variable</strong>:
+Characteristic that varies among individuals</p>
+<h2 data-number="2.3" id="branches-of-statistics"><span class="header-section-number">2.3</span> Branches of Statistics</h2>
+<h3 data-number="2.3.1" id="descriptive-statistics"><span class="header-section-number">2.3.1</span> 1. Descriptive
+Statistics</h3>
+<ul>
+<li>Organize and summarize data</li>
+<li>Describe main features of a dataset</li>
+<li>Include measures of central tendency, dispersion, and
+distribution</li>
+</ul>
+<h3 data-number="2.3.2" id="inferential-statistics"><span class="header-section-number">2.3.2</span> 2. Inferential
+Statistics</h3>
+<ul>
+<li>Make inferences about populations from samples</li>
+<li>Test hypotheses and draw conclusions</li>
+<li>Include estimation, hypothesis testing, and prediction</li>
+</ul>
+<h2 data-number="2.4" id="types-of-data"><span class="header-section-number">2.4</span> Types of Data</h2>
+<h3 data-number="2.4.1" id="by-nature"><span class="header-section-number">2.4.1</span> By Nature</h3>
+<ul>
+<li><strong>Quantitative</strong>: Numerical measurements
+<ul>
+<li><strong>Discrete</strong>: Countable values (e.g., number of
+children)</li>
+<li><strong>Continuous</strong>: Measurable values (e.g., height,
+weight)</li>
+</ul></li>
+<li><strong>Qualitative</strong>: Categorical measurements
+<ul>
+<li><strong>Nominal</strong>: Categories without order (e.g., gender,
+blood type)</li>
+<li><strong>Ordinal</strong>: Categories with order (e.g., education
+level, pain scale)</li>
+</ul></li>
+</ul>
+<h3 data-number="2.4.2" id="by-measurement-scale"><span class="header-section-number">2.4.2</span> By Measurement Scale</h3>
+<ul>
+<li><strong>Nominal</strong>: Categories, no quantitative meaning</li>
+<li><strong>Ordinal</strong>: Ordered categories, unequal intervals</li>
+<li><strong>Interval</strong>: Equal intervals, no true zero</li>
+<li><strong>Ratio</strong>: Equal intervals, true zero point</li>
+</ul>
+<h2 data-number="2.5" id="the-research-process"><span class="header-section-number">2.5</span> The Research Process</h2>
+<h3 data-number="2.5.1" id="problem-identification"><span class="header-section-number">2.5.1</span> 1. Problem
+Identification</h3>
+<ul>
+<li>Define research question</li>
+<li>Review existing literature</li>
+<li>Formulate hypotheses</li>
+</ul>
+<h3 data-number="2.5.2" id="study-design"><span class="header-section-number">2.5.2</span> 2. Study Design</h3>
+<ul>
+<li>Choose appropriate design</li>
+<li>Determine sample size</li>
+<li>Select measurement methods</li>
+</ul>
+<h3 data-number="2.5.3" id="data-collection"><span class="header-section-number">2.5.3</span> 3. Data Collection</h3>
+<ul>
+<li>Implement data collection procedures</li>
+<li>Ensure data quality</li>
+<li>Maintain ethical standards</li>
+</ul>
+<h3 data-number="2.5.4" id="data-analysis"><span class="header-section-number">2.5.4</span> 4. Data Analysis</h3>
+<ul>
+<li>Clean and prepare data</li>
+<li>Apply statistical methods</li>
+<li>Interpret results</li>
+</ul>
+<h3 data-number="2.5.5" id="reporting-results"><span class="header-section-number">2.5.5</span> 5. Reporting Results</h3>
+<ul>
+<li>Present findings clearly</li>
+<li>Draw appropriate conclusions</li>
+<li>Suggest future research</li>
+</ul>
+<h2 data-number="2.6" id="study-designs-in-research"><span class="header-section-number">2.6</span> Study Designs in Research</h2>
+<h3 data-number="2.6.1" id="experimental-designs"><span class="header-section-number">2.6.1</span> Experimental Designs</h3>
+<ul>
+<li><strong>Randomized Controlled Trials (RCTs)</strong>: Gold standard
+for establishing causality</li>
+<li><strong>Quasi-experimental</strong>: Intervention without
+randomization</li>
+<li><strong>Field Experiments</strong>: Natural setting
+interventions</li>
+</ul>
+<h3 data-number="2.6.2" id="observational-designs"><span class="header-section-number">2.6.2</span> Observational Designs</h3>
+<ul>
+<li><strong>Cohort Studies</strong>: Follow groups over time</li>
+<li><strong>Case-Control Studies</strong>: Compare cases and
+controls</li>
+<li><strong>Cross-Sectional Studies</strong>: Snapshot at single
+point</li>
+<li><strong>Ecological Studies</strong>: Population-level data</li>
+</ul>
+<h2 data-number="2.7" id="ethical-considerations"><span class="header-section-number">2.7</span> Ethical Considerations</h2>
+<h3 data-number="2.7.1" id="key-principles"><span class="header-section-number">2.7.1</span> Key Principles</h3>
+<ul>
+<li><strong>Respect for persons</strong>: Informed consent, voluntary
+participation</li>
+<li><strong>Beneficence</strong>: Maximize benefits, minimize harms</li>
+<li><strong>Justice</strong>: Fair distribution of benefits and
+burdens</li>
+<li><strong>Confidentiality</strong>: Protect participant privacy</li>
+</ul>
+<h3 data-number="2.7.2" id="statistical-ethics"><span class="header-section-number">2.7.2</span> Statistical Ethics</h3>
+<ul>
+<li><strong>Data integrity</strong>: Accurate data collection and
+analysis</li>
+<li><strong>Transparency</strong>: Clear reporting of methods and
+results</li>
+<li><strong>Objectivity</strong>: Avoid bias in analysis and
+interpretation</li>
+<li><strong>Reproducibility</strong>: Enable verification of
+results</li>
+</ul>
+<h2 data-number="2.8" id="software-tools-for-statistics"><span class="header-section-number">2.8</span> Software Tools for
+Statistics</h2>
+<h3 data-number="2.8.1" id="statistical-software"><span class="header-section-number">2.8.1</span> Statistical Software</h3>
+<ul>
+<li><strong>R</strong>: Free, powerful statistical programming
+language</li>
+<li><strong>Python</strong>: General programming with statistical
+libraries</li>
+<li><strong>SPSS</strong>: User-friendly interface for statistical
+analysis</li>
+<li><strong>SAS</strong>: Enterprise statistical software</li>
+<li><strong>Stata</strong>: Comprehensive statistical package</li>
+</ul>
+<h3 data-number="2.8.2" id="data-visualization"><span class="header-section-number">2.8.2</span> Data Visualization</h3>
+<ul>
+<li><strong>Tableau</strong>: Interactive data visualization</li>
+<li><strong>Power BI</strong>: Business intelligence and analytics</li>
+<li><strong>ggplot2 (R)</strong>: Advanced plotting capabilities</li>
+<li><strong>matplotlib (Python)</strong>: Flexible plotting library</li>
+</ul>
+<h2 data-number="2.9" id="summary"><span class="header-section-number">2.9</span> Summary</h2>
+<p>Statistical methods provide the tools for extracting meaningful
+insights from data. Understanding the fundamentals of statistics is
+essential for conducting valid research and making evidence-based
+decisions in health sciences and beyond.</p>
+<hr />
+<h2 data-number="2.10" id="descriptive"><span class="header-section-number">2.10</span> 2. Descriptive Statistics</h2>
+<h1 data-number="3" id="module-2-descriptive-statistics"><span class="header-section-number">3</span> Module 2: Descriptive
+Statistics</h1>
+<h2 data-number="3.1" id="learning-objectives-1"><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand measures of central tendency</li>
+<li>Calculate and interpret measures of dispersion</li>
+<li>Describe data distributions</li>
+<li>Create and interpret data visualizations</li>
+<li>Understand sampling distributions</li>
+</ul>
+<h2 data-number="3.2" id="measures-of-central-tendency"><span class="header-section-number">3.2</span> Measures of Central
+Tendency</h2>
+<h3 data-number="3.2.1" id="mean-arithmetic-average"><span class="header-section-number">3.2.1</span> Mean (Arithmetic
+Average)</h3>
+<p><strong>Formula</strong>: <span class="math inline">$\bar{x} =
+\frac{\sum x_i}{n}$</span></p>
+<p><strong>Example</strong>: Test scores: 85, 90, 78, 92, 88 Mean = (85
++ 90 + 78 + 92 + 88) / 5 = 86.6</p>
+<p><strong>Advantages</strong>: - Uses all data points - Mathematically
+useful - Foundation for many statistical tests</p>
+<p><strong>Disadvantages</strong>: - Affected by extreme values
+(outliers) - Not appropriate for ordinal data</p>
+<h3 data-number="3.2.2" id="median-middle-value"><span class="header-section-number">3.2.2</span> Median (Middle Value)</h3>
+<p><strong>Calculation</strong>: - Sort data in ascending order - For
+odd n: Middle value - For even n: Average of two middle values</p>
+<p><strong>Example</strong>: Ages: 23, 25, 28, 30, 35 Median = 28</p>
+<p><strong>Advantages</strong>: - Not affected by outliers - Appropriate
+for ordinal data - Easy to understand</p>
+<h3 data-number="3.2.3" id="mode-most-frequent-value"><span class="header-section-number">3.2.3</span> Mode (Most Frequent
+Value)</h3>
+<p><strong>Definition</strong>: Value that appears most frequently</p>
+<p><strong>Example</strong>: Blood types: A, B, AB, A, O, A Mode = A</p>
+<p><strong>Uses</strong>: - Categorical data - Identifying most common
+category - Bimodal/multimodal distributions</p>
+<h2 data-number="3.3" id="measures-of-dispersion"><span class="header-section-number">3.3</span> Measures of Dispersion</h2>
+<h3 data-number="3.3.1" id="range"><span class="header-section-number">3.3.1</span> Range</h3>
+<p><strong>Formula</strong>: Range = Maximum - Minimum</p>
+<p><strong>Example</strong>: Heights: 160, 165, 170, 175, 180 cm Range =
+180 - 160 = 20 cm</p>
+<p><strong>Limitations</strong>: - Only uses extreme values - Affected
+by outliers - No information about data distribution</p>
+<h3 data-number="3.3.2" id="variance"><span class="header-section-number">3.3.2</span> Variance</h3>
+<p><strong>Population Variance</strong>: <span class="math inline">$\sigma^2 = \frac{\sum (x_i - \mu)^2}{N}$</span></p>
+<p><strong>Sample Variance</strong>: <span class="math inline">$s^2 =
+\frac{\sum (x_i - \bar{x})^2}{n-1}$</span></p>
+<p><strong>Interpretation</strong>: Average squared deviation from
+mean</p>
+<h3 data-number="3.3.3" id="standard-deviation"><span class="header-section-number">3.3.3</span> Standard Deviation</h3>
+<p><strong>Formula</strong>: <span class="math inline">$s =
+\sqrt{s^2}$</span></p>
+<p><strong>Example</strong>: Data: 10, 12, 14, 16, 18 Mean = 14,
+Variance = 8, SD = <span class="math inline">$\sqrt{8}$</span> <span class="math inline">≈</span> 2.83</p>
+<p><strong>Coefficient of Variation</strong>: CV = (s/mean) × 100%</p>
+<h2 data-number="3.4" id="data-distributions"><span class="header-section-number">3.4</span> Data Distributions</h2>
+<h3 data-number="3.4.1" id="normal-distribution"><span class="header-section-number">3.4.1</span> Normal Distribution</h3>
+<ul>
+<li>Bell-shaped, symmetric</li>
+<li>Mean = Median = Mode</li>
+<li>68% within 1 SD, 95% within 2 SD, 99.7% within 3 SD</li>
+<li>Many statistical tests assume normality</li>
+</ul>
+<h3 data-number="3.4.2" id="skewness"><span class="header-section-number">3.4.2</span> Skewness</h3>
+<ul>
+<li><strong>Positive skew</strong>: Tail extends to right</li>
+<li><strong>Negative skew</strong>: Tail extends to left</li>
+<li><strong>Symmetric</strong>: No skew</li>
+</ul>
+<h3 data-number="3.4.3" id="kurtosis"><span class="header-section-number">3.4.3</span> Kurtosis</h3>
+<ul>
+<li><strong>Mesokurtic</strong>: Normal peakedness</li>
+<li><strong>Leptokurtic</strong>: More peaked than normal</li>
+<li><strong>Platykurtic</strong>: Less peaked than normal</li>
+</ul>
+<h2 data-number="3.5" id="data-visualization-1"><span class="header-section-number">3.5</span> Data Visualization</h2>
+<h3 data-number="3.5.1" id="histograms"><span class="header-section-number">3.5.1</span> Histograms</h3>
+<ul>
+<li>Show frequency distribution</li>
+<li>Bar chart for continuous data</li>
+<li>Height represents frequency</li>
+</ul>
+<h3 data-number="3.5.2" id="box-plots-box-and-whisker-plots"><span class="header-section-number">3.5.2</span> Box Plots (Box-and-Whisker
+Plots)</h3>
+<ul>
+<li>Show median, quartiles, outliers</li>
+<li>Box: IQR (Q3-Q1)</li>
+<li>Whiskers: 1.5 × IQR</li>
+<li>Points: Outliers</li>
+</ul>
+<h3 data-number="3.5.3" id="scatter-plots"><span class="header-section-number">3.5.3</span> Scatter Plots</h3>
+<ul>
+<li>Show relationship between two variables</li>
+<li>X-axis: Independent variable</li>
+<li>Y-axis: Dependent variable</li>
+<li>Pattern indicates correlation</li>
+</ul>
+<h3 data-number="3.5.4" id="bar-charts-and-pie-charts"><span class="header-section-number">3.5.4</span> Bar Charts and Pie
+Charts</h3>
+<ul>
+<li>Categorical data</li>
+<li>Bar charts: Compare categories</li>
+<li>Pie charts: Show proportions</li>
+</ul>
+<h2 data-number="3.6" id="sampling-distributions"><span class="header-section-number">3.6</span> Sampling Distributions</h2>
+<h3 data-number="3.6.1" id="central-limit-theorem"><span class="header-section-number">3.6.1</span> Central Limit Theorem</h3>
+<ul>
+<li>Sample means follow normal distribution</li>
+<li>Regardless of population distribution</li>
+<li>For sufficiently large samples (<span class="math inline"><em>n</em> ≥ 30</span>)</li>
+</ul>
+<h3 data-number="3.6.2" id="standard-error"><span class="header-section-number">3.6.2</span> Standard Error</h3>
+<p><strong>Formula</strong>: <span class="math inline">$SE =
+\frac{s}{\sqrt{n}}$</span></p>
+<p><strong>Interpretation</strong>: Standard deviation of sampling
+distribution</p>
+<p><strong>Uses</strong>: - Confidence interval calculation - Hypothesis
+testing - Sample size determination</p>
+<h2 data-number="3.7" id="summary-1"><span class="header-section-number">3.7</span> Summary</h2>
+<p>Descriptive statistics provide the foundation for understanding data.
+Measures of central tendency describe typical values, while measures of
+dispersion describe variability. Data visualization helps identify
+patterns and outliers, and sampling distributions form the basis for
+inferential statistics.</p>
+<hr />
+<h2 data-number="3.8" id="probability"><span class="header-section-number">3.8</span> 3. Probability Theory</h2>
+<h1 data-number="4" id="module-3-probability-theory"><span class="header-section-number">4</span> Module 3: Probability Theory</h1>
+<h2 data-number="4.1" id="learning-objectives-2"><span class="header-section-number">4.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand basic probability concepts</li>
+<li>Calculate probabilities using different rules</li>
+<li>Work with common probability distributions</li>
+<li>Understand conditional probability and independence</li>
+<li>Apply Bayes’ theorem</li>
+</ul>
+<h2 data-number="4.2" id="basic-probability-concepts"><span class="header-section-number">4.2</span> Basic Probability Concepts</h2>
+<h3 data-number="4.2.1" id="probability-1"><span class="header-section-number">4.2.1</span> Probability</h3>
+<p><strong>Definition</strong>: Measure of likelihood that an event will
+occur</p>
+<p><strong>Range</strong>: 0 ≤ P(A) ≤ 1 - P(A) = 0: Impossible event -
+P(A) = 1: Certain event</p>
+<h3 data-number="4.2.2" id="sample-space"><span class="header-section-number">4.2.2</span> Sample Space</h3>
+<p><strong>Definition</strong>: All possible outcomes of an
+experiment</p>
+<p><strong>Examples</strong>: - Coin flip: {Heads, Tails} - Die roll:
+{1, 2, 3, 4, 5, 6}</p>
+<h3 data-number="4.2.3" id="events"><span class="header-section-number">4.2.3</span> Events</h3>
+<ul>
+<li><strong>Simple event</strong>: Single outcome</li>
+<li><strong>Compound event</strong>: Combination of outcomes</li>
+<li><strong>Mutually exclusive</strong>: Cannot occur together</li>
+<li><strong>Independent</strong>: Occurrence doesn’t affect other
+events</li>
+</ul>
+<h2 data-number="4.3" id="probability-rules"><span class="header-section-number">4.3</span> Probability Rules</h2>
+<h3 data-number="4.3.1" id="addition-rule"><span class="header-section-number">4.3.1</span> Addition Rule</h3>
+<p><strong>For mutually exclusive events</strong>: P(A ∪ B) = P(A) +
+P(B)</p>
+<p><strong>For non-mutually exclusive events</strong>: P(A ∪ B) = P(A) +
+P(B) - P(A ∩ B)</p>
+<h3 data-number="4.3.2" id="multiplication-rule"><span class="header-section-number">4.3.2</span> Multiplication Rule</h3>
+<p><strong>For independent events</strong>: P(A ∩ B) = P(A) × P(B)</p>
+<p><strong>For dependent events</strong>: P(A ∩ B) = P(A) × P(B|A)</p>
+<h3 data-number="4.3.3" id="complement-rule"><span class="header-section-number">4.3.3</span> Complement Rule</h3>
+<p>P(A’) = 1 - P(A)</p>
+<h3 data-number="4.3.4" id="conditional-probability"><span class="header-section-number">4.3.4</span> Conditional Probability</h3>
+<p><strong>Formula</strong>: P(A|B) = P(A ∩ B) / P(B)</p>
+<p><strong>Example</strong>: Probability of having disease given
+positive test</p>
+<h2 data-number="4.4" id="bayes-theorem"><span class="header-section-number">4.4</span> Bayes’ Theorem</h2>
+<h3 data-number="4.4.1" id="formula"><span class="header-section-number">4.4.1</span> Formula</h3>
+<p>P(A|B) = [P(B|A) × P(A)] / P(B)</p>
+<h3 data-number="4.4.2" id="extended-form"><span class="header-section-number">4.4.2</span> Extended Form</h3>
+<p>P(A|B) = [P(B|A) × P(A)] / [P(B|A) × P(A) + P(B|A’) × P(A’)]</p>
+<h3 data-number="4.4.3" id="applications"><span class="header-section-number">4.4.3</span> Applications</h3>
+<ul>
+<li>Medical diagnosis</li>
+<li>Spam filtering</li>
+<li>Risk assessment</li>
+<li>Quality control</li>
+</ul>
+<h2 data-number="4.5" id="common-probability-distributions"><span class="header-section-number">4.5</span> Common Probability
+Distributions</h2>
+<h3 data-number="4.5.1" id="discrete-distributions"><span class="header-section-number">4.5.1</span> Discrete Distributions</h3>
+<h4 data-number="4.5.1.1" id="binomial-distribution"><span class="header-section-number">4.5.1.1</span> Binomial Distribution</h4>
+<ul>
+<li>Fixed number of trials (n)</li>
+<li>Each trial: success/failure</li>
+<li>Constant probability of success (p)</li>
+<li>Independent trials</li>
+</ul>
+<p><strong>Mean</strong>: μ = n × p <strong>Variance</strong>: σ² = n ×
+p × (1-p)</p>
+<p><strong>Example</strong>: Number of heads in 10 coin flips</p>
+<h4 data-number="4.5.1.2" id="poisson-distribution"><span class="header-section-number">4.5.1.2</span> Poisson Distribution</h4>
+<ul>
+<li>Counts rare events</li>
+<li>Events occur randomly over time/space</li>
+<li>Constant average rate (λ)</li>
+</ul>
+<p><strong>Mean = Variance = λ</strong></p>
+<p><strong>Example</strong>: Number of accidents per day</p>
+<h3 data-number="4.5.2" id="continuous-distributions"><span class="header-section-number">4.5.2</span> Continuous Distributions</h3>
+<h4 data-number="4.5.2.1" id="normal-distribution-1"><span class="header-section-number">4.5.2.1</span> Normal Distribution</h4>
+<ul>
+<li>Bell-shaped, symmetric</li>
+<li>Defined by mean (μ) and standard deviation (σ)</li>
+<li>68-95-99.7 rule</li>
+</ul>
+<p><strong>Standard Normal</strong>: μ = 0, σ = 1
+<strong>Z-score</strong>: z = (x - μ) / σ</p>
+<h4 data-number="4.5.2.2" id="t-distribution"><span class="header-section-number">4.5.2.2</span> t-Distribution</h4>
+<ul>
+<li>Similar to normal but with heavier tails</li>
+<li>Used for small samples</li>
+<li>Degrees of freedom = n - 1</li>
+</ul>
+<h4 data-number="4.5.2.3" id="chi-square-distribution"><span class="header-section-number">4.5.2.3</span> Chi-Square
+Distribution</h4>
+<ul>
+<li>Sum of squared standard normal variables</li>
+<li>Used for goodness of fit and independence tests</li>
+<li>Degrees of freedom vary</li>
+</ul>
+<h2 data-number="4.6" id="expected-value-and-variance"><span class="header-section-number">4.6</span> Expected Value and
+Variance</h2>
+<h3 data-number="4.6.1" id="expected-value-mean"><span class="header-section-number">4.6.1</span> Expected Value (Mean)</h3>
+<p><strong>Discrete</strong>: E[X] = Σ x × P(x)</p>
+<p><strong>Continuous</strong>: E[X] = ∫ x × f(x) dx</p>
+<h3 data-number="4.6.2" id="variance-1"><span class="header-section-number">4.6.2</span> Variance</h3>
+<p>Var(X) = E[X²] - (E[X])²</p>
+<h3 data-number="4.6.3" id="properties"><span class="header-section-number">4.6.3</span> Properties</h3>
+<ul>
+<li>E[aX + b] = aE[X] + b</li>
+<li>Var(aX + b) = a²Var(X)</li>
+<li>Var(X + Y) = Var(X) + Var(Y) (if independent)</li>
+</ul>
+<h2 data-number="4.7" id="summary-2"><span class="header-section-number">4.7</span> Summary</h2>
+<p>Probability theory provides the foundation for statistical inference.
+Understanding probability rules, distributions, and concepts like
+conditional probability and Bayes’ theorem is essential for advanced
+statistical analysis and decision-making under uncertainty.</p>
+<hr />
+<h2 data-number="4.8" id="inferential"><span class="header-section-number">4.8</span> 4. Inferential Statistics</h2>
+<h1 data-number="5" id="module-4-inferential-statistics"><span class="header-section-number">5</span> Module 4: Inferential
+Statistics</h1>
+<h2 data-number="5.1" id="learning-objectives-3"><span class="header-section-number">5.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand sampling and sampling distributions</li>
+<li>Calculate and interpret confidence intervals</li>
+<li>Perform hypothesis testing</li>
+<li>Understand Type I and Type II errors</li>
+<li>Interpret p-values and statistical significance</li>
+</ul>
+<h2 data-number="5.2" id="sampling-theory"><span class="header-section-number">5.2</span> Sampling Theory</h2>
+<h3 data-number="5.2.1" id="populations-and-samples"><span class="header-section-number">5.2.1</span> Populations and Samples</h3>
+<ul>
+<li><strong>Population</strong>: Complete set of interest</li>
+<li><strong>Sample</strong>: Subset used for inference</li>
+<li><strong>Sampling frame</strong>: List of population elements</li>
+<li><strong>Sampling methods</strong>: Random, stratified, cluster,
+systematic</li>
+</ul>
+<h3 data-number="5.2.2" id="sampling-distributions-1"><span class="header-section-number">5.2.2</span> Sampling Distributions</h3>
+<ul>
+<li><strong>Sampling distribution</strong>: Distribution of a statistic
+over many samples</li>
+<li><strong>Standard error</strong>: Standard deviation of sampling
+distribution</li>
+<li><strong>Central Limit Theorem</strong>: Sample means approach normal
+distribution</li>
+</ul>
+<h2 data-number="5.3" id="confidence-intervals"><span class="header-section-number">5.3</span> Confidence Intervals</h2>
+<h3 data-number="5.3.1" id="concept"><span class="header-section-number">5.3.1</span> Concept</h3>
+<ul>
+<li>Range of values likely to contain true population parameter</li>
+<li>Based on sample data and desired confidence level</li>
+</ul>
+<h3 data-number="5.3.2" id="formula-for-mean-σ-known"><span class="header-section-number">5.3.2</span> Formula for Mean (σ
+known)</h3>
+<p>CI = <span class="math inline">$\bar{x} \pm z \times
+\frac{\sigma}{\sqrt{n}}$</span></p>
+<h3 data-number="5.3.3" id="formula-for-mean-σ-unknown"><span class="header-section-number">5.3.3</span> Formula for Mean (σ
+unknown)</h3>
+<p>CI = <span class="math inline">$\bar{x} \pm t \times
+\frac{s}{\sqrt{n}}$</span></p>
+<h3 data-number="5.3.4" id="formula-for-proportion"><span class="header-section-number">5.3.4</span> Formula for Proportion</h3>
+<p>CI = <span class="math inline">$p \pm z
+\sqrt{\frac{p(1-p)}{n}}$</span></p>
+<h3 data-number="5.3.5" id="interpretation"><span class="header-section-number">5.3.5</span> Interpretation</h3>
+<ul>
+<li>95% CI: 95% confidence that interval contains true parameter</li>
+<li>Wider intervals: More uncertainty</li>
+<li>Factors affecting width: Sample size, variability, confidence
+level</li>
+</ul>
+<h2 data-number="5.4" id="hypothesis-testing"><span class="header-section-number">5.4</span> Hypothesis Testing</h2>
+<h3 data-number="5.4.1" id="steps-in-hypothesis-testing"><span class="header-section-number">5.4.1</span> Steps in Hypothesis
+Testing</h3>
+<ol type="1">
+<li><p><strong>State hypotheses</strong></p>
+<ul>
+<li>H₀: Null hypothesis (no effect/difference)</li>
+<li>H₁: Alternative hypothesis (effect/difference exists)</li>
+</ul></li>
+<li><p><strong>Choose significance level (α)</strong></p>
+<ul>
+<li>Common values: 0.05, 0.01, 0.10</li>
+</ul></li>
+<li><p><strong>Select test statistic</strong></p></li>
+<li><p><strong>Determine critical value or p-value</strong></p></li>
+<li><p><strong>Make decision</strong></p>
+<ul>
+<li>Reject H₀ if p &lt; α</li>
+<li>Fail to reject H₀ if p α</li>
+</ul></li>
+</ol>
+<h3 data-number="5.4.2" id="types-of-errors"><span class="header-section-number">5.4.2</span> Types of Errors</h3>
+<ul>
+<li><strong>Type I Error (α)</strong>: Reject true H₀ (false
+positive)</li>
+<li><strong>Type II Error (β)</strong>: Fail to reject false H₀ (false
+negative)</li>
+<li><strong>Power (1-β)</strong>: Probability of correctly rejecting
+false H₀</li>
+</ul>
+<h3 data-number="5.4.3" id="power-analysis"><span class="header-section-number">5.4.3</span> Power Analysis</h3>
+<p><strong>Factors affecting power</strong>: - Sample size (primary
+factor) - Effect size - Significance level (α) - Variability</p>
+<p><strong>Sample size formula</strong>: n = [(zα + zβ)/δ]² × σ²</p>
+<h2 data-number="5.5" id="common-statistical-tests"><span class="header-section-number">5.5</span> Common Statistical Tests</h2>
+<h3 data-number="5.5.1" id="parametric-tests-normal-data-equal-variances"><span class="header-section-number">5.5.1</span> Parametric Tests (Normal
+data, equal variances)</h3>
+<h4 data-number="5.5.1.1" id="one-sample-t-test"><span class="header-section-number">5.5.1.1</span> One-sample t-test</h4>
+<ul>
+<li>Compare sample mean to known value</li>
+<li>H₀: μ = μ₀</li>
+</ul>
+<h4 data-number="5.5.1.2" id="two-sample-t-test"><span class="header-section-number">5.5.1.2</span> Two-sample t-test</h4>
+<ul>
+<li>Compare means of two groups</li>
+<li>Independent samples or paired</li>
+</ul>
+<h4 data-number="5.5.1.3" id="one-way-anova"><span class="header-section-number">5.5.1.3</span> One-way ANOVA</h4>
+<ul>
+<li>Compare means of three or more groups</li>
+<li>Tests if at least one group differs</li>
+</ul>
+<h4 data-number="5.5.1.4" id="pearson-correlation"><span class="header-section-number">5.5.1.4</span> Pearson Correlation</h4>
+<ul>
+<li>Measure linear relationship between variables</li>
+<li>Range: -1 to +1</li>
+</ul>
+<h3 data-number="5.5.2" id="non-parametric-tests-no-normality-assumption"><span class="header-section-number">5.5.2</span> Non-parametric Tests (No
+normality assumption)</h3>
+<h4 data-number="5.5.2.1" id="chi-square-test"><span class="header-section-number">5.5.2.1</span> Chi-square test</h4>
+<ul>
+<li>Test independence of categorical variables</li>
+<li>Goodness of fit</li>
+</ul>
+<h4 data-number="5.5.2.2" id="mann-whitney-u-test"><span class="header-section-number">5.5.2.2</span> Mann-Whitney U test</h4>
+<ul>
+<li>Compare two independent groups</li>
+<li>Alternative to t-test</li>
+</ul>
+<h4 data-number="5.5.2.3" id="kruskal-wallis-test"><span class="header-section-number">5.5.2.3</span> Kruskal-Wallis test</h4>
+<ul>
+<li>Compare three or more independent groups</li>
+<li>Alternative to ANOVA</li>
+</ul>
+<h4 data-number="5.5.2.4" id="spearman-correlation"><span class="header-section-number">5.5.2.4</span> Spearman correlation</h4>
+<ul>
+<li>Measure monotonic relationship</li>
+<li>Alternative to Pearson correlation</li>
+</ul>
+<h2 data-number="5.6" id="p-values-and-significance"><span class="header-section-number">5.6</span> p-Values and Significance</h2>
+<h3 data-number="5.6.1" id="p-value-definition"><span class="header-section-number">5.6.1</span> p-Value Definition</h3>
+<ul>
+<li>Probability of observing data as extreme as sample data, assuming H₀
+true</li>
+<li>Smaller p-values: Stronger evidence against H₀</li>
+</ul>
+<h3 data-number="5.6.2" id="significance-levels"><span class="header-section-number">5.6.2</span> Significance Levels</h3>
+<ul>
+<li><strong>p &lt; 0.05</strong>: Statistically significant</li>
+<li><strong>p &lt; 0.01</strong>: Highly significant</li>
+<li><strong>p &lt; 0.001</strong>: Very highly significant</li>
+</ul>
+<h3 data-number="5.6.3" id="misconceptions"><span class="header-section-number">5.6.3</span> Misconceptions</h3>
+<ul>
+<li>p-value ≠ probability that H₀ is true</li>
+<li>p-value ≠ importance of result</li>
+<li>Statistical significance ≠ clinical significance</li>
+</ul>
+<h2 data-number="5.7" id="effect-size"><span class="header-section-number">5.7</span> Effect Size</h2>
+<h3 data-number="5.7.1" id="importance"><span class="header-section-number">5.7.1</span> Importance</h3>
+<ul>
+<li>Magnitude of relationship or difference</li>
+<li>Independent of sample size</li>
+<li>More meaningful than p-values</li>
+</ul>
+<h3 data-number="5.7.2" id="common-measures"><span class="header-section-number">5.7.2</span> Common Measures</h3>
+<ul>
+<li><strong>Cohen’s d</strong>: Standardized mean difference</li>
+<li><strong>Odds ratio</strong>: For categorical outcomes</li>
+<li><strong>Relative risk</strong>: For incidence data</li>
+<li><strong>R²</strong>: Proportion of variance explained</li>
+</ul>
+<h2 data-number="5.8" id="summary-3"><span class="header-section-number">5.8</span> Summary</h2>
+<p>Inferential statistics allow us to make conclusions about populations
+from sample data. Confidence intervals provide estimates with
+uncertainty, while hypothesis testing helps determine if observed
+effects are real. Understanding Type I/II errors, power, and effect
+sizes is crucial for proper interpretation of statistical results.</p>
+<hr />
+<h2 data-number="5.9" id="parametric"><span class="header-section-number">5.9</span> 5. Parametric Tests</h2>
+<h1 data-number="6" id="module-5-parametric-statistical-tests"><span class="header-section-number">6</span> Module 5: Parametric Statistical
+Tests</h1>
+<h2 data-number="6.1" id="learning-objectives-4"><span class="header-section-number">6.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand assumptions of parametric tests</li>
+<li>Perform and interpret t-tests</li>
+<li>Conduct ANOVA and post-hoc tests</li>
+<li>Calculate and interpret correlation coefficients</li>
+<li>Understand linear regression</li>
+</ul>
+<h2 data-number="6.2" id="assumptions-of-parametric-tests"><span class="header-section-number">6.2</span> Assumptions of Parametric
+Tests</h2>
+<h3 data-number="6.2.1" id="normality"><span class="header-section-number">6.2.1</span> Normality</h3>
+<ul>
+<li>Data follows normal distribution</li>
+<li>Check with histograms, Q-Q plots, Shapiro-Wilk test</li>
+<li>Central Limit Theorem helps with large samples</li>
+</ul>
+<h3 data-number="6.2.2" id="homoscedasticity-equal-variances"><span class="header-section-number">6.2.2</span> Homoscedasticity (Equal
+Variances)</h3>
+<ul>
+<li>Variances equal across groups</li>
+<li>Test with Levene’s test or Bartlett’s test</li>
+<li>Important for t-tests and ANOVA</li>
+</ul>
+<h3 data-number="6.2.3" id="independence"><span class="header-section-number">6.2.3</span> Independence</h3>
+<ul>
+<li>Observations independent of each other</li>
+<li>Violated in repeated measures designs</li>
+<li>Important for all parametric tests</li>
+</ul>
+<h3 data-number="6.2.4" id="linearity"><span class="header-section-number">6.2.4</span> Linearity</h3>
+<ul>
+<li>Relationship between variables is linear</li>
+<li>Check with scatter plots</li>
+<li>Important for correlation and regression</li>
+</ul>
+<h2 data-number="6.3" id="t-tests"><span class="header-section-number">6.3</span> t-Tests</h2>
+<h3 data-number="6.3.1" id="one-sample-t-test-1"><span class="header-section-number">6.3.1</span> One-Sample t-Test</h3>
+<p><strong>Purpose</strong>: Test if sample mean differs from known
+population mean</p>
+<p><strong>Formula</strong>: t = (x̄ - μ₀) / (s / )</p>
+<p><strong>Example</strong>: Test if average height differs from
+national average</p>
+<h3 data-number="6.3.2" id="independent-samples-t-test"><span class="header-section-number">6.3.2</span> Independent Samples
+t-Test</h3>
+<p><strong>Purpose</strong>: Compare means of two independent groups</p>
+<p><strong>Formula</strong>: t = (x̄₁ - x̄₂) / </p>
+<p><strong>Assumptions</strong>: - Independent observations - Normal
+distribution in each group - Equal variances (or use Welch’s
+correction)</p>
+<h3 data-number="6.3.3" id="paired-t-test"><span class="header-section-number">6.3.3</span> Paired t-Test</h3>
+<p><strong>Purpose</strong>: Compare means of two related groups</p>
+<p><strong>Formula</strong>: t = (x̄_d) / (s_d / )</p>
+<p>Where x̄_d is mean of differences</p>
+<p><strong>Uses</strong>: - Before-after studies - Matched pairs -
+Repeated measures</p>
+<h2 data-number="6.4" id="analysis-of-variance-anova"><span class="header-section-number">6.4</span> Analysis of Variance
+(ANOVA)</h2>
+<h3 data-number="6.4.1" id="one-way-anova-1"><span class="header-section-number">6.4.1</span> One-Way ANOVA</h3>
+<p><strong>Purpose</strong>: Compare means of three or more groups</p>
+<p><strong>Logic</strong>: Partition total variation into between-group
+and within-group</p>
+<p><strong>F-statistic</strong>: F = MS_between / MS_within</p>
+<p><strong>Post-hoc tests</strong>: - Tukey’s HSD: Compare all pairs -
+Bonferroni: Control family-wise error - Dunnett’s: Compare to control
+group</p>
+<h3 data-number="6.4.2" id="two-way-anova"><span class="header-section-number">6.4.2</span> Two-Way ANOVA</h3>
+<p><strong>Purpose</strong>: Examine effects of two factors and their
+interaction</p>
+<p><strong>Model</strong>: Y = μ + A + B + AB + ε</p>
+<p><strong>Main effects</strong>: Effect of each factor alone
+<strong>Interaction</strong>: Combined effect of factors</p>
+<h3 data-number="6.4.3" id="repeated-measures-anova"><span class="header-section-number">6.4.3</span> Repeated Measures ANOVA</h3>
+<p><strong>Purpose</strong>: Compare means across multiple time points
+or conditions</p>
+<p><strong>Advantages</strong>: - Controls for individual differences -
+Requires fewer subjects - More powerful than independent groups</p>
+<h2 data-number="6.5" id="correlation-analysis"><span class="header-section-number">6.5</span> Correlation Analysis</h2>
+<h3 data-number="6.5.1" id="pearson-correlation-1"><span class="header-section-number">6.5.1</span> Pearson Correlation</h3>
+<p><strong>Purpose</strong>: Measure strength and direction of linear
+relationship</p>
+<p><strong>Formula</strong>: r = Σ[(x_i - x̄)(y_i - ȳ)] / </p>
+<p><strong>Interpretation</strong>: - +1: Perfect positive correlation -
+0: No linear relationship - -1: Perfect negative correlation</p>
+<p><strong>Hypothesis testing</strong>: t = r </p>
+<h3 data-number="6.5.2" id="correlation-vs.-causation"><span class="header-section-number">6.5.2</span> Correlation
+vs. Causation</h3>
+<ul>
+<li>Correlation does not imply causation</li>
+<li>Third variable may explain relationship</li>
+<li>Experimental design needed for causality</li>
+</ul>
+<h2 data-number="6.6" id="linear-regression"><span class="header-section-number">6.6</span> Linear Regression</h2>
+<h3 data-number="6.6.1" id="simple-linear-regression"><span class="header-section-number">6.6.1</span> Simple Linear Regression</h3>
+<p><strong>Model</strong>: Y = β₀ + β₁X + ε</p>
+<p><strong>Parameters</strong>: - β₀: Intercept (Y when X=0) - β₁: Slope
+(change in Y per unit X) - ε: Error term</p>
+<p><strong>Estimation</strong>: Least squares method</p>
+<h3 data-number="6.6.2" id="multiple-linear-regression"><span class="header-section-number">6.6.2</span> Multiple Linear
+Regression</h3>
+<p><strong>Model</strong>: Y = β₀ + β₁X₁ + β₂X₂ + … + βₖXₖ + ε</p>
+<p><strong>Assumptions</strong>: - Linearity - Independence -
+Homoscedasticity - Normality of residuals</p>
+<h3 data-number="6.6.3" id="model-evaluation"><span class="header-section-number">6.6.3</span> Model Evaluation</h3>
+<ul>
+<li><strong>R²</strong>: Proportion of variance explained</li>
+<li><strong>Adjusted R²</strong>: Penalizes for additional
+variables</li>
+<li><strong>F-test</strong>: Overall model significance</li>
+<li><strong>t-tests</strong>: Individual coefficient significance</li>
+</ul>
+<h3 data-number="6.6.4" id="regression-diagnostics"><span class="header-section-number">6.6.4</span> Regression Diagnostics</h3>
+<ul>
+<li><strong>Residual plots</strong>: Check assumptions</li>
+<li><strong>Influential points</strong>: Cook’s distance</li>
+<li><strong>Multicollinearity</strong>: VIF &gt; 10</li>
+<li><strong>Outliers</strong>: Standardized residuals &gt; 3</li>
+</ul>
+<h2 data-number="6.7" id="summary-4"><span class="header-section-number">6.7</span> Summary</h2>
+<p>Parametric tests provide powerful tools for comparing groups and
+examining relationships when assumptions are met. Understanding test
+assumptions, proper interpretation, and appropriate use of post-hoc
+tests is essential for valid statistical analysis.</p>
+<hr />
+<h2 data-number="6.8" id="nonparametric"><span class="header-section-number">6.8</span> 6. Non-Parametric Tests</h2>
+<h1 data-number="7" id="module-6-non-parametric-statistical-tests"><span class="header-section-number">7</span> Module 6: Non-Parametric
+Statistical Tests</h1>
+<h2 data-number="7.1" id="learning-objectives-5"><span class="header-section-number">7.1</span> Learning Objectives</h2>
+<ul>
+<li>Understand when to use non-parametric tests</li>
+<li>Perform and interpret chi-square tests</li>
+<li>Apply Mann-Whitney and Kruskal-Wallis tests</li>
+<li>Use Spearman’s correlation</li>
+<li>Understand non-parametric alternatives</li>
+</ul>
+<h2 data-number="7.2" id="when-to-use-non-parametric-tests"><span class="header-section-number">7.2</span> When to Use Non-Parametric
+Tests</h2>
+<h3 data-number="7.2.1" id="advantages"><span class="header-section-number">7.2.1</span> Advantages</h3>
+<ul>
+<li><strong>No normality assumption</strong>: Work with any
+distribution</li>
+<li><strong>Ordinal data</strong>: Appropriate for ranked data</li>
+<li><strong>Robust</strong>: Less affected by outliers</li>
+<li><strong>Small samples</strong>: Often more powerful with small
+n</li>
+</ul>
+<h3 data-number="7.2.2" id="disadvantages"><span class="header-section-number">7.2.2</span> Disadvantages</h3>
+<ul>
+<li><strong>Less powerful</strong>: May miss real effects with normal
+data</li>
+<li><strong>Less precise</strong>: Often only test for differences, not
+magnitude</li>
+<li><strong>Ordinal results</strong>: May lose information from
+continuous data</li>
+</ul>
+<h3 data-number="7.2.3" id="decision-criteria"><span class="header-section-number">7.2.3</span> Decision Criteria</h3>
+<ul>
+<li>Data not normally distributed</li>
+<li>Ordinal or nominal data</li>
+<li>Small sample sizes</li>
+<li>Presence of outliers</li>
+</ul>
+<h2 data-number="7.3" id="chi-square-tests"><span class="header-section-number">7.3</span> Chi-Square Tests</h2>
+<h3 data-number="7.3.1" id="chi-square-goodness-of-fit"><span class="header-section-number">7.3.1</span> Chi-Square Goodness of
+Fit</h3>
+<p><strong>Purpose</strong>: Test if observed frequencies match expected
+distribution</p>
+<p><strong>Formula</strong>: χ² = Σ [(O_i - E_i)² / E_i]</p>
+<p><strong>Example</strong>: Test if die is fair - Expected: Each face
+1/6 = 16.67 - Observed: 20, 15, 18, 16, 17, 14</p>
+<h3 data-number="7.3.2" id="chi-square-test-of-independence"><span class="header-section-number">7.3.2</span> Chi-Square Test of
+Independence</h3>
+<p><strong>Purpose</strong>: Test if two categorical variables are
+independent</p>
+<p><strong>Contingency table</strong>:</p>
+<pre><code>         Variable B
+Variable A | B1 | B2 | Total
+-----------|----|----|------
+A1        |    |    |
+A2        |    |    |
+-----------|----|----|------
+Total     |    |    |</code></pre>
+<p><strong>Formula</strong>: Same as goodness of fit, but for all
+cells</p>
+<p><strong>Expected frequency</strong>: E_ij = (Row total × Column
+total) / Grand total</p>
+<h3 data-number="7.3.3" id="fishers-exact-test"><span class="header-section-number">7.3.3</span> Fisher’s Exact Test</h3>
+<p><strong>Purpose</strong>: Alternative to chi-square for small
+samples</p>
+<p><strong>Uses</strong>: 2×2 tables with small expected frequencies
+(&lt;5)</p>
+<h2 data-number="7.4" id="mann-whitney-u-test-1"><span class="header-section-number">7.4</span> Mann-Whitney U Test</h2>
+<h3 data-number="7.4.1" id="purpose"><span class="header-section-number">7.4.1</span> Purpose</h3>
+<ul>
+<li>Compare two independent groups</li>
+<li>Alternative to independent samples t-test</li>
+<li>Works with ordinal or continuous data</li>
+</ul>
+<h3 data-number="7.4.2" id="logic"><span class="header-section-number">7.4.2</span> Logic</h3>
+<ul>
+<li>Rank all observations combined</li>
+<li>Compare sum of ranks between groups</li>
+<li>Test if groups come from same distribution</li>
+</ul>
+<h3 data-number="7.4.3" id="formula-1"><span class="header-section-number">7.4.3</span> Formula</h3>
+<p>U = n₁n₂ + n₁(n₁+1)/2 - R₁</p>
+<p>Where R₁ is sum of ranks in group 1</p>
+<h3 data-number="7.4.4" id="effect-size-1"><span class="header-section-number">7.4.4</span> Effect Size</h3>
+<p><span class="math inline">$r = |z| / \sqrt{(n₁ + n₂)}$</span></p>
+<h2 data-number="7.5" id="kruskal-wallis-test-1"><span class="header-section-number">7.5</span> Kruskal-Wallis Test</h2>
+<h3 data-number="7.5.1" id="purpose-1"><span class="header-section-number">7.5.1</span> Purpose</h3>
+<ul>
+<li>Compare three or more independent groups</li>
+<li>Extension of Mann-Whitney test</li>
+<li>Alternative to one-way ANOVA</li>
+</ul>
+<h3 data-number="7.5.2" id="logic-1"><span class="header-section-number">7.5.2</span> Logic</h3>
+<ul>
+<li>Rank all observations</li>
+<li>Compare mean ranks between groups</li>
+<li>Chi-square approximation for large samples</li>
+</ul>
+<h3 data-number="7.5.3" id="post-hoc-tests"><span class="header-section-number">7.5.3</span> Post-hoc Tests</h3>
+<ul>
+<li>Dunn’s test for pairwise comparisons</li>
+<li>Bonferroni correction for multiple tests</li>
+</ul>
+<h2 data-number="7.6" id="wilcoxon-signed-rank-test"><span class="header-section-number">7.6</span> Wilcoxon Signed-Rank Test</h2>
+<h3 data-number="7.6.1" id="purpose-2"><span class="header-section-number">7.6.1</span> Purpose</h3>
+<ul>
+<li>Compare two related samples</li>
+<li>Alternative to paired t-test</li>
+<li>Works with ordinal data</li>
+</ul>
+<h3 data-number="7.6.2" id="procedure"><span class="header-section-number">7.6.2</span> Procedure</h3>
+<ol type="1">
+<li>Calculate differences between pairs</li>
+<li>Rank absolute differences</li>
+<li>Assign signs based on direction</li>
+<li>Test if positive and negative ranks balanced</li>
+</ol>
+<h2 data-number="7.7" id="spearmans-rank-correlation"><span class="header-section-number">7.7</span> Spearman’s Rank
+Correlation</h2>
+<h3 data-number="7.7.1" id="purpose-3"><span class="header-section-number">7.7.1</span> Purpose</h3>
+<ul>
+<li>Measure monotonic relationship between variables</li>
+<li>Alternative to Pearson correlation</li>
+<li>Works with ordinal data</li>
+</ul>
+<h3 data-number="7.7.2" id="calculation"><span class="header-section-number">7.7.2</span> Calculation</h3>
+<ol type="1">
+<li>Rank both variables</li>
+<li>Calculate Pearson correlation on ranks</li>
+</ol>
+<p><strong>Formula</strong>: r_s = 1 - (6Σd_i²) / (n(n²-1))</p>
+<h2 data-number="7.8" id="summary-5"><span class="header-section-number">7.8</span> Summary</h2>
+<p>Non-parametric tests provide robust alternatives when parametric
+assumptions are not met. Understanding when to use each test and how to
+interpret results is essential for appropriate statistical analysis of
+various data types.</p>
+</body>
+</html>

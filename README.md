@@ -39,10 +39,10 @@ By the end of this course, students will be able to:
 
 ## 🚀 Getting Started
 
-### Option 1: Static Website (GitHub Pages)
-Access the interactive modules directly through GitHub Pages:
-- [Main Dashboard](https://YOUR_USERNAME.github.io/epidemiology-teaching-materials/interactive/dashboard.html)
-- [Comprehensive Modules](https://YOUR_USERNAME.github.io/epidemiology-teaching-materials/interactive/comprehensive_modules.html)
+### Option 1: Static Website (Local Files)
+Access the interactive modules directly through your local files:
+- [Main Dashboard](interactive/dashboard.html)
+- [Comprehensive Modules](interactive/comprehensive_modules.html)
 
 ### Option 2: Streamlit Dashboard
 For the full data analytics experience:
