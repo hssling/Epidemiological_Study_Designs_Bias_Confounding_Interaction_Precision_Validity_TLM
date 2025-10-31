@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Design Selector - Interactive Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .question-card {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .option-btn {
+            background-color: white;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+        }
+        .option-btn:hover {
+            border-color: #3498db;
+            background-color: #ecf0f1;
+        }
+        .option-btn.selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .result-card {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        .result-title {
+            color: #155724;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .result-description {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        .recommendation {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .strengths-weaknesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .strengths, .weaknesses {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .strengths h4, .weaknesses h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .strengths ul, .weaknesses ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn.secondary {
+            background-color: #95a5a6;
+        }
+        .btn.secondary:hover {
+            background-color: #7f8c8d;
+        }
+        .progress {
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .step-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌳 Study Design Selector</h1>
+        <p>Use this interactive decision tree to determine the most appropriate epidemiological study design for your research question.</p>
+
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-info">
+                Step <span id="currentStep">1</span> of <span id="totalSteps">6</span>
+            </div>
+        </div>
+
+        <div id="questionContainer">
+            <!-- Questions will be loaded here -->
+        </div>
+
+        <div class="result-card" id="resultCard">
+            <div class="result-title" id="resultTitle"></div>
+            <div class="result-description" id="resultDescription"></div>
+            <div class="recommendation" id="recommendation"></div>
+            <div class="strengths-weaknesses" id="strengthsWeaknesses"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn secondary" id="backBtn" onclick="goBack()" style="display: none;">← Back</button>
+            <button class="btn" id="nextBtn" onclick="nextStep()" style="display: none;">Next →</button>
+            <button class="btn secondary" id="restartBtn" onclick="restartSelector()" style="display: none;">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the primary objective of your study?",
+                options: [
+                    { text: "Establish causality between exposure and outcome", value: "causality" },
+                    { text: "Estimate disease frequency in a population", value: "prevalence" },
+                    { text: "Test effectiveness of an intervention", value: "intervention" },
+                    { text: "Investigate risk factors for a disease", value: "risk_factors" }
+                ]
+            },
+            {
+                question: "How common is the outcome you're studying?",
+                options: [
+                    { text: "Very common (affects >10% of population)", value: "common" },
+                    { text: "Moderately common (affects 1-10% of population)", value: "moderate" },
+                    { text: "Rare (affects <1% of population)", value: "rare" },
+                    { text: "Very rare (affects <0.1% of population)", value: "very_rare" }
+                ]
+            },
+            {
+                question: "Do you have the ability to intervene or assign exposure?",
+                options: [
+                    { text: "Yes, I can randomly assign participants to groups", value: "yes_randomize" },
+                    { text: "Yes, but randomization is not feasible", value: "yes_no_randomize" },
+                    { text: "No, exposure occurs naturally", value: "no" }
+                ]
+            },
+            {
+                question: "What is your timeline and budget?",
+                options: [
+                    { text: "Long timeline, high budget (years, significant resources)", value: "long_high" },
+                    { text: "Moderate timeline and budget (months, moderate resources)", value: "moderate" },
+                    { text: "Short timeline, limited budget (weeks, minimal resources)", value: "short_low" }
+                ]
+            },
+            {
+                question: "Do you need to study the outcome over time?",
+                options: [
+                    { text: "Yes, I need to follow participants over time", value: "yes" },
+                    { text: "No, a single point in time is sufficient", value: "no" }
+                ]
+            },
+            {
+                question: "What is the nature of your exposure?",
+                options: [
+                    { text: "Well-defined intervention or treatment", value: "intervention" },
+                    { text: "Behavioral or lifestyle factor", value: "behavioral" },
+                    { text: "Environmental or occupational exposure", value: "environmental" },
+                    { text: "Genetic or biological factor", value: "genetic" }
+                ]
+            }
+        ];
+
+        const studyDesigns = {
+            rct: {
+                name: "Randomized Controlled Trial (RCT)",
+                description: "Participants are randomly assigned to intervention or control groups, and outcomes are compared between groups.",
+                recommendation: "Best for establishing causality when you can control exposure assignment.",
+                strengths: [
+                    "Gold standard for causality",
+                    "Minimizes confounding through randomization",
+                    "High internal validity",
+                    "Can establish temporality"
+                ],
+                weaknesses: [
+                    "Expensive and time-consuming",
+                    "May not be ethical for some exposures",
+                    "Limited generalizability",
+                    "May not be feasible for rare outcomes"
+                ]
+            },
+            cohort: {
+                name: "Cohort Study",
+                description: "Groups of people with/without exposure are followed over time to compare outcome rates.",
+                recommendation: "Ideal for studying risk factors when you can follow participants prospectively.",
+                strengths: [
+                    "Can establish temporality",
+                    "Good for multiple outcomes",
+                    "Can calculate incidence rates",
+                    "Relatively unbiased"
+                ],
+                weaknesses: [
+                    "Time-consuming and expensive",
+                    "Loss to follow-up possible",
+                    "Not suitable for rare outcomes",
+                    "Confounding possible"
+                ]
+            },
+            case_control: {
+                name: "Case-Control Study",
+                description: "People with outcome (cases) are compared to those without (controls) for exposure history.",
+                recommendation: "Best choice for rare outcomes when you need efficiency.",
+                strengths: [
+                    "Efficient for rare outcomes",
+                    "Relatively quick and inexpensive",
+                    "Can study multiple exposures",
+                    "Good for generating hypotheses"
+                ],
+                weaknesses: [
+                    "Cannot establish temporality",
+                    "Prone to recall bias",
+                    "Selection bias possible",
+                    "Cannot calculate incidence"
+                ]
+            },
+            cross_sectional: {
+                name: "Cross-Sectional Study",
+                description: "Data on exposure and outcome are collected at a single point in time from a population.",
+                recommendation: "Suitable when you need a snapshot of disease frequency or associations.",
+                strengths: [
+                    "Quick and inexpensive",
+                    "Good for prevalence estimation",
+                    "Can study multiple variables",
+                    "Useful for planning larger studies"
+                ],
+                weaknesses: [
+                    "Cannot establish temporality",
+                    "Survival bias possible",
+                    "Cannot determine causality",
+                    "Prevalence-incidence bias"
+                ]
+            },
+            ecological: {
+                name: "Ecological Study",
+                description: "Population-level data is used to examine associations between exposures and outcomes.",
+                recommendation: "Useful for hypothesis generation with existing population data.",
+                strengths: [
+                    "Very inexpensive",
+                    "Uses existing data",
+                    "Good for policy decisions",
+                    "Can study large populations"
+                ],
+                weaknesses: [
+                    "Ecological fallacy possible",
+                    "Cannot establish causality",
+                    "Confounding at group level",
+                    "Limited individual-level data"
+                ]
+            }
+        };
+
+        let currentStep = 0;
+        let answers = [];
+        let history = [];
+
+        function loadQuestion() {
+            const question = questions[currentStep];
+            const container = document.getElementById('questionContainer');
+
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question">${question.question}</div>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <button class="option-btn" onclick="selectOption(${index})">
+                                ${option.text}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('currentStep').textContent = currentStep + 1;
+            updateProgress();
+        }
+
+        function selectOption(index) {
+            const option = questions[currentStep].options[index];
+            answers[currentStep] = option.value;
+            history.push(currentStep);
+
+            // Auto-advance for some questions or show next button
+            if (currentStep < questions.length - 1) {
+                document.getElementById('nextBtn').style.display = 'inline-block';
+            } else {
+                determineStudyDesign();
+            }
+        }
+
+        function nextStep() {
+            currentStep++;
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('backBtn').style.display = 'inline-block';
+
+            if (currentStep < questions.length) {
+                loadQuestion();
+            } else {
+                determineStudyDesign();
+            }
+        }
+
+        function goBack() {
+            if (history.length > 0) {
+                currentStep = history.pop();
+                answers = answers.slice(0, currentStep + 1);
+                loadQuestion();
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('resultCard').style.display = 'none';
+
+                if (currentStep === 0) {
+                    document.getElementById('backBtn').style.display = 'none';
+                }
+            }
+        }
+
+        function determineStudyDesign() {
+            // Simple decision logic based on answers
+            let recommendedDesign = 'cross_sectional'; // default
+
+            if (answers[0] === 'causality' && answers[2] === 'yes_randomize') {
+                recommendedDesign = 'rct';
+            } else if (answers[0] === 'intervention' && answers[2] === 'yes_randomize') {
+                recommendedDesign = 'rct';
+            } else if (answers[1] === 'rare' || answers[1] === 'very_rare') {
+                recommendedDesign = 'case_control';
+            } else if (answers[4] === 'yes' && answers[3] === 'long_high') {
+                recommendedDesign = 'cohort';
+            } else if (answers[0] === 'prevalence') {
+                recommendedDesign = 'cross_sectional';
+            } else if (answers[3] === 'short_low') {
+                recommendedDesign = 'cross_sectional';
+            }
+
+            showResult(recommendedDesign);
+        }
+
+        function showResult(designKey) {
+            const design = studyDesigns[designKey];
+            const resultCard = document.getElementById('resultCard');
+
+            document.getElementById('resultTitle').textContent = `Recommended: ${design.name}`;
+            document.getElementById('resultDescription').textContent = design.description;
+            document.getElementById('recommendation').innerHTML = `<strong>Why this design?</strong> ${design.recommendation}`;
+
+            document.getElementById('strengthsWeaknesses').innerHTML = `
+                <div class="strengths">
+                    <h4>Strengths</h4>
+                    <ul>
+                        ${design.strengths.map(strength => `<li>${strength}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="weaknesses">
+                    <h4>Limitations</h4>
+                    <ul>
+                        ${design.weaknesses.map(weakness => `<li>${weakness}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            resultCard.style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('restartBtn').style.display = 'inline-block';
+        }
+
+        function updateProgress() {
+            const progress = ((currentStep + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function restartSelector() {
+            currentStep = 0;
+            answers = [];
+            history = [];
+
+            document.getElementById('resultCard').style.display = 'none';
+            document.getElementById('restartBtn').style.display = 'none';
+            document.getElementById('backBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+
+            loadQuestion();
+        }
+
+        // Initialize
+        loadQuestion();
+    </script>
+</body>
+</html>

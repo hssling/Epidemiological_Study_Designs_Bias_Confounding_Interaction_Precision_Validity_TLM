@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Analysis - Interactive Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .scenario {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        .scenario h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .decision-point {
+            background-color: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .decision-point h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .option-card {
+            background-color: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            border-color: #3498db;
+            background-color: #f8f9fa;
+        }
+        .option-card.selected {
+            border-color: #28a745;
+            background-color: #d4edda;
+        }
+        .option-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .option-description {
+            color: #666;
+            font-size: 14px;
+        }
+        .consequence {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .consequence h5 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .progress {
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .step-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .results {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        .results h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .score-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+        }
+        .score-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .score-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .feedback {
+            background-color: #e8f4fd;
+            border: 1px solid #b8daff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .feedback h4 {
+            color: #004085;
+            margin-top: 0;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn.secondary {
+            background-color: #95a5a6;
+        }
+        .btn.secondary:hover {
+            background-color: #7f8c8d;
+        }
+        .btn.success {
+            background-color: #27ae60;
+        }
+        .btn.success:hover {
+            background-color: #229954;
+        }
+        .btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Interactive Case Study: Foodborne Outbreak Investigation</h1>
+        <p>Step into the role of an epidemiologist investigating a foodborne illness outbreak. Make decisions at each stage and see how your choices affect the investigation outcomes.</p>
+
+        <div class="scenario">
+            <h3>The Outbreak</h3>
+            <p>Over the past week, 47 people in a small city have reported symptoms of gastroenteritis (nausea, vomiting, diarrhea, abdominal pain). All cases occurred within 48 hours of attending a community potluck dinner. As the lead epidemiologist, you need to identify the contaminated food source and prevent further cases.</p>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-info">
+                Step <span id="currentStep">1</span> of <span id="totalSteps">6</span>
+            </div>
+        </div>
+
+        <div id="decisionContainer">
+            <!-- Decision points will be loaded here -->
+        </div>
+
+        <div class="consequence" id="consequence">
+            <h5>Consequences of Your Choice:</h5>
+            <p id="consequenceText"></p>
+        </div>
+
+        <div class="results" id="results">
+            <h3>Investigation Results</h3>
+            <div class="score-card">
+                <div class="score-title">Cases Prevented</div>
+                <div class="score-value" id="casesPrevented">0</div>
+            </div>
+            <div class="score-card">
+                <div class="score-title">Investigation Efficiency</div>
+                <div class="score-value" id="efficiency">0%</div>
+            </div>
+            <div class="score-card">
+                <div class="score-title">Scientific Rigor</div>
+                <div class="score-value" id="rigor">0%</div>
+            </div>
+            <div class="feedback" id="finalFeedback">
+                <h4>Overall Assessment:</h4>
+                <p id="feedbackText"></p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" id="nextBtn" onclick="nextStep()" style="display: none;">Continue Investigation →</button>
+            <button class="btn secondary" id="restartBtn" onclick="restartCase()" style="display: none;">Investigate Another Outbreak</button>
+        </div>
+    </div>
+
+    <script>
+        const decisions = [
+            {
+                step: 1,
+                question: "How do you initially define and identify cases?",
+                options: [
+                    {
+                        title: "Broad Case Definition",
+                        description: "Include anyone with gastrointestinal symptoms in the past week, regardless of potluck attendance",
+                        consequence: "You identify 89 cases, including many not related to the outbreak. This creates confusion but ensures you don't miss any real cases.",
+                        scores: { casesPrevented: 5, efficiency: 60, rigor: 70 }
+                    },
+                    {
+                        title: "Specific Case Definition",
+                        description: "Only include people who attended the potluck AND developed symptoms within 72 hours",
+                        consequence: "You identify 52 confirmed cases. This is more precise but you might miss some cases with delayed symptoms.",
+                        scores: { casesPrevented: 8, efficiency: 85, rigor: 90 }
+                    },
+                    {
+                        title: "Laboratory-Confirmed Only",
+                        description: "Wait for stool samples to confirm the pathogen before counting cases",
+                        consequence: "You identify only 23 laboratory-confirmed cases. This takes time but provides certainty about the outbreak source.",
+                        scores: { casesPrevented: 3, efficiency: 40, rigor: 95 }
+                    }
+                ]
+            },
+            {
+                step: 2,
+                question: "What study design do you use to identify the contaminated food?",
+                options: [
+                    {
+                        title: "Cohort Study",
+                        description: "Compare food consumption among all potluck attendees (cases and non-cases)",
+                        consequence: "You survey all 200 attendees about what they ate. This provides strong evidence but requires significant resources.",
+                        scores: { casesPrevented: 9, efficiency: 75, rigor: 95 }
+                    },
+                    {
+                        title: "Case-Control Study",
+                        description: "Compare food consumption between cases and a sample of non-cases",
+                        consequence: "You interview 50 cases and 50 non-cases. This is efficient and provides good evidence with less work.",
+                        scores: { casesPrevented: 8, efficiency: 90, rigor: 85 }
+                    },
+                    {
+                        title: "Descriptive Epidemiology Only",
+                        description: "Just describe the outbreak without comparing food consumption",
+                        consequence: "You identify the timing and location but cannot pinpoint the specific contaminated food item.",
+                        scores: { casesPrevented: 2, efficiency: 95, rigor: 50 }
+                    }
+                ]
+            },
+            {
+                step: 3,
+                question: "How do you collect exposure information?",
+                options: [
+                    {
+                        title: "Self-Administered Questionnaire",
+                        description: "Send questionnaires to all attendees to complete on their own",
+                        consequence: "You get responses from 150 people but recall bias affects the accuracy of food consumption reports.",
+                        scores: { casesPrevented: 6, efficiency: 80, rigor: 65 }
+                    },
+                    {
+                        title: "Telephone Interviews",
+                        description: "Call all attendees for structured interviews about food consumption",
+                        consequence: "You interview 180 people with detailed information. This provides better data but takes more time.",
+                        scores: { casesPrevented: 9, efficiency: 70, rigor: 90 }
+                    },
+                    {
+                        title: "Food History from Memory Only",
+                        description: "Ask cases to recall what they ate without contacting others",
+                        consequence: "You get incomplete information leading to uncertain conclusions about the contaminated food.",
+                        scores: { casesPrevented: 4, efficiency: 95, rigor: 40 }
+                    }
+                ]
+            },
+            {
+                step: 4,
+                question: "How do you handle potential confounding factors?",
+                options: [
+                    {
+                        title: "Adjust for Age and Gender",
+                        description: "Control for demographic factors that might affect both food choice and illness risk",
+                        consequence: "Your analysis shows potato salad as the likely source, accounting for the fact that older attendees ate more of it.",
+                        scores: { casesPrevented: 9, efficiency: 75, rigor: 95 }
+                    },
+                    {
+                        title: "No Adjustment",
+                        description: "Analyze raw associations without controlling for other factors",
+                        consequence: "Your results suggest multiple foods might be contaminated, creating confusion about the true source.",
+                        scores: { casesPrevented: 5, efficiency: 90, rigor: 60 }
+                    },
+                    {
+                        title: "Adjust for Everything Possible",
+                        description: "Control for age, gender, portion size, cooking methods, and storage conditions",
+                        consequence: "Your over-adjusted analysis loses statistical power and the true association becomes unclear.",
+                        scores: { casesPrevented: 6, efficiency: 50, rigor: 70 }
+                    }
+                ]
+            },
+            {
+                step: 5,
+                question: "How quickly do you act on your findings?",
+                options: [
+                    {
+                        title: "Immediate Public Health Action",
+                        description: "Issue warnings and recalls based on preliminary findings within 24 hours",
+                        consequence: "You prevent additional cases but later find the contaminated food was actually different from your initial conclusion.",
+                        scores: { casesPrevented: 7, efficiency: 95, rigor: 60 }
+                    },
+                    {
+                        title: "Wait for Complete Analysis",
+                        description: "Complete full statistical analysis before taking any action (takes 3 days)",
+                        consequence: "Your thorough analysis correctly identifies the contaminated egg salad, but 15 additional people get sick in the meantime.",
+                        scores: { casesPrevented: 3, efficiency: 60, rigor: 95 }
+                    },
+                    {
+                        title: "Balanced Approach",
+                        description: "Issue preliminary warnings while completing the full investigation",
+                        consequence: "You identify egg salad as the likely source and prevent most additional cases while confirming your findings.",
+                        scores: { casesPrevented: 9, efficiency: 85, rigor: 85 }
+                    }
+                ]
+            },
+            {
+                step: 6,
+                question: "How do you communicate your findings?",
+                options: [
+                    {
+                        title: "Press Conference Only",
+                        description: "Hold a press conference to inform the public and health officials",
+                        consequence: "The media coverage reaches many people but some health professionals don't get detailed information.",
+                        scores: { casesPrevented: 7, efficiency: 80, rigor: 70 }
+                    },
+                    {
+                        title: "Technical Report Only",
+                        description: "Publish a detailed epidemiological report for health professionals",
+                        consequence: "Health professionals have complete information but the public remains unaware of the risks.",
+                        scores: { casesPrevented: 4, efficiency: 60, rigor: 90 }
+                    },
+                    {
+                        title: "Multi-Channel Communication",
+                        description: "Combine press releases, professional reports, and direct communication with at-risk groups",
+                        consequence: "Both the public and health professionals receive appropriate information, maximizing prevention impact.",
+                        scores: { casesPrevented: 9, efficiency: 75, rigor: 85 }
+                    }
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+        let choices = [];
+        let totalScores = { casesPrevented: 0, efficiency: 0, rigor: 0 };
+
+        function loadDecision() {
+            const decision = decisions[currentStep];
+            const container = document.getElementById('decisionContainer');
+
+            container.innerHTML = `
+                <div class="decision-point">
+                    <h4>${decision.question}</h4>
+                    <div class="options">
+                        ${decision.options.map((option, index) => `
+                            <div class="option-card" onclick="selectOption(${index})">
+                                <div class="option-title">${option.title}</div>
+                                <div class="option-description">${option.description}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('currentStep').textContent = currentStep + 1;
+            updateProgress();
+            document.getElementById('consequence').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+        function selectOption(index) {
+            const decision = decisions[currentStep];
+            const option = decision.options[index];
+
+            // Highlight selected option
+            document.querySelectorAll('.option-card').forEach((card, i) => {
+                card.classList.toggle('selected', i === index);
+            });
+
+            // Show consequence
+            document.getElementById('consequenceText').textContent = option.consequence;
+            document.getElementById('consequence').style.display = 'block';
+
+            // Store choice
+            choices[currentStep] = option;
+
+            // Show next button
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        }
+
+        function nextStep() {
+            // Add scores
+            const choice = choices[currentStep];
+            totalScores.casesPrevented += choice.scores.casesPrevented;
+            totalScores.efficiency += choice.scores.efficiency;
+            totalScores.rigor += choice.scores.rigor;
+
+            currentStep++;
+
+            if (currentStep < decisions.length) {
+                loadDecision();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('decisionContainer').style.display = 'none';
+            document.getElementById('consequence').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('restartBtn').style.display = 'inline-block';
+
+            // Calculate final scores
+            const avgEfficiency = Math.round(totalScores.efficiency / decisions.length);
+            const avgRigor = Math.round(totalScores.rigor / decisions.length);
+
+            document.getElementById('casesPrevented').textContent = totalScores.casesPrevented;
+            document.getElementById('efficiency').textContent = avgEfficiency + '%';
+            document.getElementById('rigor').textContent = avgRigor + '%';
+
+            // Generate feedback
+            let feedback = "";
+            const totalScore = totalScores.casesPrevented + avgEfficiency + avgRigor;
+
+            if (totalScore >= 240) {
+                feedback = "Excellent work! You successfully identified the outbreak source, prevented additional cases, and conducted a rigorous investigation. Your epidemiological skills are well-developed.";
+            } else if (totalScore >= 180) {
+                feedback = "Good investigation overall. You prevented most additional cases but there were some areas for improvement in either efficiency or scientific rigor.";
+            } else if (totalScore >= 120) {
+                feedback = "Adequate investigation, but several choices could have been improved. Consider reviewing epidemiological methods for better outcomes in future outbreaks.";
+            } else {
+                feedback = "This investigation had significant challenges. Review the consequences of your choices and consider how different approaches might have led to better outcomes.";
+            }
+
+            document.getElementById('feedbackText').textContent = feedback;
+
+            // Update progress to 100%
+            document.getElementById('progressFill').style.width = '100%';
+        }
+
+        function updateProgress() {
+            const progress = ((currentStep + 1) / decisions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function restartCase() {
+            currentStep = 0;
+            choices = [];
+            totalScores = { casesPrevented: 0, efficiency: 0, rigor: 0 };
+
+            document.getElementById('decisionContainer').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('restartBtn').style.display = 'none';
+            document.getElementById('progressFill').style.width = '0%';
+
+            loadDecision();
+        }
+
+        // Initialize
+        loadDecision();
+    </script>
+</body>
+</html>

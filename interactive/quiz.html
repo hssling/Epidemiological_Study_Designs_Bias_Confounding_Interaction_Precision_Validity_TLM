@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Design Quiz - Interactive Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin-bottom: 10px;
+        }
+        .option label {
+            cursor: pointer;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .option label:hover {
+            background-color: #f8f9fa;
+        }
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .progress {
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .explanation {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>📚 Epidemiological Study Design Quiz</h1>
+        <p>Test your knowledge of epidemiological study designs, bias, confounding, and related concepts.</p>
+
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p>Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></p>
+        </div>
+
+        <div id="questionContainer">
+            <!-- Questions will be loaded here -->
+        </div>
+
+        <div class="result" id="result">
+            <h3 id="resultTitle"></h3>
+            <p id="resultText"></p>
+            <div class="explanation" id="explanation"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+            <button class="btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+            <button class="btn" id="restartBtn" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>
+        </div>
+
+        <div class="score" id="score" style="display: none;">
+            Final Score: <span id="finalScore">0</span>/10
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which study design is considered the gold standard for establishing causality?",
+                options: ["Case-control study", "Cohort study", "Randomized controlled trial", "Cross-sectional study"],
+                correct: 2,
+                explanation: "Randomized controlled trials (RCTs) are considered the gold standard because randomization helps eliminate confounding and bias, allowing for stronger causal inferences."
+            },
+            {
+                question: "In a case-control study, the odds ratio measures:",
+                options: ["Risk difference", "Relative risk", "Prevalence", "Association strength"],
+                correct: 3,
+                explanation: "In case-control studies, we calculate odds ratios (OR) to measure the strength of association between exposure and outcome, not relative risk which requires incidence data."
+            },
+            {
+                question: "Which type of bias occurs when the exposure status is misclassified?",
+                options: ["Selection bias", "Information bias", "Confounding bias", "Publication bias"],
+                correct: 1,
+                explanation: "Information bias (also called measurement or misclassification bias) occurs when there are errors in measuring exposure, outcome, or other variables."
+            },
+            {
+                question: "A confounding variable must be:",
+                options: ["Associated with the exposure", "Associated with the outcome", "Not on the causal pathway", "All of the above"],
+                correct: 3,
+                explanation: "A confounder must be associated with both the exposure and outcome, and not be on the causal pathway between them (not an intermediate variable)."
+            },
+            {
+                question: "Which study design is best for studying rare outcomes?",
+                options: ["Cohort study", "Case-control study", "Cross-sectional study", "Ecological study"],
+                correct: 1,
+                explanation: "Case-control studies are efficient for studying rare outcomes because they start with cases (people with the outcome) and controls (without the outcome)."
+            },
+            {
+                question: "Internal validity refers to:",
+                options: ["Generalizability of results", "Accuracy of measurements within the study", "Both A and B", "Neither A nor B"],
+                correct: 1,
+                explanation: "Internal validity is the extent to which a study accurately measures what it intends to measure within its own context."
+            },
+            {
+                question: "Which method can help control for confounding in the analysis phase?",
+                options: ["Randomization", "Matching", "Stratification", "Statistical adjustment"],
+                correct: 3,
+                explanation: "Statistical adjustment (like regression modeling) can control for confounding during data analysis by mathematically accounting for confounders."
+            },
+            {
+                question: "A cross-sectional study measures:",
+                options: ["Incidence over time", "Prevalence at a point in time", "Risk in exposed vs unexposed", "Causal relationships"],
+                correct: 1,
+                explanation: "Cross-sectional studies measure prevalence (the proportion of people with a condition at a specific point in time) and can show associations but not temporality."
+            },
+            {
+                question: "Which of the following is NOT a type of selection bias?",
+                options: ["Berkson's bias", "Healthy worker effect", "Recall bias", "Volunteer bias"],
+                correct: 2,
+                explanation: "Recall bias is a type of information bias, not selection bias. Selection bias occurs when the selection of study participants is not representative."
+            },
+            {
+                question: "Effect modification (interaction) occurs when:",
+                options: ["The effect of exposure varies by levels of another variable", "A variable affects both exposure and outcome", "Exposure measurement is inaccurate", "Study participants drop out"],
+                correct: 0,
+                explanation: "Effect modification occurs when the relationship between exposure and outcome differs across subgroups defined by a third variable."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedAnswer = null;
+
+        function loadQuestion() {
+            const question = questions[currentQuestionIndex];
+            const container = document.getElementById('questionContainer');
+
+            container.innerHTML = `
+                <div class="question">
+                    <h3>${question.question}</h3>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <div class="option">
+                                <label>
+                                    <input type="radio" name="answer" value="${index}" onclick="selectAnswer(${index})">
+                                    ${option}
+                                </label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('submitBtn').disabled = true;
+            selectedAnswer = null;
+        }
+
+        function selectAnswer(index) {
+            selectedAnswer = index;
+            document.getElementById('submitBtn').disabled = false;
+        }
+
+        function checkAnswer() {
+            const question = questions[currentQuestionIndex];
+            const resultDiv = document.getElementById('result');
+            const explanationDiv = document.getElementById('explanation');
+
+            if (selectedAnswer === question.correct) {
+                resultDiv.className = 'result correct';
+                document.getElementById('resultTitle').textContent = 'Correct!';
+                document.getElementById('resultText').textContent = 'Well done!';
+                score++;
+            } else {
+                resultDiv.className = 'result incorrect';
+                document.getElementById('resultTitle').textContent = 'Incorrect';
+                document.getElementById('resultText').textContent = `The correct answer is: ${question.options[question.correct]}`;
+            }
+
+            explanationDiv.textContent = question.explanation;
+            resultDiv.style.display = 'block';
+
+            document.getElementById('submitBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'inline-block';
+
+            // Update progress bar
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+                document.getElementById('submitBtn').style.display = 'inline-block';
+                document.getElementById('nextBtn').style.display = 'none';
+            } else {
+                showFinalScore();
+            }
+        }
+
+        function showFinalScore() {
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('restartBtn').style.display = 'inline-block';
+
+            document.getElementById('score').style.display = 'block';
+            document.getElementById('finalScore').textContent = score;
+
+            // Update progress bar to 100%
+            document.getElementById('progressFill').style.width = '100%';
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswer = null;
+
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('score').style.display = 'none';
+            document.getElementById('restartBtn').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'inline-block';
+            document.getElementById('progressFill').style.width = '0%';
+
+            loadQuestion();
+        }
+
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html>

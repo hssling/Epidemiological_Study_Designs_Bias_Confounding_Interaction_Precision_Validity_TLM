@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confounding Explorer - Interactive Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .scenario {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        .scenario h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .dag-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .dag-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .variable {
+            position: absolute;
+            width: 120px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 14px;
+        }
+        .variable:hover {
+            transform: scale(1.05);
+        }
+        .variable.exposure {
+            background-color: #e74c3c;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+        .variable.outcome {
+            background-color: #27ae60;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+        .variable.confounder {
+            background-color: #f39c12;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .variable.mediator {
+            background-color: #9b59b6;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .arrow {
+            position: absolute;
+            height: 2px;
+            background-color: #666;
+            transform-origin: left center;
+        }
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #666;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .control-group {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .control-group h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .toggle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .toggle input {
+            margin-right: 10px;
+        }
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .result-card {
+            background-color: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .result-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+        .result-description {
+            color: #666;
+            font-size: 14px;
+        }
+        .explanation {
+            background-color: #e8f4fd;
+            border: 1px solid #b8daff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .explanation h4 {
+            color: #004085;
+            margin-top: 0;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn.secondary {
+            background-color: #95a5a6;
+        }
+        .btn.secondary:hover {
+            background-color: #7f8c8d;
+        }
+        .btn.success {
+            background-color: #27ae60;
+        }
+        .btn.success:hover {
+            background-color: #229954;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Confounding Explorer</h1>
+        <p>Explore how confounding variables affect epidemiological study results. Manipulate the relationships in the diagram below to understand confounding concepts.</p>
+
+        <div class="scenario">
+            <h3>Study Scenario: Smoking and Lung Cancer</h3>
+            <p>We're studying whether smoking causes lung cancer. Tar exposure is a potential mediator (part of the causal pathway), while socioeconomic status might be a confounder. Use the controls to explore different relationships and see how they affect the study results.</p>
+        </div>
+
+        <div class="dag-container">
+            <div class="dag-title">Directed Acyclic Graph (DAG)</div>
+
+            <!-- Variables -->
+            <div class="variable exposure" id="smoking">Smoking</div>
+            <div class="variable outcome" id="cancer">Lung Cancer</div>
+            <div class="variable confounder" id="ses">Socioeconomic Status</div>
+            <div class="variable mediator" id="tar">Tar Exposure</div>
+
+            <!-- Arrows (will be drawn by JavaScript) -->
+            <div class="arrow" id="arrow1" style="display: none;"></div>
+            <div class="arrow" id="arrow2" style="display: none;"></div>
+            <div class="arrow" id="arrow3" style="display: none;"></div>
+            <div class="arrow" id="arrow4" style="display: none;"></div>
+            <div class="arrow" id="arrow5" style="display: none;"></div>
+            <div class="arrow" id="arrow6" style="display: none;"></div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <h4>Relationships to Explore</h4>
+                <div class="toggle">
+                    <input type="checkbox" id="sesToSmoking" onchange="updateDAG()">
+                    <label for="sesToSmoking">Socioeconomic Status → Smoking</label>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="sesToCancer" onchange="updateDAG()">
+                    <label for="sesToCancer">Socioeconomic Status → Lung Cancer</label>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="smokingToTar" onchange="updateDAG()">
+                    <label for="smokingToTar">Smoking → Tar Exposure</label>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="tarToCancer" onchange="updateDAG()">
+                    <label for="tarToCancer">Tar Exposure → Lung Cancer</label>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="smokingToCancer" onchange="updateDAG()">
+                    <label for="smokingToCancer">Smoking → Lung Cancer (direct)</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h4>Analysis Options</h4>
+                <div class="toggle">
+                    <input type="checkbox" id="adjustForSES" onchange="updateResults()">
+                    <label for="adjustForSES">Adjust for Socioeconomic Status</label>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="adjustForTar" onchange="updateResults()">
+                    <label for="adjustForTar">Adjust for Tar Exposure</label>
+                </div>
+                <p><small>Check boxes to see how statistical adjustment affects results</small></p>
+            </div>
+
+            <div class="control-group">
+                <h4>Quick Scenarios</h4>
+                <button class="btn secondary" onclick="loadScenario('noConfounding')">No Confounding</button>
+                <button class="btn secondary" onclick="loadScenario('confounding')">Confounding Present</button>
+                <button class="btn secondary" onclick="loadScenario('mediation')">Mediation</button>
+                <button class="btn secondary" onclick="loadScenario('both')">Both Confounding & Mediation</button>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="result-card">
+                <h4>Crude Association</h4>
+                <div class="result-value" id="crudeRR">2.50</div>
+                <div class="result-description">Smoking vs No Smoking</div>
+            </div>
+
+            <div class="result-card">
+                <h4>Adjusted Association</h4>
+                <div class="result-value" id="adjustedRR">2.50</div>
+                <div class="result-description">After statistical adjustment</div>
+            </div>
+
+            <div class="result-card">
+                <h4>Confounding Present?</h4>
+                <div class="result-value" id="confoundingStatus">No</div>
+                <div class="result-description">Based on DAG analysis</div>
+            </div>
+
+            <div class="result-card">
+                <h4>Mediation Present?</h4>
+                <div class="result-value" id="mediationStatus">No</div>
+                <div class="result-description">Based on DAG analysis</div>
+            </div>
+        </div>
+
+        <div class="explanation" id="explanation">
+            <h4>Current Analysis:</h4>
+            <p id="explanationText">No relationships are currently active. Click the checkboxes above to explore different causal relationships and see how they affect the study results.</p>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="btn success" onclick="showHint()">Show Hint</button>
+            <button class="btn secondary" onclick="resetDAG()">Reset All</button>
+        </div>
+    </div>
+
+    <script>
+        // DAG state
+        let relationships = {
+            sesToSmoking: false,
+            sesToCancer: false,
+            smokingToTar: false,
+            tarToCancer: false,
+            smokingToCancer: false
+        };
+
+        let adjustments = {
+            ses: false,
+            tar: false
+        };
+
+        // True causal effects
+        const trueEffects = {
+            smokingToCancer: 2.0,  // Direct effect of smoking on cancer
+            sesToSmoking: 1.5,     // SES effect on smoking
+            sesToCancer: 1.3,      // SES effect on cancer
+            smokingToTar: 3.0,     // Smoking effect on tar
+            tarToCancer: 1.8       // Tar effect on cancer
+        };
+
+        function updateDAG() {
+            // Update relationship states
+            relationships.sesToSmoking = document.getElementById('sesToSmoking').checked;
+            relationships.sesToCancer = document.getElementById('sesToCancer').checked;
+            relationships.smokingToTar = document.getElementById('smokingToTar').checked;
+            relationships.tarToCancer = document.getElementById('tarToCancer').checked;
+            relationships.smokingToCancer = document.getElementById('smokingToCancer').checked;
+
+            // Draw arrows
+            drawArrows();
+            updateResults();
+        }
+
+        function drawArrows() {
+            // Clear existing arrows
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.style.display = 'none';
+            });
+
+            // Draw arrows based on relationships
+            if (relationships.sesToSmoking) {
+                drawArrow('ses', 'smoking', 'arrow1');
+            }
+            if (relationships.sesToCancer) {
+                drawArrow('ses', 'cancer', 'arrow2');
+            }
+            if (relationships.smokingToTar) {
+                drawArrow('smoking', 'tar', 'arrow3');
+            }
+            if (relationships.tarToCancer) {
+                drawArrow('tar', 'cancer', 'arrow4');
+            }
+            if (relationships.smokingToCancer) {
+                drawArrow('smoking', 'cancer', 'arrow5');
+            }
+        }
+
+        function drawArrow(from, to, arrowId) {
+            const fromEl = document.getElementById(from);
+            const toEl = document.getElementById(to);
+            const arrow = document.getElementById(arrowId);
+
+            const fromRect = fromEl.getBoundingClientRect();
+            const toRect = toEl.getBoundingClientRect();
+            const containerRect = document.querySelector('.dag-container').getBoundingClientRect();
+
+            const fromX = fromRect.left + fromRect.width/2 - containerRect.left;
+            const fromY = fromRect.top + fromRect.height/2 - containerRect.top;
+            const toX = toRect.left + toRect.width/2 - containerRect.left;
+            const toY = toRect.top + toRect.height/2 - containerRect.top;
+
+            const distance = Math.sqrt((toX - fromX) ** 2 + (toY - fromY) ** 2);
+            const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+
+            arrow.style.width = distance + 'px';
+            arrow.style.left = fromX + 'px';
+            arrow.style.top = fromY + 'px';
+            arrow.style.transform = `rotate(${angle}deg)`;
+            arrow.style.transformOrigin = '0 50%';
+            arrow.style.display = 'block';
+        }
+
+        function updateResults() {
+            adjustments.ses = document.getElementById('adjustForSES').checked;
+            adjustments.tar = document.getElementById('adjustForTar').checked;
+
+            // Calculate crude association
+            let crudeRR = calculateCrudeRR();
+
+            // Calculate adjusted association
+            let adjustedRR = calculateAdjustedRR(crudeRR);
+
+            // Update displays
+            document.getElementById('crudeRR').textContent = crudeRR.toFixed(2);
+            document.getElementById('adjustedRR').textContent = adjustedRR.toFixed(2);
+
+            // Determine confounding and mediation status
+            const confounding = isConfoundingPresent();
+            const mediation = isMediationPresent();
+
+            document.getElementById('confoundingStatus').textContent = confounding ? 'Yes' : 'No';
+            document.getElementById('mediationStatus').textContent = mediation ? 'Yes' : 'No';
+
+            // Update explanation
+            updateExplanation(crudeRR, adjustedRR, confounding, mediation);
+        }
+
+        function calculateCrudeRR() {
+            // Simplified calculation of observed association
+            let rr = trueEffects.smokingToCancer;
+
+            // Add confounding effects
+            if (relationships.sesToSmoking && relationships.sesToCancer) {
+                rr *= trueEffects.sesToSmoking * trueEffects.sesToCancer * 0.5; // Confounding inflates association
+            }
+
+            // Add mediation effects
+            if (relationships.smokingToTar && relationships.tarToCancer && !relationships.smokingToCancer) {
+                rr = (trueEffects.smokingToTar * trueEffects.tarToCancer) / trueEffects.smokingToCancer; // Mediation reduces direct effect
+            }
+
+            return Math.max(1.0, rr);
+        }
+
+        function calculateAdjustedRR(crudeRR) {
+            let adjustedRR = crudeRR;
+
+            // Adjust for SES (confounder)
+            if (adjustments.ses && relationships.sesToSmoking && relationships.sesToCancer) {
+                adjustedRR /= (trueEffects.sesToSmoking * trueEffects.sesToCancer * 0.3); // Remove confounding effect
+            }
+
+            // Adjust for tar (mediator) - this would be inappropriate
+            if (adjustments.tar && relationships.smokingToTar && relationships.tarToCancer) {
+                adjustedRR = trueEffects.smokingToCancer; // Adjusting for mediator removes total effect
+            }
+
+            return Math.max(1.0, adjustedRR);
+        }
+
+        function isConfoundingPresent() {
+            return relationships.sesToSmoking && relationships.sesToCancer;
+        }
+
+        function isMediationPresent() {
+            return relationships.smokingToTar && relationships.tarToCancer && relationships.smokingToCancer;
+        }
+
+        function updateExplanation(crudeRR, adjustedRR, confounding, mediation) {
+            let text = "";
+
+            if (!Object.values(relationships).some(v => v)) {
+                text = "No relationships are currently active. Click the checkboxes above to explore different causal relationships and see how they affect the study results.";
+            } else {
+                text = `The crude relative risk is ${crudeRR.toFixed(2)}. `;
+
+                if (confounding) {
+                    text += "Confounding is present because socioeconomic status affects both smoking and lung cancer. ";
+                    if (adjustments.ses) {
+                        text += `After adjusting for socioeconomic status, the association changes to ${adjustedRR.toFixed(2)}, which helps remove the confounding effect.`;
+                    } else {
+                        text += "Consider adjusting for socioeconomic status to control for confounding.";
+                    }
+                }
+
+                if (mediation) {
+                    text += "Mediation is present because tar exposure is on the causal pathway from smoking to lung cancer. ";
+                    if (adjustments.tar) {
+                        text += "Adjusting for tar exposure (a mediator) removes the total effect and may lead to incorrect conclusions.";
+                    } else {
+                        text += "Be careful not to adjust for mediators like tar exposure.";
+                    }
+                }
+
+                if (!confounding && !mediation) {
+                    text += "Neither confounding nor mediation appears to be present in this scenario.";
+                }
+            }
+
+            document.getElementById('explanationText').textContent = text;
+        }
+
+        function loadScenario(scenario) {
+            // Reset all
+            Object.keys(relationships).forEach(key => {
+                relationships[key] = false;
+                document.getElementById(key).checked = false;
+            });
+
+            Object.keys(adjustments).forEach(key => {
+                adjustments[key] = false;
+                document.getElementById('adjustFor' + key.charAt(0).toUpperCase() + key.slice(1)).checked = false;
+            });
+
+            // Load specific scenario
+            switch(scenario) {
+                case 'noConfounding':
+                    // Only direct effect
+                    relationships.smokingToCancer = true;
+                    document.getElementById('smokingToCancer').checked = true;
+                    break;
+                case 'confounding':
+                    relationships.smokingToCancer = true;
+                    relationships.sesToSmoking = true;
+                    relationships.sesToCancer = true;
+                    document.getElementById('smokingToCancer').checked = true;
+                    document.getElementById('sesToSmoking').checked = true;
+                    document.getElementById('sesToCancer').checked = true;
+                    break;
+                case 'mediation':
+                    relationships.smokingToTar = true;
+                    relationships.tarToCancer = true;
+                    document.getElementById('smokingToTar').checked = true;
+                    document.getElementById('tarToCancer').checked = true;
+                    break;
+                case 'both':
+                    relationships.smokingToCancer = true;
+                    relationships.sesToSmoking = true;
+                    relationships.sesToCancer = true;
+                    relationships.smokingToTar = true;
+                    relationships.tarToCancer = true;
+                    document.getElementById('smokingToCancer').checked = true;
+                    document.getElementById('sesToSmoking').checked = true;
+                    document.getElementById('sesToCancer').checked = true;
+                    document.getElementById('smokingToTar').checked = true;
+                    document.getElementById('tarToCancer').checked = true;
+                    break;
+            }
+
+            updateDAG();
+        }
+
+        function showHint() {
+            const hint = "Try the 'Confounding Present' scenario to see how socioeconomic status acts as a confounder. Then try adjusting for SES to see how statistical adjustment removes the confounding effect.";
+            alert(hint);
+        }
+
+        function resetDAG() {
+            Object.keys(relationships).forEach(key => {
+                relationships[key] = false;
+                document.getElementById(key).checked = false;
+            });
+
+            Object.keys(adjustments).forEach(key => {
+                adjustments[key] = false;
+                document.getElementById('adjustFor' + key.charAt(0).toUpperCase() + key.slice(1)).checked = false;
+            });
+
+            updateDAG();
+        }
+
+        // Initialize
+        updateDAG();
+    </script>
+</body>
+</html>

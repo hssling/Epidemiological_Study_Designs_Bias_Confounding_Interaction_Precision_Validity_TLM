@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Learning Modules - Epidemiology Study Designs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .tabs {
+            display: flex;
+            background-color: white;
+            border-radius: 10px 10px 0 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .tab-button {
+            flex: 1;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+            transition: all 0.3s ease;
+            border-right: 1px solid #e9ecef;
+        }
+        .tab-button:last-child {
+            border-right: none;
+        }
+        .tab-button:hover {
+            background-color: #e9ecef;
+        }
+        .tab-button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tab-content {
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin-bottom: 10px;
+        }
+        .option label {
+            cursor: pointer;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .option label:hover {
+            background-color: #e9ecef;
+        }
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .progress {
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .explanation {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Design Selector Styles */
+        .question-card {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .option-btn {
+            background-color: white;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+        }
+        .option-btn:hover {
+            border-color: #3498db;
+            background-color: #ecf0f1;
+        }
+        .option-btn.selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .result-card {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        .result-title {
+            color: #155724;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .result-description {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        .recommendation {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .strengths-weaknesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .strengths, .weaknesses {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .strengths h4, .weaknesses h4 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .strengths ul, .weaknesses ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .btn.secondary {
+            background-color: #95a5a6;
+        }
+        .btn.secondary:hover {
+            background-color: #7f8c8d;
+        }
+        .step-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Bias Simulation Styles */
+        .simulation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .scenario-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .scenario-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .scenario-description {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .control-group {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+        }
+        .control-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+            cursor: pointer;
+        }
+        .results-display {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .result-item {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .result-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+        }
+        .result-label {
+            color: #666;
+            font-size: 14px;
+        }
+        .bias-explanation {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        /* Confounding Explorer Styles */
+        .explorer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .dag-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .variable-node {
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+            line-height: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .exposure { background-color: #3498db; color: white; }
+        .outcome { background-color: #e74c3c; color: white; }
+        .confounder { background-color: #f39c12; color: white; }
+        .variable-node:hover {
+            transform: scale(1.1);
+        }
+        .arrow {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #666;
+        }
+        .controls-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .analysis-results {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .result-metric {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Case Study Styles */
+        .case-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .case-scenario {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .case-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .case-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .decision-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .decision-btn {
+            background-color: white;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .decision-btn:hover {
+            border-color: #3498db;
+            background-color: #ecf0f1;
+        }
+        .decision-btn.selected {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .outcome-display {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        .outcome-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .outcome-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .consequences {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        /* Validity Lab Styles */
+        .lab-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .target-practice {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .target {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #e74c3c 20%, #f39c12 40%, #f1c40f 60%, #27ae60 80%, #3498db 100%);
+            margin: 20px auto;
+            position: relative;
+            cursor: crosshair;
+        }
+        .shot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .lab-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .lab-results {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .metric-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .metric-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .metric-label {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎓 Comprehensive Learning Modules</h1>
+        <h2>Epidemiological Study Designs</h2>
+        <p>All interactive learning modules in one comprehensive interface</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('quiz')">📚 Study Design Quiz</button>
+        <button class="tab-button" onclick="openTab('design_selector')">🌳 Design Selector</button>
+        <button class="tab-button" onclick="openTab('bias_simulation')">🎯 Bias Simulation</button>
+        <button class="tab-button" onclick="openTab('confounding_explorer')">🔗 Confounding Explorer</button>
+        <button class="tab-button" onclick="openTab('case_study')">📊 Case Study Analysis</button>
+        <button class="tab-button" onclick="openTab('validity_lab')">📈 Validity & Precision Lab</button>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div id="quiz" class="tab-content active">
+        <div class="quiz-container">
+            <h1>📚 Epidemiological Study Design Quiz</h1>
+            <p>Test your knowledge of epidemiological study designs, bias, confounding, and related concepts.</p>
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="quizProgressFill"></div>
+                </div>
+                <p>Question <span id="quizCurrentQuestion">1</span> of <span id="quizTotalQuestions">10</span></p>
+            </div>
+
+            <div id="quizQuestionContainer">
+                <!-- Questions will be loaded here -->
+            </div>
+
+            <div class="result" id="quizResult">
+                <h3 id="quizResultTitle"></h3>
+                <p id="quizResultText"></p>
+                <div class="explanation" id="quizExplanation"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" id="quizSubmitBtn" onclick="checkQuizAnswer()">Submit Answer</button>
+                <button class="btn" id="quizNextBtn" onclick="nextQuizQuestion()" style="display: none;">Next Question</button>
+                <button class="btn" id="quizRestartBtn" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>
+            </div>
+
+            <div class="score" id="quizScore" style="display: none;">
+                Final Score: <span id="quizFinalScore">0</span>/10
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Selector Tab -->
+    <div id="design_selector" class="tab-content">
+        <div class="container">
+            <h1>🌳 Study Design Selector</h1>
+            <p>Use this interactive decision tree to determine the most appropriate epidemiological study design for your research question.</p>
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="selectorProgressFill"></div>
+                </div>
+                <div class="step-info">
+                    Step <span id="selectorCurrentStep">1</span> of <span id="selectorTotalSteps">6</span>
+                </div>
+            </div>
+
+            <div id="selectorQuestionContainer">
+                <!-- Questions will be loaded here -->
+            </div>
+
+            <div class="result-card" id="selectorResultCard">
+                <div class="result-title" id="selectorResultTitle"></div>
+                <div class="result-description" id="selectorResultDescription"></div>
+                <div class="recommendation" id="selectorRecommendation"></div>
+                <div class="strengths-weaknesses" id="selectorStrengthsWeaknesses"></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn secondary" id="selectorBackBtn" onclick="goBackSelector()" style="display: none;">← Back</button>
+                <button class="btn" id="selectorNextBtn" onclick="nextSelectorStep()" style="display: none;">Next →</button>
+                <button class="btn secondary" id="selectorRestartBtn" onclick="restartSelector()" style="display: none;">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bias Simulation Tab -->
+    <div id="bias_simulation" class="tab-content">
+        <div class="simulation-container">
+            <h1>🎯 Bias Simulation</h1>
+            <p>Experience how different types of bias can affect study results through interactive scenarios.</p>
+
+            <div class="scenario-card">
+                <div class="scenario-title">Selection Bias Scenario</div>
+                <div class="scenario-description">
+                    You're studying the relationship between coffee consumption and heart disease. Participants are recruited from a local gym (exposed group) and a nearby library (unexposed group).
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label>Selection Bias Level: <span id="selectionBiasValue">50</span>%</label>
+                        <input type="range" class="slider" id="selectionBiasSlider" min="0" max="100" value="50" oninput="updateSelectionBias()">
+                    </div>
+                    <div class="control-group">
+                        <label>Sample Size: <span id="sampleSizeValue">1000</span></label>
+                        <input type="range" class="slider" id="sampleSizeSlider" min="100" max="5000" step="100" value="1000" oninput="updateSampleSize()">
+                    </div>
+                </div>
+
+                <div class="results-display">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-value" id="trueOddsRatio">2.0</span>
+                            <div class="result-label">True Odds Ratio</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value" id="observedOddsRatio">2.0</span>
+                            <div class="result-label">Observed Odds Ratio</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value" id="biasDirection">None</span>
+                            <div class="result-label">Bias Direction</div>
+                        </div>
+                    </div>
+
+                    <div class="bias-explanation" id="biasExplanation">
+                        <strong>Selection Bias:</strong> When the selection of study participants is not representative of the target population, leading to systematic differences between exposed and unexposed groups.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confounding Explorer Tab -->
+    <div id="confounding_explorer" class="tab-content">
+        <div class="explorer-container">
+            <h1>🔗 Confounding Explorer</h1>
+            <p>Interactive tool to understand confounding variables and how they affect epidemiological studies.</p>
+
+            <div class="dag-container">
+                <h3>Directed Acyclic Graph (DAG)</h3>
+                <div class="variable-node exposure" onclick="selectVariable('exposure')">Exposure</div>
+                <span class="arrow">→</span>
+                <div class="variable-node outcome" onclick="selectVariable('outcome')">Outcome</div>
+                <br><br>
+                <div class="variable-node confounder" onclick="selectVariable('confounder')">Confounder</div>
+                <span class="arrow">→</span>
+                <div class="variable-node exposure" onclick="selectVariable('exposure')">Exposure</div>
+                <br>
+                <div class="variable-node confounder" onclick="selectVariable('confounder')">Confounder</div>
+                <span class="arrow">→</span>
+                <div class="variable-node outcome" onclick="selectVariable('outcome')">Outcome</div>
+            </div>
+
+            <div class="controls-section">
+                <h3>Adjust for Confounding</h3>
+                <button class="btn" onclick="adjustForConfounding()">Adjust for Confounder</button>
+                <button class="btn secondary" onclick="resetDAG()">Reset DAG</button>
+            </div>
+
+            <div class="analysis-results">
+                <h3>Analysis Results</h3>
+                <div class="result-metric">
+                    <div class="metric-value" id="crudeRR">2.5</div>
+                    <div>Crude Risk Ratio</div>
+                </div>
+                <div class="result-metric">
+                    <div class="metric-value" id="adjustedRR">1.8</div>
+                    <div>Adjusted Risk Ratio</div>
+                </div>
+                <div class="result-metric">
+                    <div class="metric-value" id="confoundingEffect">30%</div>
+                    <div>Confounding Effect</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Tab -->
+    <div id="case_study" class="tab-content">
+        <div class="case-container">
+            <h1>📊 Case Study Analysis</h1>
+            <p>Step into the role of an epidemiologist investigating a foodborne outbreak with real-time decision making.</p>
+
+            <div class="case-scenario">
+                <div class="case-title">Foodborne Outbreak Investigation</div>
+                <div class="case-description">
+                    Reports of gastrointestinal illness have increased dramatically in the past 48 hours. Multiple people have reported eating at the same restaurant chain. As the lead epidemiologist, you need to decide on the next steps for investigation.
+                </div>
+
+                <div class="decision-options">
+                    <button class="decision-btn" onclick="makeDecision('contact_restaurant')">
+                        <strong>Contact Restaurant Management</strong><br>
+                        Interview staff and review food handling procedures
+                    </button>
+                    <button class="decision-btn" onclick="makeDecision('analyze_symptoms')">
+                        <strong>Analyze Symptom Patterns</strong><br>
+                        Review medical records for common symptoms and incubation periods
+                    </button>
+                    <button class="decision-btn" onclick="makeDecision('trace_contacts')">
+                        <strong>Trace Contacts</strong><br>
+                        Identify and contact people who ate at the restaurant
+                    </button>
+                    <button class="decision-btn" onclick="makeDecision('lab_testing')">
+                        <strong>Laboratory Testing</strong><br>
+                        Collect stool samples for pathogen identification
+                    </button>
+                </div>
+            </div>
+
+            <div class="outcome-display" id="caseOutcome">
+                <div class="outcome-title" id="outcomeTitle"></div>
+                <div class="outcome-description" id="outcomeDescription"></div>
+                <div class="consequences" id="caseConsequences"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Validity Lab Tab -->
+    <div id="validity_lab" class="tab-content">
+        <div class="lab-container">
+            <h1>📈 Validity & Precision Lab</h1>
+            <p>Explore measurement concepts through interactive simulations of validity and precision.</p>
+
+            <div class="target-practice">
+                <h3>Target Shooting Analogy</h3>
+                <p>Click on the target to simulate measurements. The bullseye represents the true value.</p>
+
+                <div class="target" id="target" onclick="shootTarget(event)">
+                    <!-- Shots will be added here -->
+                </div>
+
+                <div class="lab-controls">
+                    <div class="control-group">
+                        <label>Precision (Spread): <span id="precisionValue">20</span>%</label>
+                        <input type="range" class="slider" id="precisionSlider" min="5" max="50" value="20" oninput="updatePrecision()">
+                    </div>
+                    <div class="control-group">
+                        <label>Validity (Bias): <span id="validityValue">0</span>%</label>
+                        <input type="range" class="slider" id="validitySlider" min="-30" max="30" value="0" oninput="updateValidity()">
+                    </div>
+                    <div class="control-group">
+                        <button class="btn" onclick="clearShots()">Clear Shots</button>
+                        <button class="btn secondary" onclick="simulateShots(10)">Auto Shoot (10)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lab-results">
+                <h3>Measurement Statistics</h3>
+                <div class="metric-display">
+                    <div class="metric-item">
+                        <div class="metric-value" id="meanValue">0.0</div>
+                        <div class="metric-label">Mean</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="sdValue">0.0</div>
+                        <div class="metric-label">Standard Deviation</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="biasValue">0.0</div>
+                        <div class="metric-label">Bias</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="accuracyValue">100%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function openTab(tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            tabContents.forEach(content => content.classList.remove('active'));
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                question: "Which study design is considered the gold standard for establishing causality?",
+                options: ["Case-control study", "Cohort study", "Randomized controlled trial", "Cross-sectional study"],
+                correct: 2,
+                explanation: "Randomized controlled trials (RCTs) are considered the gold standard because randomization helps eliminate confounding and bias, allowing for stronger causal inferences."
+            },
+            {
+                question: "In a case-control study, the odds ratio measures:",
+                options: ["Risk difference", "Relative risk", "Prevalence", "Association strength"],
+                correct: 3,
+                explanation: "In case-control studies, we calculate odds ratios (OR) to measure the strength of association between exposure and outcome, not relative risk which requires incidence data."
+            },
+            {
+                question: "Which type of bias occurs when the exposure status is misclassified?",
+                options: ["Selection bias", "Information bias", "Confounding bias", "Publication bias"],
+                correct: 1,
+                explanation: "Information bias (also called measurement or misclassification bias) occurs when there are errors in measuring exposure, outcome, or other variables."
+            },
+            {
+                question: "A confounding variable must be:",
+                options: ["Associated with the exposure", "Associated with the outcome", "Not on the causal pathway", "All of the above"],
+                correct: 3,
+                explanation: "A confounder must be associated with both the exposure and outcome, and not be on the causal pathway (not an intermediate variable)."
+            },
+            {
+                question: "Which study design is best for studying rare outcomes?",
+                options: ["Cohort study", "Case-control study", "Cross-sectional study", "Ecological study"],
+                correct: 1,
+                explanation: "Case-control studies are efficient for studying rare outcomes because they start with cases (people with the outcome) and controls (without the outcome)."
+            },
+            {
+                question: "Internal validity refers to:",
+                options: ["Generalizability of results", "Accuracy of measurements within the study", "Both A and B", "Neither A nor B"],
+                correct: 1,
+                explanation: "Internal validity is the extent to which a study accurately measures what it intends to measure within its own context."
+            },
+            {
+                question: "Which method can help control for confounding in the analysis phase?",
+                options: ["Randomization", "Matching", "Stratification", "Statistical adjustment"],
+                correct: 3,
+                explanation: "Statistical adjustment (like regression modeling) can control for confounding during data analysis by mathematically accounting for confounders."
+            },
+            {
+                question: "A cross-sectional study measures:",
+                options: ["Incidence over time", "Prevalence at a point in time", "Risk in exposed vs unexposed", "Causal relationships"],
+                correct: 1,
+                explanation: "Cross-sectional studies measure prevalence (the proportion of people with a condition at a specific point in time) and can show associations but not temporality."
+            },
+            {
+                question: "Which of the following is NOT a type of selection bias?",
+                options: ["Berkson's bias", "Healthy worker effect", "Recall bias", "Volunteer bias"],
+                correct: 2,
+                explanation: "Recall bias is a type of information bias, not selection bias. Selection bias occurs when the selection of study participants is not representative."
+            },
+            {
+                question: "Effect modification (interaction) occurs when:",
+                options: ["The effect of exposure varies by levels of another variable", "A variable affects both exposure and outcome", "Exposure measurement is inaccurate", "Study participants drop out"],
+                correct: 0,
+                explanation: "Effect modification occurs when the relationship between exposure and outcome differs across subgroups defined by a third variable."
+            }
+        ];
+
+        let quizCurrentQuestionIndex = 0;
+        let quizScore = 0;
+        let quizSelectedAnswer = null;
+
+        function loadQuizQuestion() {
+            const question = quizQuestions[quizCurrentQuestionIndex];
+            const container = document.getElementById('quizQuestionContainer');
+
+            container.innerHTML = `
+                <div class="question">
+                    <h3>${question.question}</h3>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <div class="option">
+                                <label>
+                                    <input type="radio" name="quizAnswer" value="${index}" onclick="selectQuizAnswer(${index})">
+                                    ${option}
+                                </label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quizCurrentQuestion').textContent = quizCurrentQuestionIndex + 1;
+            document.getElementById('quizResult').style.display = 'none';
+            document.getElementById('quizSubmitBtn').disabled = true;
+            quizSelectedAnswer = null;
+        }
+
+        function selectQuizAnswer(index) {
+            quizSelectedAnswer = index;
+            document.getElementById('quizSubmitBtn').disabled = false;
+        }
+
+        function checkQuizAnswer() {
+            const question = quizQuestions[quizCurrentQuestionIndex];
+            const resultDiv = document.getElementById('quizResult');
+            const explanationDiv = document.getElementById('quizExplanation');
+
+            if (quizSelectedAnswer === question.correct) {
+                resultDiv.className = 'result correct';
+                document.getElementById('quizResultTitle').textContent = 'Correct!';
+                document.getElementById('quizResultText').textContent = 'Well done!';
+                quizScore++;
+            } else {
+                resultDiv.className = 'result incorrect';
+                document.getElementById('quizResultTitle').textContent = 'Incorrect';
+                document.getElementById('quizResultText').textContent = `The correct answer is: ${question.options[question.correct]}`;
+            }
+
+            explanationDiv.textContent = question.explanation;
+            resultDiv.style.display = 'block';
+
+            document.getElementById('quizSubmitBtn').style.display = 'none';
+            document.getElementById('quizNextBtn').style.display = 'inline-block';
+
+            const progress = ((quizCurrentQuestionIndex + 1) / quizQuestions.length) * 100;
+            document.getElementById('quizProgressFill').style.width = progress + '%';
+        }
+
+        function nextQuizQuestion() {
+            quizCurrentQuestionIndex++;
+
+            if (quizCurrentQuestionIndex < quizQuestions.length) {
+                loadQuizQuestion();
+                document.getElementById('quizSubmitBtn').style.display = 'inline-block';
+                document.getElementById('quizNextBtn').style.display = 'none';
+            } else {
+                showQuizFinalScore();
+            }
+        }
+
+        function showQuizFinalScore() {
+            document.getElementById('quizQuestionContainer').style.display = 'none';
+            document.getElementById('quizResult').style.display = 'none';
+            document.getElementById('quizSubmitBtn').style.display = 'none';
+            document.getElementById('quizNextBtn').style.display = 'none';
+            document.getElementById('quizRestartBtn').style.display = 'inline-block';
+
+            document.getElementById('quizScore').style.display = 'block';
+            document.getElementById('quizFinalScore').textContent = quizScore;
+
+            document.getElementById('quizProgressFill').style.width = '100%';
+        }
+
+        function restartQuiz() {
+            quizCurrentQuestionIndex = 0;
+            quizScore = 0;
+            quizSelectedAnswer = null;
+
+            document.getElementById('quizQuestionContainer').style.display = 'block';
+            document.getElementById('quizScore').style.display = 'none';
+            document.getElementById('quizRestartBtn').style.display = 'none';
+            document.getElementById('quizSubmitBtn').style.display = 'inline-block';
+            document.getElementById('quizProgressFill').style.width = '0%';
+
+            loadQuizQuestion();
+        }
+
+        // Design Selector functionality
+        const selectorQuestions = [
+            {
+                question: "What is the primary objective of your study?",
+                options: [
+                    { text: "Establish causality between exposure and outcome", value: "causality" },
+                    { text: "Estimate disease frequency in a population", value: "prevalence" },
+                    { text: "Test effectiveness of an intervention", value: "intervention" },
+                    { text: "Investigate risk factors for a disease", value: "risk_factors" }
+                ]
+            },
+            {
+                question: "How common is the outcome you're studying?",
+                options: [
+                    { text: "Very common (affects >10% of population)", value: "common" },
+                    { text: "Moderately common (affects 1-10% of population)", value: "moderate" },
+                    { text: "Rare (affects <1% of population)", value: "rare" },
+                    { text: "Very rare (affects <0.1% of population)", value: "very_rare" }
+                ]
+            },
+            {
+                question: "Do you have the ability to intervene or assign exposure?",
+                options: [
+                    { text: "Yes, I can randomly assign participants to groups", value: "yes_randomize" },
+                    { text: "Yes, but randomization is not feasible", value: "yes_no_randomize" },
+                    { text: "No, exposure occurs naturally", value: "no" }
+                ]
+            },
+            {
+                question: "What is your timeline and budget?",
+                options: [
+                    { text: "Long timeline, high budget (years, significant resources)", value: "long_high" },
+                    { text: "Moderate timeline and budget (months, moderate resources)", value: "moderate" },
+                    { text: "Short timeline, limited budget (weeks, minimal resources)", value: "short_low" }
+                ]
+            },
+            {
+                question: "Do you need to study the outcome over time?",
+                options: [
+                    { text: "Yes, I need to follow participants over time", value: "yes" },
+                    { text: "No, a single point in time is sufficient", value: "no" }
+                ]
+            },
+            {
+                question: "What is the nature of your exposure?",
+                options: [
+                    { text: "Well-defined intervention or treatment", value: "intervention" },
+                    { text: "Behavioral or lifestyle factor", value: "behavioral" },
+                    { text: "Environmental or occupational exposure", value: "environmental" },
+                    { text: "Genetic or biological factor", value: "genetic" }
+                ]
+            }
+        ];
+
+        const studyDesigns = {
+            rct: {
+                name: "Randomized Controlled Trial (RCT)",
+                description: "Participants are randomly assigned to intervention or control groups, and outcomes are compared between groups.",
+                recommendation: "Best for establishing causality when you can control exposure assignment.",
+                strengths: [
+                    "Gold standard for causality",
+                    "Minimizes confounding through randomization",
+                    "High internal validity",
+                    "Can establish temporality"
+                ],
+                weaknesses: [
+                    "Expensive and time-consuming",
+                    "May not be ethical for some exposures",
+                    "Limited generalizability",
+                    "May not be feasible for rare outcomes"
+                ]
+            },
+            cohort: {
+                name: "Cohort Study",
+                description: "Groups of people with/without exposure are followed over time to compare outcome rates.",
+                recommendation: "Ideal for studying risk factors when you can follow participants prospectively.",
+                strengths: [
+                    "Can establish temporality",
+                    "Good for multiple outcomes",
+                    "Can calculate incidence rates",
+                    "Relatively unbiased"
+                ],
+                weaknesses: [
+                    "Time-consuming and expensive",
+                    "Loss to follow-up possible",
+                    "Not suitable for rare outcomes",
+                    "Confounding possible"
+                ]
+            },
+            case_control: {
+                name: "Case-Control Study",
+                description: "People with outcome (cases) are compared to those without (controls) for exposure history.",
+                recommendation: "Best choice for rare outcomes when you need efficiency.",
+                strengths: [
+                    "Efficient for rare outcomes",
+                    "Relatively quick and inexpensive",
+                    "Can study multiple exposures",
+                    "Good for generating hypotheses"
+                ],
+                weaknesses: [
+                    "Cannot establish temporality",
+                    "Prone to recall bias",
+                    "Selection bias possible",
+                    "Cannot calculate incidence"
+                ]
+            },
+            cross_sectional: {
+                name: "Cross-Sectional Study",
+                description: "Data on exposure and outcome are collected at a single point in time from a population.",
+                recommendation: "Suitable when you need a snapshot of disease frequency or associations.",
+                strengths: [
+                    "Quick and inexpensive",
+                    "Good for prevalence estimation",
+                    "Can study multiple variables",
+                    "Useful for planning larger studies"
+                ],
+                weaknesses: [
+                    "Cannot establish temporality",
+                    "Survival bias possible",
+                    "Cannot determine causality",
+                    "Prevalence-incidence bias"
+                ]
+            }
+        };
+
+        let selectorCurrentStep = 0;
+        let selectorAnswers = [];
+        let selectorHistory = [];
+
+        function loadSelectorQuestion() {
+            const question = selectorQuestions[selectorCurrentStep];
+            const container = document.getElementById('selectorQuestionContainer');
+
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question">${question.question}</div>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <button class="option-btn" onclick="selectSelectorOption(${index})">
+                                ${option.text}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('selectorCurrentStep').textContent = selectorCurrentStep + 1;
+            updateSelectorProgress();
+        }
+
+        function selectSelectorOption(index) {
+            const option = selectorQuestions[selectorCurrentStep].options[index];
+            selectorAnswers[selectorCurrentStep] = option.value;
+            selectorHistory.push(selectorCurrentStep);
+
+            if (selectorCurrentStep < selectorQuestions.length - 1) {
+                document.getElementById('selectorNextBtn').style.display = 'inline-block';
+            } else {
+                determineStudyDesign();
+            }
+        }
+
+        function nextSelectorStep() {
+            selectorCurrentStep++;
+            document.getElementById('selectorNextBtn').style.display = 'none';
+            document.getElementById('selectorBackBtn').style.display = 'inline-block';
+
+            if (selectorCurrentStep < selectorQuestions.length) {
+                loadSelectorQuestion();
+            } else {
+                determineStudyDesign();
+            }
+        }
+
+        function goBackSelector() {
+            if (selectorHistory.length > 0) {
+                selectorCurrentStep = selectorHistory.pop();
+                selectorAnswers = selectorAnswers.slice(0, selectorCurrentStep + 1);
+                loadSelectorQuestion();
+                document.getElementById('selectorNextBtn').style.display = 'none';
+                document.getElementById('selectorResultCard').style.display = 'none';
+
+                if (selectorCurrentStep === 0) {
+                    document.getElementById('selectorBackBtn').style.display = 'none';
+                }
+            }
+        }
+
+        function determineStudyDesign() {
+            let recommendedDesign = 'cross_sectional';
+
+            if (selectorAnswers[0] === 'causality' && selectorAnswers[2] === 'yes_randomize') {
+                recommendedDesign = 'rct';
+            } else if (selectorAnswers[0] === 'intervention' && selectorAnswers[2] === 'yes_randomize') {
+                recommendedDesign = 'rct';
+            } else if (selectorAnswers[1] === 'rare' || selectorAnswers[1] === 'very_rare') {
+                recommendedDesign = 'case_control';
+            } else if (selectorAnswers[4] === 'yes' && selectorAnswers[3] === 'long_high') {
+                recommendedDesign = 'cohort';
+            } else if (selectorAnswers[0] === 'prevalence') {
+                recommendedDesign = 'cross_sectional';
+            } else if (selectorAnswers[3] === 'short_low') {
+                recommendedDesign = 'cross_sectional';
+            }
+
+            showSelectorResult(recommendedDesign);
+        }
+
+        function showSelectorResult(designKey) {
+            const design = studyDesigns[designKey];
+            const resultCard = document.getElementById('selectorResultCard');
+
+            document.getElementById('selectorResultTitle').textContent = `Recommended: ${design.name}`;
+            document.getElementById('selectorResultDescription').textContent = design.description;
+            document.getElementById('selectorRecommendation').innerHTML = `<strong>Why this design?</strong> ${design.recommendation}`;
+
+            document.getElementById('selectorStrengthsWeaknesses').innerHTML = `
+                <div class="strengths">
+                    <h4>Strengths</h4>
+                    <ul>
+                        ${design.strengths.map(strength => `<li>${strength}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="weaknesses">
+                    <h4>Limitations</h4>
+                    <ul>
+                        ${design.weaknesses.map(weakness => `<li>${weakness}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            resultCard.style.display = 'block';
+            document.getElementById('selectorNextBtn').style.display = 'none';
+            document.getElementById('selectorRestartBtn').style.display = 'inline-block';
+        }
+
+        function updateSelectorProgress() {
+            const progress = ((selectorCurrentStep + 1) / selectorQuestions.length) * 100;
+            document.getElementById('selectorProgressFill').style.width = progress + '%';
+        }
+
+        function restartSelector() {
+            selectorCurrentStep = 0;
+            selectorAnswers = [];
+            selectorHistory = [];
+
+            document.getElementById('selectorResultCard').style.display = 'none';
+            document.getElementById('selectorRestartBtn').style.display = 'none';
+            document.getElementById('selectorBackBtn').style.display = 'none';
+            document.getElementById('selectorNextBtn').style.display = 'none';
+
+            loadSelectorQuestion();
+        }
+
+        // Bias Simulation functionality
+        function updateSelectionBias() {
+            const value = document.getElementById('selectionBiasSlider').value;
+            document.getElementById('selectionBiasValue').textContent = value;
+
+            // Simulate bias effect
+            const trueOR = 2.0;
+            const biasEffect = value / 100;
+            const observedOR = trueOR * (1 + biasEffect * 0.5);
+
+            document.getElementById('trueOddsRatio').textContent = trueOR.toFixed(1);
+            document.getElementById('observedOddsRatio').textContent = observedOR.toFixed(1);
+            document.getElementById('biasDirection').textContent = biasEffect > 0 ? 'Away from null' : 'Toward null';
+        }
+
+        function updateSampleSize() {
+            const value = document.getElementById('sampleSizeSlider').value;
+            document.getElementById('sampleSizeValue').textContent = value;
+        }
+
+        // Confounding Explorer functionality
+        function selectVariable(type) {
+            // Highlight selected variable
+            const variables = document.querySelectorAll('.variable-node');
+            variables.forEach(v => v.classList.remove('selected'));
+            event.target.classList.add('selected');
+        }
+
+        function adjustForConfounding() {
+            document.getElementById('crudeRR').textContent = '2.5';
+            document.getElementById('adjustedRR').textContent = '1.8';
+            document.getElementById('confoundingEffect').textContent = '30%';
+        }
+
+        function resetDAG() {
+            const variables = document.querySelectorAll('.variable-node');
+            variables.forEach(v => v.classList.remove('selected'));
+            document.getElementById('crudeRR').textContent = '2.5';
+            document.getElementById('adjustedRR').textContent = '2.5';
+            document.getElementById('confoundingEffect').textContent = '0%';
+        }
+
+        // Case Study functionality
+        function makeDecision(decision) {
+            const outcomeDiv = document.getElementById('caseOutcome');
+            let title, description, consequences;
+
+            switch(decision) {
+                case 'contact_restaurant':
+                    title = 'Restaurant Investigation';
+                    description = 'You contact the restaurant management and discover that several employees have reported similar symptoms. Food samples are collected for testing.';
+                    consequences = 'This decision helps identify the source quickly but may alert the restaurant, potentially compromising evidence.';
+                    break;
+                case 'analyze_symptoms':
+                    title = 'Symptom Analysis';
+                    description = 'Analysis of medical records shows a consistent incubation period of 12-24 hours and symptoms typical of Salmonella infection.';
+                    consequences = 'This provides valuable epidemiological clues but requires more time to confirm the diagnosis.';
+                    break;
+                case 'trace_contacts':
+                    title = 'Contact Tracing';
+                    description = 'You identify 47 people who ate at the restaurant in the past 48 hours. 23 have reported symptoms, suggesting a high attack rate.';
+                    consequences = 'Contact tracing is crucial for outbreak control but is labor-intensive and time-consuming.';
+                    break;
+                case 'lab_testing':
+                    title = 'Laboratory Confirmation';
+                    description = 'Stool samples from affected individuals test positive for Salmonella enteritidis. The outbreak is confirmed.';
+                    consequences = 'Laboratory confirmation is essential for public health action but results take 24-48 hours.';
+                    break;
+            }
+
+            document.getElementById('outcomeTitle').textContent = title;
+            document.getElementById('outcomeDescription').textContent = description;
+            document.getElementById('caseConsequences').innerHTML = `<strong>Consequences:</strong> ${consequences}`;
+
+            outcomeDiv.style.display = 'block';
+        }
+
+        // Validity Lab functionality
+        let shots = [];
+        let precision = 20;
+        let validity = 0;
+
+        function updatePrecision() {
+            precision = document.getElementById('precisionSlider').value;
+            document.getElementById('precisionValue').textContent = precision;
+        }
+
+        function updateValidity() {
+            validity = document.getElementById('validitySlider').value;
+            document.getElementById('validityValue').textContent = validity;
+        }
+
+        function shootTarget(event) {
+            const rect = event.target.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Add bias (validity)
+            const biasedX = x + (validity / 100) * 100;
+            const biasedY = y + (validity / 100) * 100;
+
+            // Add random error (precision)
+            const errorX = (Math.random() - 0.5) * (precision / 100) * 200;
+            const errorY = (Math.random() - 0.5) * (precision / 100) * 200;
+
+            const finalX = Math.max(0, Math.min(200, biasedX + errorX));
+            const finalY = Math.max(0, Math.min(200, biasedY + errorY));
+
+            shots.push({x: finalX, y: finalY});
+
+            const shot = document.createElement('div');
+            shot.className = 'shot';
+            shot.style.left = finalX + 'px';
+            shot.style.top = finalY + 'px';
+            event.target.appendChild(shot);
+
+            updateLabStatistics();
+        }
+
+        function simulateShots(count) {
+            clearShots();
+            for (let i = 0; i < count; i++) {
+                const x = Math.random() * 200;
+                const y = Math.random() * 200;
+
+                const biasedX = x + (validity / 100) * 100;
+                const biasedY = y + (validity / 100) * 100;
+
+                const errorX = (Math.random() - 0.5) * (precision / 100) * 200;
+                const errorY = (Math.random() - 0.5) * (precision / 100) * 200;
+
+                const finalX = Math.max(0, Math.min(200, biasedX + errorX));
+                const finalY = Math.max(0, Math.min(200, biasedY + errorY));
+
+                shots.push({x: finalX, y: finalY});
+
+                const shot = document.createElement('div');
+                shot.className = 'shot';
+                shot.style.left = finalX + 'px';
+                shot.style.top = finalY + 'px';
+                document.getElementById('target').appendChild(shot);
+            }
+            updateLabStatistics();
+        }
+
+        function clearShots() {
+            shots = [];
+            const target = document.getElementById('target');
+            const shotElements = target.querySelectorAll('.shot');
+            shotElements.forEach(shot => shot.remove());
+            updateLabStatistics();
+        }
+
+        function updateLabStatistics() {
+            if (shots.length === 0) {
+                document.getElementById('meanValue').textContent = '0.0';
+                document.getElementById('sdValue').textContent = '0.0';
+                document.getElementById('biasValue').textContent = '0.0';
+                document.getElementById('accuracyValue').textContent = '100%';
+                return;
+            }
+
+            // Calculate statistics
+            const distances = shots.map(shot => {
+                const centerX = 100, centerY = 100;
+                return Math.sqrt(Math.pow(shot.x - centerX, 2) + Math.pow(shot.y - centerY, 2));
+            });
+
+            const mean = distances.reduce((a, b) => a + b, 0) / distances.length;
+            const variance = distances.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / distances.length;
+            const sd = Math.sqrt(variance);
+
+            // Calculate bias (average distance from center)
+            const bias = mean;
+
+            // Calculate accuracy (1 - normalized bias)
+            const maxDistance = Math.sqrt(2) * 100; // diagonal
+            const accuracy = Math.max(0, (1 - bias / maxDistance) * 100);
+
+            document.getElementById('meanValue').textContent = mean.toFixed(1);
+            document.getElementById('sdValue').textContent = sd.toFixed(1);
+            document.getElementById('biasValue').textContent = bias.toFixed(1);
+            document.getElementById('accuracyValue').textContent = accuracy.toFixed(0) + '%';
+        }
+
+        // Handle URL hash for direct tab navigation
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1); // Remove the '#'
+            if (hash && document.getElementById(hash)) {
+                openTab(hash);
+            }
+        }
+
+        // Check for hash on page load
+        window.addEventListener('load', function() {
+            handleHashChange();
+        });
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+
+        // Initialize
+        loadQuizQuestion();
+        loadSelectorQuestion();
+        updateSelectionBias();
+        updateSampleSize();
+        updatePrecision();
+        updateValidity();
+    </script>
+</body>
+</html>
