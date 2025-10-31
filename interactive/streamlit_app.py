@@ -169,6 +169,7 @@ def show_dashboard_overview():
     <div class="main-header">
         <h1>📊 Epidemiology Learning Dashboard</h1>
         <p>Track your progress and master epidemiological study designs</p>
+        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">Created by: Dr. Siddalingaiah H S, Professor, Community Medicine, SIMSRH, Tumkur</p>
     </div>
     """, unsafe_allow_html=True)
 

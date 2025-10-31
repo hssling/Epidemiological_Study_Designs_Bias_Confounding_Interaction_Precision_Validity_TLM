@@ -2,6 +2,8 @@
 
 A comprehensive teaching and learning resource for postgraduate students studying epidemiological study designs, bias, confounding, and related concepts.
 
+**Created by:** Dr. Siddalingaiah H S, Professor, Community Medicine, SIMSRH, Tumkur
+
 ## 📚 Overview
 
 This repository contains complete teacher-student resources for epidemiology education, including:
